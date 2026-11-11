@@ -16,13 +16,16 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
+# A gate that reads a named file instead of the git index is given one.
+FILE_ARGS = {"check_outbound.py": ["--no-private", "README.md"]}
+
 
 def test_gates_are_installed_and_runnable():
     """Every gate exists and runs. Exit 1 is a finding; a crash is a defect."""
     gates = sorted((ROOT / ".gates").glob("check_*.py"))
     assert gates, "no gates in .gates/ -- this workspace is not protected"
     for g in gates:
-        r = subprocess.run([sys.executable, str(g)], cwd=ROOT,
+        r = subprocess.run([sys.executable, str(g), *FILE_ARGS.get(g.name, [])], cwd=ROOT,
                            capture_output=True, text=True, timeout=60)
         assert r.returncode in (0, 1), (
             f"{g.name} crashed with exit {r.returncode}: {r.stderr[-200:]}")
