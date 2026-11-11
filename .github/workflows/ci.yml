@@ -20,8 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
       - run: |
           [ -d .gates ] || { echo "no .gates in this repository"; exit 0; }
+          # The pre-commit hook refuses to pass without its runner.
+          uv tool install pre-commit
           for g in .gates/*.py; do
             # check_outbound and check_wheel read a named file, not the
             # tree, so there is nothing here to hand them; prove_gates.sh
