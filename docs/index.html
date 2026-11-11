@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Location filter prototype</title>
+<style>
+  :root {
+    --bg: #fafaf8; --panel: #ffffff; --text: #1c1c1a; --muted: #6b6b66;
+    --line: #e4e3de; --accent: #1f5fbf; --accent-bg: #e8f0fc; --warn: #8a5a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161615; --panel: #1f1f1d; --text: #ecebe6; --muted: #9c9b94;
+      --line: #33332f; --accent: #8ab4f8; --accent-bg: #23344f; --warn: #e0b060;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .page { max-width: 1120px; margin: 0 auto; padding: 24px; display: grid;
+          grid-template-columns: 320px 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 800px) { .page { grid-template-columns: 1fr; } }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+       color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  .panel { background: var(--panel); border: 1px solid var(--line);
+           border-radius: 10px; padding: 14px; margin-bottom: 16px; }
+  .row { display: flex; width: 100%; align-items: baseline; gap: 8px;
+         padding: 6px 8px; border: 0; border-radius: 6px; background: none;
+         color: inherit; font: inherit; text-align: left; cursor: pointer; }
+  .row:hover { background: var(--accent-bg); }
+  .row[aria-pressed="true"] { background: var(--accent-bg); color: var(--accent);
+                              font-weight: 600; }
+  .row .name { flex: 1; }
+  .row .count { font-variant-numeric: tabular-nums; color: var(--muted); }
+  .row[aria-pressed="true"] .count { color: inherit; }
+  .row .sub { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
+  .children { margin: 2px 0 8px 12px; padding-left: 8px; border-left: 2px solid var(--line); }
+  .note { font-size: 12px; color: var(--muted); margin: 6px 8px; }
+  .group-label { font-size: 12px; color: var(--muted); margin: 14px 8px 4px; }
+  .query { background: var(--panel); border: 1px solid var(--line);
+           border-left: 4px solid var(--accent); border-radius: 10px;
+           padding: 14px 16px; margin-bottom: 16px; }
+  .query .big { font-size: 18px; font-weight: 600; margin: 0 0 4px; }
+  .query p { margin: 0; color: var(--muted); }
+  .job { background: var(--panel); border: 1px solid var(--line);
+         border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+  .job a { color: var(--text); font-weight: 600; text-decoration: none; }
+  .job a:hover { color: var(--accent); text-decoration: underline; }
+  .meta { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12px; padding: 2px 8px; border-radius: 999px;
+          border: 1px solid var(--line); color: var(--muted); }
+  .chip.hit { border-color: var(--accent); background: var(--accent-bg);
+              color: var(--accent); font-weight: 600; }
+  .chip .role { font-weight: 400; opacity: .8; }
+  .error { color: var(--warn); padding: 24px; white-space: pre-wrap; }
+  .top { max-width: 1120px; margin: 0 auto; padding: 24px 24px 0; }
+  .top h1 { font-size: 22px; margin: 0 0 4px; }
+  .top p { margin: 0 0 4px; color: var(--muted); }
+  .top a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Job board location filter</h1>
+  <p>A prototype that groups each posting's locations by the address country
+     the feed records, so a country contains its cities.</p>
+  <p id="source"></p>
+</header>
+<div class="page">
+  <aside>
+    <div class="panel"><h2>Location</h2><div id="locations"></div></div>
+    <div class="panel">
+      <h2>Work arrangement</h2>
+      <div id="workplaces"></div>
+      <p class="note">The feed records this once per posting, not per location.</p>
+    </div>
+  </aside>
+  <main>
+    <div class="query" id="query"></div>
+    <div id="results"></div>
+  </main>
+</div>
+
+<script>
+const SNAPSHOT_URL = "snapshot.json";
+const WORKPLACES = [["Remote", "Remote"], ["Hybrid", "Hybrid"],
+                    ["OnSite", "On-site"], [null, "Not specified"]];
+
+const state = { loc: { kind: "all" }, workplaces: new Set() };
+let jobs = [];
+
+function el(tag, attrs, ...children) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "onclick") node.addEventListener("click", v);
+    else node.setAttribute(k, v);
+  }
+  node.append(...children.filter(c => c !== null && c !== undefined));
+  return node;
+}
+
+// One location entry as the feed records it. Nothing is inferred from the name.
+function readLocation(entry, role) {
+  const postal = (entry.address || {}).postalAddress || {};
+  const clean = v => (typeof v === "string" && v.trim()) || null;
+  return {
+    name: entry.location, role,
+    locality: clean(postal.addressLocality),
+    region: clean(postal.addressRegion),
+    country: clean(postal.addressCountry),
+  };
+}
+
+function readJob(job) {
+  const locs = [readLocation(job, "primary"),
+    ...(job.secondaryLocations || []).map(s => readLocation(s, "secondary"))];
+  return { id: job.id, title: job.title.trim(), url: job.jobUrl,
+           department: job.department, team: job.team,
+           workplace: job.workplaceType ?? null, locs };
+}
+
+// A location is country-wide when it is named after its address country,
+// or when its address holds a country and nothing else.
+const isCountryWide = l =>
+  Boolean(l.country) && (l.name === l.country || (!l.locality && !l.region));
+const cityRegion = l => [...new Set([l.locality, l.region])].filter(Boolean).join(", ");
+
+function locationTest(loc) {
+  if (loc.kind === "country") return l => l.country === loc.country;
+  if (loc.kind === "place") return l => l.country === loc.country && l.name === loc.name;
+  return null;
+}
+
+function hits(job, loc) {
+  const test = locationTest(loc);
+  return test ? job.locs.filter(test) : job.locs;
+}
+
+const passesWorkplace = job =>
+  state.workplaces.size === 0 || state.workplaces.has(job.workplace);
+
+const countFor = loc =>
+  jobs.filter(j => passesWorkplace(j) && hits(j, loc).length > 0).length;
+
+function addressNote(l) {
+  if (isCountryWide(l)) return "anywhere in the country · " + (cityRegion(l)
+    ? `feed address says ${cityRegion(l)}` : "no city in the address");
+  const parts = [...new Set([l.locality, l.region])].filter(p => p && p !== l.name);
+  if (!l.country) parts.push("no address country in the feed");
+  return parts.join(", ");
+}
+
+function sameLoc(a, b) {
+  return a.kind === b.kind && a.country === b.country && a.name === b.name;
+}
+
+function row(label, sub, count, loc) {
+  return el("button", {
+      class: "row", "aria-pressed": String(sameLoc(state.loc, loc)),
+      onclick: () => { state.loc = loc; render(); } },
+    el("span", { class: "name" }, label, sub ? el("span", { class: "sub" }, sub) : null),
+    el("span", { class: "count" }, String(count)));
+}
+
+function renderLocations() {
+  const box = document.getElementById("locations");
+  box.replaceChildren(row("All locations", null, countFor({ kind: "all" }), { kind: "all" }));
+
+  // country -> name -> one sample location entry
+  const tree = new Map();
+  for (const job of jobs) for (const l of job.locs) {
+    if (!tree.has(l.country)) tree.set(l.country, new Map());
+    tree.get(l.country).set(l.name, l);
+  }
+  const countries = [...tree.keys()].filter(c => c !== null)
+    .map(c => [c, countFor({ kind: "country", country: c })])
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+
+  const places = country => [...tree.get(country).values()]
+    .map(l => [l, countFor({ kind: "place", country, name: l.name })])
+    .sort((a, b) => isCountryWide(b[0]) - isCountryWide(a[0]) || b[1] - a[1]
+                    || a[0].name.localeCompare(b[0].name));
+
+  for (const [country, count] of countries) {
+    box.append(row(country, "any location in this country", count,
+                   { kind: "country", country }));
+    if (state.loc.country !== country) continue;
+    const kids = el("div", { class: "children" });
+    for (const [l, n] of places(country))
+      kids.append(row(l.name, addressNote(l), n,
+                      { kind: "place", country, name: l.name }));
+    kids.append(el("p", { class: "note" },
+      `A posting can list several locations, so these rows do not add up to ${count}.`));
+    box.append(kids);
+  }
+
+  if (tree.has(null)) {
+    box.append(el("p", { class: "group-label" },
+      "Named locations with no address country in the feed"));
+    for (const [l, n] of places(null))
+      box.append(row(l.name, addressNote(l), n,
+                     { kind: "place", country: null, name: l.name }));
+  }
+}
+
+function renderWorkplaces() {
+  const box = document.getElementById("workplaces");
+  const inLocation = jobs.filter(j => hits(j, state.loc).length > 0);
+  box.replaceChildren(...WORKPLACES.map(([value, label]) =>
+    el("button", {
+        class: "row", "aria-pressed": String(state.workplaces.has(value)),
+        onclick: () => {
+          state.workplaces.has(value) ? state.workplaces.delete(value)
+                                      : state.workplaces.add(value);
+          render();
+        } },
+      el("span", { class: "name" }, label),
+      el("span", { class: "count" },
+         String(inLocation.filter(j => j.workplace === value).length)))));
+}
+
+function describeQuery(n) {
+  const loc = state.loc;
+  let what, detail;
+  if (loc.kind === "all") {
+    what = "listed"; detail = "No location filter is applied.";
+  } else if (loc.kind === "country") {
+    what = `with a location in ${loc.country}`;
+    detail = `Matches any primary or secondary location whose address country is `
+      + `${loc.country}: cities, regions, and the country-wide location alike.`;
+  } else {
+    const sample = jobs.flatMap(j => j.locs).find(locationTest(loc));
+    what = `listing the location named “${loc.name}”`;
+    detail = isCountryWide(sample)
+      ? `This is the country-wide location`
+        + (cityRegion(sample) ? `, though its address in the feed says ${cityRegion(sample)}. `
+                              : `: its address holds only the country. `)
+        + `Postings that list only a city in ${loc.country} are not included.`
+      : `Matches that one named location, as primary or secondary`
+        + (addressNote(sample) ? ` (${addressNote(sample)}).` : ".");
+  }
+  if (state.workplaces.size > 0) {
+    const labels = WORKPLACES.filter(([v]) => state.workplaces.has(v)).map(([, l]) => l);
+    detail += ` Limited to postings marked ${labels.join(" or ")}.`;
+  }
+  return [`${n} posting${n === 1 ? "" : "s"} ${what}`, detail];
+}
+
+function renderResults() {
+  const shown = jobs.filter(j => passesWorkplace(j) && hits(j, state.loc).length > 0)
+    .sort((a, b) => a.title.localeCompare(b.title));
+  const [big, detail] = describeQuery(shown.length);
+  document.getElementById("query").replaceChildren(
+    el("p", { class: "big" }, big), el("p", {}, detail));
+
+  const filtered = state.loc.kind !== "all";
+  const labels = new Map(WORKPLACES);
+  document.getElementById("results").replaceChildren(...shown.map(job => {
+    const matched = new Set(filtered ? hits(job, state.loc) : []);
+    return el("div", { class: "job" },
+      el("a", { href: job.url, target: "_blank", rel: "noopener" }, job.title),
+      el("div", { class: "meta" },
+         [job.department, job.team, labels.get(job.workplace)]
+           .filter((v, i, a) => v && a.indexOf(v) === i).join(" · ")),
+      el("div", { class: "chips" }, ...job.locs.map(l =>
+        el("span", { class: matched.has(l) ? "chip hit" : "chip",
+                     title: [l.locality, l.region, l.country].filter(Boolean).join(", ")
+                            || "no address in the feed" },
+           l.name, l.role === "primary" ? el("span", { class: "role" }, " · primary") : null))));
+  }));
+}
+
+function render() { renderLocations(); renderWorkplaces(); renderResults(); }
+
+function renderSource(source) {
+  const day = new Date(source.downloaded).toLocaleDateString("en-CA",
+    { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+  document.getElementById("source").replaceChildren(
+    `Data: a snapshot of the public ${source.provider} `,
+    el("a", { href: source.feed_url, rel: "noopener" }, "job board feed"),
+    ` for ${source.board}, downloaded ${day}. An independent prototype, `
+    + `not affiliated with ${source.board} or ${source.provider}.`);
+}
+
+async function main() {
+  const response = await fetch(SNAPSHOT_URL);
+  if (!response.ok) throw new Error(`${SNAPSHOT_URL}: HTTP ${response.status}`);
+  const feed = await response.json();
+  const listed = feed.jobs.filter(j => j.isListed === true);
+  if (new Set(listed.map(j => j.id)).size !== listed.length)
+    throw new Error("Duplicate posting IDs in the snapshot.");
+  jobs = listed.map(readJob);
+  renderSource(feed.source);
+  render();
+}
+
+main().catch(error => {
+  document.body.replaceChildren(
+    el("p", { class: "error" }, `Could not load the snapshot.\n${error}`));
+  throw error;
+});
+</script>
+</body>
+</html>

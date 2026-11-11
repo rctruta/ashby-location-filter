@@ -1,0 +1,21 @@
+# What the published snapshot contains.
+# A posting field that is not listed under posting_fields is held back.
+source:
+  board: Cohere
+  provider: Ashby
+  feed_url: https://api.ashbyhq.com/posting-api/job-board/cohere
+  downloaded: 2026-11-09
+
+output: docs/snapshot.json
+
+posting_fields:
+  - id
+  - title
+  - department
+  - team
+  - workplaceType
+  - location
+  - address
+  - secondaryLocations
+  - jobUrl
+  - isListed
