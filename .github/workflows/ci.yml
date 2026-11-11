@@ -30,4 +30,8 @@ jobs:
             echo "--- $(basename "$g")"
             python3 "$g" --check
           done
+          # The proofs commit in throwaway repositories, and a runner has
+          # no git identity of its own.
+          export GIT_AUTHOR_NAME=ci GIT_AUTHOR_EMAIL=ci@example.invalid
+          export GIT_COMMITTER_NAME=ci GIT_COMMITTER_EMAIL=ci@example.invalid
           sh .gates/tests/prove_gates.sh
