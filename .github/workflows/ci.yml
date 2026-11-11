@@ -13,6 +13,7 @@ jobs:
       - run: |
           uv venv
           uv pip install -r requirements.txt
+          git config core.hooksPath .githooks   # hooks do not clone
           .venv/bin/pytest
 
   gates:  # the hooks are local policy and bypassable; this copy is not
@@ -22,7 +23,10 @@ jobs:
       - run: |
           [ -d .gates ] || { echo "no .gates in this repository"; exit 0; }
           for g in .gates/*.py; do
-            case "$(basename "$g")" in _*) continue;; esac
+            # check_outbound and check_wheel read a named file, not the
+            # tree, so there is nothing here to hand them; prove_gates.sh
+            # below shows both still fire.
+            case "$(basename "$g")" in _*|check_outbound.py|check_wheel.py) continue;; esac
             echo "--- $(basename "$g")"
             python3 "$g" --check
           done
