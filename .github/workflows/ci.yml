@@ -25,6 +25,7 @@ jobs:
           [ -d .gates ] || { echo "no .gates in this repository"; exit 0; }
           # The pre-commit hook refuses to pass without its runner.
           uv tool install pre-commit
+          git config core.hooksPath .githooks   # hooks do not clone
           for g in .gates/*.py; do
             # check_outbound and check_wheel read a named file, not the
             # tree, so there is nothing here to hand them; prove_gates.sh
