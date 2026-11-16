@@ -1,5 +1,5 @@
 export const MANIFEST_URL = "data/manifest.json";
-export const DEFAULT_SNAPSHOT = "data/cohere.json";
+export const DEFAULT_COMPANY = "all";
 
 export const WORKPLACES = [
   ["Remote", "Remote"],
@@ -13,4 +13,11 @@ export const STATUS_OPTIONS = [
   ["active", "Active only"],
   ["new", "Newly added"],
   ["removed", "Delisted only"],
+];
+
+export const GROUP_MODES = [
+  ["company", "Group by Company"],
+  ["department", "Group by Department"],
+  ["location", "Group by Location"],
+  ["flat", "Flat List"],
 ];

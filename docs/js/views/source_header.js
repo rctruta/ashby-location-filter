@@ -16,7 +16,7 @@ export function renderSourceHeader(container, source) {
     container.replaceChildren(
       `Data: Aggregated snapshot of ${source.companyCount || 3} public `,
       el("span", { style: "font-weight: 600;" }, "Ashby"),
-      ` job board feeds (${source.boardNames || "Cohere, Ramp, Linear"}), downloaded ${day}. ` +
+      ` job board feeds (${source.boardNames || "tracked companies"}), downloaded ${day}. ` +
         `An independent prototype, not affiliated with any of the named companies or Ashby.`
     );
     return;

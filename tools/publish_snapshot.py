@@ -23,15 +23,6 @@ CONFIG_PATH = Path(__file__).with_suffix(".yaml")
 log = logging.getLogger(__name__)
 
 
-class Source(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    board: str
-    provider: str
-    feed_url: HttpUrl
-    downloaded: date
-
-
 class CompanyConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -45,11 +36,9 @@ class CompanyConfig(BaseModel):
 class PublishConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    source: Source
-    output: Path
+    companies: list[CompanyConfig]
+    manifest_output: Path
     posting_fields: list[str]
-    companies: list[CompanyConfig] = []
-    manifest_output: Path | None = None
 
 
 class Selection(BaseModel):
@@ -117,9 +106,6 @@ def publish_one(
 
 def write_manifest(config: PublishConfig) -> None:
     """Write the manifest of available companies for the frontend."""
-    if not config.manifest_output or not config.companies:
-        return
-
     manifest_path = ROOT / config.manifest_output
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -157,29 +143,14 @@ def main() -> None:
 
     config = load_config()
 
-    if args.all:
-        for company in config.companies:
-            log.info("Publishing company: %s (%s)", company.name, company.id)
-            feed_data = fetch_feed(str(company.feed_url))
-            source_info = {
-                "board": company.name,
-                "provider": company.provider,
-                "feed_url": str(company.feed_url),
-                "downloaded": date.today().isoformat(),
-            }
-            publish_one(source_info, feed_data, company.output, config.posting_fields)
-            if company.id == "cohere" and company.output != config.output:
-                publish_one(source_info, feed_data, config.output, config.posting_fields)
-        write_manifest(config)
-        return
-
     if args.company:
         match = next((c for c in config.companies if c.id == args.company), None)
         if not match:
             available = ", ".join(c.id for c in config.companies)
             raise ValueError(f"Company '{args.company}' not found. Available: {available}")
         log.info("Publishing company: %s (%s)", match.name, match.id)
-        feed_data = fetch_feed(str(match.feed_url))
+        feed_source = args.feed if args.feed else str(match.feed_url)
+        feed_data = fetch_feed(feed_source)
         source_info = {
             "board": match.name,
             "provider": match.provider,
@@ -187,27 +158,21 @@ def main() -> None:
             "downloaded": date.today().isoformat(),
         }
         publish_one(source_info, feed_data, match.output, config.posting_fields)
-        if match.id == "cohere" and match.output != config.output:
-            publish_one(source_info, feed_data, config.output, config.posting_fields)
         write_manifest(config)
         return
 
-    # Default / Positional argument fallback
-    feed_source = args.feed
-    if not feed_source:
-        # Re-publish from default output if exists, or use default source feed_url
-        target_path = ROOT / config.output
-        if target_path.exists():
-            feed_source = str(target_path)
-        else:
-            feed_source = str(config.source.feed_url)
+    # Publish all companies in config (default when no single company specified)
+    for company in config.companies:
+        log.info("Publishing company: %s (%s)", company.name, company.id)
+        feed_data = fetch_feed(str(company.feed_url))
+        source_info = {
+            "board": company.name,
+            "provider": company.provider,
+            "feed_url": str(company.feed_url),
+            "downloaded": date.today().isoformat(),
+        }
+        publish_one(source_info, feed_data, company.output, config.posting_fields)
 
-    feed_data = fetch_feed(feed_source)
-    source_info = config.source.model_dump(mode="json")
-    publish_one(source_info, feed_data, config.output, config.posting_fields)
-    cohere_match = next((c for c in config.companies if c.id == "cohere"), None)
-    if cohere_match and cohere_match.output != config.output:
-        publish_one(source_info, feed_data, cohere_match.output, config.posting_fields)
     write_manifest(config)
 
 

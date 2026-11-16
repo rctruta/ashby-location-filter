@@ -1,12 +1,11 @@
-import { WORKPLACES, STATUS_OPTIONS } from "../constants.js";
+import { STATUS_OPTIONS, WORKPLACES } from "../constants.js";
 import { el } from "../dom.js";
 import {
+  countForCompany,
   countForDepartment,
   countForLocation,
-  hitsLocation,
-  passesSearch,
-  passesStatus,
-  passesWorkplace,
+  countForStatus,
+  countForWorkplace,
 } from "../filter.js";
 import { addressNote, isCountryWide } from "../models.js";
 
@@ -33,8 +32,40 @@ function row(label, sub, count, isPressed, onClick) {
   );
 }
 
+export function renderCompanyFacet(container, jobs, state, onSelectCompany) {
+  if (!state.companies || state.companies.length <= 1) return;
+
+  const panel = el("div", { class: "panel" }, el("h2", {}, "Company"));
+  const box = el("div", { id: "companies-list" });
+
+  box.append(
+    row(
+      "All Companies",
+      `${state.companies.length} boards combined`,
+      countForCompany(jobs, state, "all"),
+      state.companyId === "all",
+      () => onSelectCompany("all")
+    )
+  );
+
+  for (const c of state.companies) {
+    box.append(
+      row(
+        c.name,
+        null,
+        countForCompany(jobs, state, c.id),
+        state.companyId === c.id,
+        () => onSelectCompany(c.id)
+      )
+    );
+  }
+
+  panel.append(box);
+  container.append(panel);
+}
+
 export function renderLocationsPanel(container, jobs, state, onSelectLoc) {
-  const panel = el("div", { class: "panel" }, el("h2", {}, "Filter by Location"));
+  const panel = el("div", { class: "panel" }, el("h2", {}, "Location"));
   const box = el("div", { id: "locations-list" });
 
   box.append(
@@ -58,6 +89,7 @@ export function renderLocationsPanel(container, jobs, state, onSelectLoc) {
   const countries = [...tree.keys()]
     .filter(c => c !== null)
     .map(c => [c, countForLocation(jobs, state, { kind: "country", country: c })])
+    .filter(([, count]) => count > 0 || state.loc.country !== null)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 
   const places = country =>
@@ -107,23 +139,22 @@ export function renderLocationsPanel(container, jobs, state, onSelectLoc) {
   }
 
   if (tree.has(null)) {
-    box.append(
-      el(
-        "p",
-        { class: "group-label" },
-        "Named locations with no address country in the feed"
-      )
-    );
-    for (const [l, n] of places(null)) {
+    const nullPlaces = places(null).filter(([, n]) => n > 0 || state.loc.name !== null);
+    if (nullPlaces.length > 0) {
       box.append(
-        row(
-          l.name,
-          addressNote(l),
-          n,
-          sameLoc(state.loc, { kind: "place", country: null, name: l.name }),
-          () => onSelectLoc({ kind: "place", country: null, name: l.name })
-        )
+        el("p", { class: "group-label" }, "Locations with no address country")
       );
+      for (const [l, n] of nullPlaces) {
+        box.append(
+          row(
+            l.name,
+            addressNote(l),
+            n,
+            sameLoc(state.loc, { kind: "place", country: null, name: l.name }),
+            () => onSelectLoc({ kind: "place", country: null, name: l.name })
+          )
+        );
+      }
     }
   }
 
@@ -132,7 +163,7 @@ export function renderLocationsPanel(container, jobs, state, onSelectLoc) {
 }
 
 export function renderDepartmentsPanel(container, jobs, state, onSelectDept) {
-  const panel = el("div", { class: "panel" }, el("h2", {}, "Filter by Department"));
+  const panel = el("div", { class: "panel" }, el("h2", {}, "Department"));
   const box = el("div", { id: "departments-list" });
 
   box.append(
@@ -156,6 +187,7 @@ export function renderDepartmentsPanel(container, jobs, state, onSelectDept) {
 
   const deptList = [...deptMap.keys()]
     .map(d => [d, countForDepartment(jobs, state, { kind: "department", name: d })])
+    .filter(([, count]) => count > 0 || state.dept.name === null)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 
   for (const [deptName, count] of deptList) {
@@ -198,34 +230,19 @@ export function renderDepartmentsPanel(container, jobs, state, onSelectDept) {
 }
 
 export function renderWorkplacesPanel(container, jobs, state, onToggleWorkplace) {
-  const panel = el(
-    "div",
-    { class: "panel" },
+  const panel = el("div", { class: "panel" },
     el("h2", {}, "Work arrangement"),
-    el("div", { id: "workplaces-list" }),
-    el("p", { class: "note" }, "The feed records this once per posting, not per location.")
+    el("div", { id: "workplaces-list" })
   );
 
   const box = panel.querySelector("#workplaces-list");
-  const inScope = jobs.filter(j => {
-    if (!passesSearch(j, state.search)) return false;
-    if (!passesStatus(j, state.status)) return false;
-    if (state.dept.kind !== "all") {
-      const deptCheck =
-        state.dept.kind === "department"
-          ? j.department === state.dept.name
-          : j.department === state.dept.department && j.team === state.dept.name;
-      if (!deptCheck) return false;
-    }
-    return state.loc.kind === "all" || hitsLocation(j, state.loc).length > 0;
-  });
 
   box.replaceChildren(
     ...WORKPLACES.map(([value, label]) =>
       row(
         label,
         null,
-        inScope.filter(j => j.workplace === value).length,
+        countForWorkplace(jobs, state, value),
         state.workplaces.has(value),
         () => onToggleWorkplace(value)
       )
@@ -239,21 +256,16 @@ export function renderStatusPanel(container, jobs, state, onSelectStatus) {
   const hasDiffs = jobs.some(j => j.status === "new" || j.status === "removed");
   if (!hasDiffs) return;
 
-  const panel = el("div", { class: "panel" }, el("h2", {}, "Posting Status (Diffs)"), el("div", { id: "status-list" }));
+  const panel = el("div", { class: "panel" },
+    el("h2", {}, "Posting Status"),
+    el("div", { id: "status-list" })
+  );
 
   const box = panel.querySelector("#status-list");
-  const inScope = jobs.filter(j => {
-    if (!passesSearch(j, state.search)) return false;
-    if (!passesWorkplace(j, state.workplaces)) return false;
-    return true;
-  });
 
   box.replaceChildren(
     ...STATUS_OPTIONS.map(([value, label]) => {
-      const count =
-        value === "all"
-          ? inScope.length
-          : inScope.filter(j => j.status === value).length;
+      const count = countForStatus(jobs, state, value);
       return row(label, null, count, state.status === value, () => onSelectStatus(value));
     })
   );
@@ -264,14 +276,18 @@ export function renderStatusPanel(container, jobs, state, onSelectStatus) {
 export function renderFacetSidebar(container, jobs, state, callbacks) {
   container.innerHTML = "";
 
-  // Dedicated clean focus per viewMode
-  if (state.viewMode === "department") {
-    renderDepartmentsPanel(container, jobs, state, callbacks.onSelectDept);
-  } else {
-    // "location"
-    renderLocationsPanel(container, jobs, state, callbacks.onSelectLoc);
-  }
+  // 1. Company Facet (visible when multiple companies exist)
+  renderCompanyFacet(container, jobs, state, callbacks.onSelectCompany);
 
+  // 2. Location Facet (always visible, always synchronized)
+  renderLocationsPanel(container, jobs, state, callbacks.onSelectLoc);
+
+  // 3. Department Facet (always visible, always synchronized)
+  renderDepartmentsPanel(container, jobs, state, callbacks.onSelectDept);
+
+  // 4. Workplace Facet (always visible, dynamically calculated)
   renderWorkplacesPanel(container, jobs, state, callbacks.onToggleWorkplace);
+
+  // 5. Diff Status Facet (visible if diff data exists)
   renderStatusPanel(container, jobs, state, callbacks.onSelectStatus);
 }

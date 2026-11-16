@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 
 from tools.client import fetch_feed
 from tools.diff_engine import compute_diff
-from tools.publish_snapshot import CompanyConfig, PublishConfig, Source, write_manifest
+from tools.publish_snapshot import CompanyConfig, PublishConfig, write_manifest
 
 
 def test_diff_engine_no_previous_snapshot():
@@ -56,13 +56,6 @@ def test_fetch_feed_http(monkeypatch):
 def test_write_manifest(tmp_path: Path):
     manifest_rel = Path("docs/data/manifest.json")
     config = PublishConfig(
-        source=Source(
-            board="Cohere",
-            provider="Ashby",
-            feed_url="https://api.ashbyhq.com/posting-api/job-board/cohere",
-            downloaded="2026-11-09",
-        ),
-        output=Path("docs/snapshot.json"),
         posting_fields=["id", "title"],
         companies=[
             CompanyConfig(
@@ -70,7 +63,7 @@ def test_write_manifest(tmp_path: Path):
                 name="Cohere",
                 provider="Ashby",
                 feed_url="https://api.ashbyhq.com/posting-api/job-board/cohere",
-                output=Path("docs/snapshot.json"),
+                output=Path("docs/data/cohere.json"),
             ),
             CompanyConfig(
                 id="ramp",
@@ -90,6 +83,6 @@ def test_write_manifest(tmp_path: Path):
         content = json.loads(manifest_file.read_text(encoding="utf-8"))
         assert len(content["companies"]) == 2
         assert content["companies"][0]["id"] == "cohere"
-        assert content["companies"][0]["snapshot"] == "snapshot.json"
+        assert content["companies"][0]["snapshot"] == "data/cohere.json"
         assert content["companies"][1]["id"] == "ramp"
         assert content["companies"][1]["snapshot"] == "data/ramp.json"

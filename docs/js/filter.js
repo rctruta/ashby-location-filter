@@ -1,6 +1,6 @@
 /**
- * Filtering engine supporting multi-faceted filters:
- * Search text, Company, Location hierarchy, Department hierarchy, Workplace, and Diff status.
+ * Unified multi-faceted filtering engine.
+ * Fully synchronizes Company, Location, Department, Workplace, and Status facets.
  */
 
 export function locationTest(loc) {
@@ -20,6 +20,21 @@ export function departmentTest(dept) {
 export function hitsLocation(job, loc) {
   const test = locationTest(loc);
   return test ? job.locs.filter(test) : job.locs;
+}
+
+export function passesCompany(job, companyId) {
+  if (!companyId || companyId === "all") return true;
+  return job.company && job.company.id === companyId;
+}
+
+export function passesLocation(job, loc) {
+  if (!loc || loc.kind === "all") return true;
+  return hitsLocation(job, loc).length > 0;
+}
+
+export function passesDepartment(job, dept) {
+  const test = departmentTest(dept);
+  return test ? test(job) : true;
 }
 
 export function passesWorkplace(job, workplaces) {
@@ -47,40 +62,36 @@ export function passesSearch(job, query) {
   );
 }
 
+export function matchesJob(job, state, excludeFacet = null) {
+  if (!passesSearch(job, state.search)) return false;
+  if (excludeFacet !== "company" && !passesCompany(job, state.companyId)) return false;
+  if (excludeFacet !== "location" && !passesLocation(job, state.loc)) return false;
+  if (excludeFacet !== "department" && !passesDepartment(job, state.dept)) return false;
+  if (excludeFacet !== "workplace" && !passesWorkplace(job, state.workplaces)) return false;
+  if (excludeFacet !== "status" && !passesStatus(job, state.status)) return false;
+  return true;
+}
+
 export function filterJobs(jobs, state) {
-  return jobs.filter(job => {
-    if (!passesSearch(job, state.search)) return false;
-    if (!passesWorkplace(job, state.workplaces)) return false;
-    if (!passesStatus(job, state.status)) return false;
+  return jobs.filter(job => matchesJob(job, state));
+}
 
-    if (state.viewMode === "department") {
-      const deptCheck = departmentTest(state.dept);
-      if (deptCheck && !deptCheck(job)) return false;
-    } else {
-      // "location" mode
-      const locMatches = hitsLocation(job, state.loc);
-      if (state.loc && state.loc.kind !== "all" && locMatches.length === 0) return false;
-    }
-
-    return true;
-  });
+export function countForCompany(jobs, state, companyId) {
+  return jobs.filter(j => matchesJob(j, state, "company") && (companyId === "all" || passesCompany(j, companyId))).length;
 }
 
 export function countForLocation(jobs, state, loc) {
-  return jobs.filter(j => {
-    if (!passesSearch(j, state.search)) return false;
-    if (!passesWorkplace(j, state.workplaces)) return false;
-    if (!passesStatus(j, state.status)) return false;
-    return hitsLocation(j, loc).length > 0;
-  }).length;
+  return jobs.filter(j => matchesJob(j, state, "location") && (loc.kind === "all" || passesLocation(j, loc))).length;
 }
 
 export function countForDepartment(jobs, state, dept) {
-  const deptCheck = departmentTest(dept);
-  return jobs.filter(j => {
-    if (!passesSearch(j, state.search)) return false;
-    if (!passesWorkplace(j, state.workplaces)) return false;
-    if (!passesStatus(j, state.status)) return false;
-    return deptCheck ? deptCheck(j) : true;
-  }).length;
+  return jobs.filter(j => matchesJob(j, state, "department") && (dept.kind === "all" || passesDepartment(j, dept))).length;
+}
+
+export function countForWorkplace(jobs, state, workplace) {
+  return jobs.filter(j => matchesJob(j, state, "workplace") && (workplace === null ? j.workplace === null : j.workplace === workplace)).length;
+}
+
+export function countForStatus(jobs, state, status) {
+  return jobs.filter(j => matchesJob(j, state, "status") && (status === "all" || j.status === status)).length;
 }

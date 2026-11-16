@@ -1,10 +1,11 @@
+import { GROUP_MODES } from "../constants.js";
 import { el } from "../dom.js";
 
 /**
- * Sets up the search bar and mode toggle buttons.
+ * Sets up the search bar and group mode toggle buttons.
  * Preserves the input element across state updates to prevent cursor jumps and focus loss.
  */
-export function renderControlsBar(container, state, onSearchChange, onModeChange) {
+export function renderControlsBar(container, state, onSearchChange, onGroupChange) {
   let searchInput = container.querySelector(".search-input");
   let clearBtn = container.querySelector(".clear-btn");
   let modeToggle = container.querySelector(".mode-toggle");
@@ -13,7 +14,7 @@ export function renderControlsBar(container, state, onSearchChange, onModeChange
     searchInput = el("input", {
       type: "search",
       class: "search-input",
-      placeholder: "Search titles, departments, teams, locations...",
+      placeholder: "Search titles, companies, departments, teams, locations...",
       value: state.search || "",
       oninput: (e) => onSearchChange(e.target.value),
     });
@@ -37,20 +38,14 @@ export function renderControlsBar(container, state, onSearchChange, onModeChange
 
     const searchBox = el("div", { class: "search-box" }, searchInput, clearBtn);
 
-    // Two clear, intuitive view modes: By Location or By Department
-    const modes = [
-      ["location", "By Location"],
-      ["department", "By Department"],
-    ];
-
-    const modeButtons = modes.map(([modeKey, label]) => {
+    const modeButtons = GROUP_MODES.map(([modeKey, label]) => {
       return el(
         "button",
         {
           type: "button",
           "data-mode": modeKey,
-          class: `mode-btn ${state.viewMode === modeKey ? "active" : ""}`,
-          onclick: () => onModeChange(modeKey),
+          class: `mode-btn ${state.groupMode === modeKey ? "active" : ""}`,
+          onclick: () => onGroupChange(modeKey),
         },
         label
       );
@@ -58,13 +53,12 @@ export function renderControlsBar(container, state, onSearchChange, onModeChange
 
     modeToggle = el(
       "div",
-      { class: "mode-toggle", role: "group", "aria-label": "Display Mode" },
+      { class: "mode-toggle", role: "group", "aria-label": "Group results by" },
       ...modeButtons
     );
 
     container.replaceChildren(searchBox, modeToggle);
   } else {
-    // Only update value if the input is not currently focused by user
     if (document.activeElement !== searchInput) {
       searchInput.value = state.search || "";
     }
@@ -72,7 +66,7 @@ export function renderControlsBar(container, state, onSearchChange, onModeChange
 
     modeToggle.querySelectorAll(".mode-btn").forEach((btn) => {
       const modeKey = btn.getAttribute("data-mode");
-      btn.classList.toggle("active", state.viewMode === modeKey);
+      btn.classList.toggle("active", state.groupMode === modeKey);
     });
   }
 }

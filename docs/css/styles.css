@@ -313,13 +313,85 @@ h2 {
   box-shadow: var(--shadow-md);
   border-color: #cbccc7;
 }
+.group-header {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 28px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--line);
+}
+.group-header:first-of-type {
+  margin-top: 8px;
+}
+
 .job-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 12px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
+.job-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.job-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--panel-muted);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.company-badge.company-cohere {
+  background: #ede9fe;
+  color: #5b21b6;
+  border-color: #ddd6fe;
+}
+.company-badge.company-ramp {
+  background: #ecfccb;
+  color: #3f6212;
+  border-color: #d9f99d;
+}
+.company-badge.company-linear {
+  background: #e0e7ff;
+  color: #3730a3;
+  border-color: #c7d2fe;
+}
+
+@media (prefers-color-scheme: dark) {
+  .company-badge.company-cohere {
+    background: #311b59;
+    color: #c4b5fd;
+    border-color: #4c1d95;
+  }
+  .company-badge.company-ramp {
+    background: #1e330a;
+    color: #bef264;
+    border-color: #365314;
+  }
+  .company-badge.company-linear {
+    background: #1e2554;
+    color: #a5b4fc;
+    border-color: #312e81;
+  }
+}
+
 .job a.title {
   color: var(--text);
   font-size: 16px;
@@ -353,14 +425,6 @@ h2 {
   background: var(--delisted-bg);
   color: var(--delisted-text);
   border: 1px solid rgba(148, 83, 0, 0.2);
-}
-.badge-company {
-  background: var(--accent-bg);
-  color: var(--accent);
-  border: 1px solid rgba(31, 95, 191, 0.25);
-  font-weight: 600;
-  text-transform: none;
-  font-size: 11px;
 }
 
 .meta {
