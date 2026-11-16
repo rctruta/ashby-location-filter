@@ -17,6 +17,12 @@ companies:
     provider: Ashby
     feed_url: https://api.ashbyhq.com/posting-api/job-board/linear
     output: docs/data/linear.json
+  - id: influxdata
+    name: InfluxData
+    provider: Ashby
+    feed_url: https://api.ashbyhq.com/posting-api/job-board/influxdata
+    output: docs/data/influxdata.json
+
 
 manifest_output: docs/data/manifest.json
 

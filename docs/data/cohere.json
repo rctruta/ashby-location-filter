@@ -5421,6 +5421,45 @@
    "isListed": true
   },
   {
+   "id": "5a61f4d2-5a52-4c98-a8a9-71fbfd67e485",
+   "title": "Compensation Business Partner",
+   "department": "People Operations",
+   "team": "People",
+   "workplaceType": "Remote",
+   "location": "New York",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New York",
+     "addressCountry": "United States",
+     "addressLocality": "New York"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Washington, DC",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington, DC",
+       "addressCountry": "United States",
+       "addressLocality": "Washington, DC"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/5a61f4d2-5a52-4c98-a8a9-71fbfd67e485",
+   "isListed": true
+  },
+  {
    "id": "2dc422bb-6759-4867-afb6-dc074af9ae58",
    "title": "Senior Accountant",
    "department": "Business Operations",
@@ -5506,13 +5545,52 @@
    "secondaryLocations": [],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/c4192057-43fa-45c9-a40e-6f29131bf11d",
    "isListed": true
+  },
+  {
+   "id": "0067eb76-92af-497e-a5f8-7521716552f9",
+   "title": "Talent Partner, Tech",
+   "department": "People Operations",
+   "team": "Talent Acquisition",
+   "workplaceType": "Remote",
+   "location": "New York",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New York",
+     "addressCountry": "United States",
+     "addressLocality": "New York"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Washington, DC",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington, DC",
+       "addressCountry": "United States",
+       "addressLocality": "Washington, DC"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/0067eb76-92af-497e-a5f8-7521716552f9",
+   "isListed": true
   }
  ],
  "diff": {
   "new_ids": [],
   "removed_jobs": [],
   "summary": {
-   "active": 121,
+   "active": 123,
    "new": 0,
    "removed": 0
   }

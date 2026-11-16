@@ -419,6 +419,11 @@ p.subtitle {
   color: #3730a3;
   border-color: #c7d2fe;
 }
+.company-badge.company-influxdata {
+  background: #fce7f3;
+  color: #9d174d;
+  border-color: #fbcfe8;
+}
 
 @media (prefers-color-scheme: dark) {
   .company-badge.company-cohere {
@@ -435,6 +440,11 @@ p.subtitle {
     background: #1e2554;
     color: #a5b4fc;
     border-color: #312e81;
+  }
+  .company-badge.company-influxdata {
+    background: #4a1532;
+    color: #f472b6;
+    border-color: #831843;
   }
 }
 

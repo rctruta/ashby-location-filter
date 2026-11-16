@@ -20,6 +20,13 @@
    "provider": "Ashby",
    "feed_url": "https://api.ashbyhq.com/posting-api/job-board/linear",
    "snapshot": "data/linear.json"
+  },
+  {
+   "id": "influxdata",
+   "name": "InfluxData",
+   "provider": "Ashby",
+   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/influxdata",
+   "snapshot": "data/influxdata.json"
   }
  ]
 }

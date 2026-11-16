@@ -5450,13 +5450,50 @@
    ],
    "jobUrl": "https://jobs.ashbyhq.com/ramp/4727e0b5-eafa-41ab-89ce-f6a1d19d3f0e",
    "isListed": true
+  },
+  {
+   "id": "f34619af-0475-4987-83b9-eb926b4bb07a",
+   "title": "Customer Success Manager, Strategic ",
+   "department": "Sales",
+   "team": "Customer Success Management",
+   "workplaceType": "Hybrid",
+   "location": "New York, NY (HQ)",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "NY",
+     "addressCountry": "USA",
+     "addressLocality": "New York City"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "San Francisco, CA",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California ",
+       "addressCountry": "USA",
+       "addressLocality": "San Fransisco"
+      }
+     }
+    },
+    {
+     "location": "Remote (US)",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "United States"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/ramp/f34619af-0475-4987-83b9-eb926b4bb07a",
+   "isListed": true
   }
  ],
  "diff": {
   "new_ids": [],
   "removed_jobs": [],
   "summary": {
-   "active": 177,
+   "active": 178,
    "new": 0,
    "removed": 0
   }
