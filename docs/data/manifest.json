@@ -5,7 +5,7 @@
    "name": "Cohere",
    "provider": "Ashby",
    "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-   "snapshot": "snapshot.json"
+   "snapshot": "data/cohere.json"
   },
   {
    "id": "ramp",

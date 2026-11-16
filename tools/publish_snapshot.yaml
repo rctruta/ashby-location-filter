@@ -4,7 +4,7 @@ source:
   board: Cohere
   provider: Ashby
   feed_url: https://api.ashbyhq.com/posting-api/job-board/cohere
-  downloaded: 2026-11-09
+  downloaded: 2026-11-16
 
 output: docs/snapshot.json
 
@@ -13,7 +13,7 @@ companies:
     name: Cohere
     provider: Ashby
     feed_url: https://api.ashbyhq.com/posting-api/job-board/cohere
-    output: docs/snapshot.json
+    output: docs/data/cohere.json
   - id: ramp
     name: Ramp
     provider: Ashby

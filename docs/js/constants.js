@@ -1,5 +1,5 @@
 export const MANIFEST_URL = "data/manifest.json";
-export const DEFAULT_SNAPSHOT = "snapshot.json";
+export const DEFAULT_SNAPSHOT = "data/cohere.json";
 
 export const WORKPLACES = [
   ["Remote", "Remote"],

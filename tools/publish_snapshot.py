@@ -168,6 +168,8 @@ def main() -> None:
                 "downloaded": date.today().isoformat(),
             }
             publish_one(source_info, feed_data, company.output, config.posting_fields)
+            if company.id == "cohere" and company.output != config.output:
+                publish_one(source_info, feed_data, config.output, config.posting_fields)
         write_manifest(config)
         return
 
@@ -185,6 +187,8 @@ def main() -> None:
             "downloaded": date.today().isoformat(),
         }
         publish_one(source_info, feed_data, match.output, config.posting_fields)
+        if match.id == "cohere" and match.output != config.output:
+            publish_one(source_info, feed_data, config.output, config.posting_fields)
         write_manifest(config)
         return
 
@@ -201,6 +205,9 @@ def main() -> None:
     feed_data = fetch_feed(feed_source)
     source_info = config.source.model_dump(mode="json")
     publish_one(source_info, feed_data, config.output, config.posting_fields)
+    cohere_match = next((c for c in config.companies if c.id == "cohere"), None)
+    if cohere_match and cohere_match.output != config.output:
+        publish_one(source_info, feed_data, cohere_match.output, config.posting_fields)
     write_manifest(config)
 
 

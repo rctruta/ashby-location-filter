@@ -3,14 +3,14 @@
   "board": "Cohere",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-  "downloaded": "2026-11-09"
+  "downloaded": "2026-11-16"
  },
  "jobs": [
   {
    "id": "7133d205-5421-4336-a8e2-6037b5f55073",
    "title": "Senior Full-Stack Engineer, Annotation Platform ",
    "department": "Engineering & Infra",
-   "team": "Internal Applications",
+   "team": "APIs & Tooling",
    "workplaceType": "Remote",
    "location": "Toronto",
    "address": {
@@ -1335,113 +1335,6 @@
    "isListed": true
   },
   {
-   "id": "c80f0fe9-3fc4-49fe-9f26-a7115350b1fc",
-   "title": "Staff Research Engineer, Model Efficiency",
-   "department": "Modeling",
-   "team": "Modeling",
-   "workplaceType": "Remote",
-   "location": "New York",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "New York",
-     "addressCountry": "United States",
-     "addressLocality": "New York"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "San Francisco",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    },
-    {
-     "location": "Montreal",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Quebec ",
-       "addressCountry": "Canada",
-       "addressLocality": "Montreal"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/c80f0fe9-3fc4-49fe-9f26-a7115350b1fc",
-   "isListed": true
-  },
-  {
-   "id": "2df2da3c-fb69-4d4d-b3c9-077b3df2ba3d",
-   "title": "Senior Member of Technical Staff, Synthetic Data",
-   "department": "Modeling",
-   "team": "Modeling",
-   "workplaceType": "Remote",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "London",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "London",
-       "addressCountry": "United Kingdom",
-       "addressLocality": "London"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    },
-    {
-     "location": "Paris",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "France",
-       "addressLocality": "Paris"
-      }
-     }
-    },
-    {
-     "location": "Montreal",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Quebec ",
-       "addressCountry": "Canada",
-       "addressLocality": "Montreal"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/2df2da3c-fb69-4d4d-b3c9-077b3df2ba3d",
-   "isListed": true
-  },
-  {
    "id": "98f69f63-2f54-4813-86ea-13d67336326e",
    "title": "Senior Account Executive - US Public Sector (Civilian and Federal)",
    "department": "Revenue",
@@ -1920,8 +1813,8 @@
   {
    "id": "39cab400-c976-41d9-9002-880ac6985b64",
    "title": "Staff Software Engineer, Agentic Analytics",
-   "department": "Analytics & Data Insights",
-   "team": "Analytics & Data Insights",
+   "department": "Data & Analytics ",
+   "team": "Data Analytics & Insights ",
    "workplaceType": "Hybrid",
    "location": "United States",
    "address": {
@@ -2208,7 +2101,7 @@
    "id": "6aa3cb2b-ee8b-4c92-b505-3a7509f80d7f",
    "title": "Software Engineer, Data Infrastructure",
    "department": "Engineering & Infra",
-   "team": "Engineering & Infra",
+   "team": "Product Engineering | Infrastructure",
    "workplaceType": "Remote",
    "location": "New York",
    "address": {
@@ -2326,53 +2219,6 @@
     }
    ],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/0cf19dbd-bfa9-425f-a357-e2bd874bb489",
-   "isListed": true
-  },
-  {
-   "id": "82ec1512-5bc3-49dd-b995-b6abc2a958d7",
-   "title": "Senior Member of Technical Staff, Web Data",
-   "department": "Modeling",
-   "team": "Modeling",
-   "workplaceType": "Remote",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Europe",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "European Union"
-      }
-     }
-    },
-    {
-     "location": "London",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "London",
-       "addressCountry": "United Kingdom",
-       "addressLocality": "London"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/82ec1512-5bc3-49dd-b995-b6abc2a958d7",
    "isListed": true
   },
   {
@@ -2564,82 +2410,6 @@
    "isListed": true
   },
   {
-   "id": "6a6120d5-5e02-4811-99d9-6baf0b910e37",
-   "title": "Engineering Manager, FDE Infrastructure (NORAM)",
-   "department": "Engineering & Infra",
-   "team": "Delivery Engineering | Infrastructure",
-   "workplaceType": "Remote",
-   "location": "Canada",
-   "address": {
-    "postalAddress": {
-     "addressCountry": "Canada"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "United States",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/6a6120d5-5e02-4811-99d9-6baf0b910e37",
-   "isListed": true
-  },
-  {
-   "id": "87e9fd4e-49ac-4242-97be-7da6f718020d",
-   "title": "Product Manager, Integrations",
-   "department": "Product Management & Program Management",
-   "team": "Product Management",
-   "workplaceType": "Remote",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "London",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "London",
-       "addressCountry": "United Kingdom",
-       "addressLocality": "London"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    },
-    {
-     "location": "Montreal",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Quebec ",
-       "addressCountry": "Canada",
-       "addressLocality": "Montreal"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/87e9fd4e-49ac-4242-97be-7da6f718020d",
-   "isListed": true
-  },
-  {
    "id": "01a34bc3-6421-4af2-bf5b-f42e98155dda",
    "title": "Technical Program Manager, AI Delivery for Public Sector & Defence, Canada ",
    "department": "Product Management & Program Management",
@@ -2716,7 +2486,7 @@
   },
   {
    "id": "5e344658-f721-4f4a-b4df-b4052b6a0393",
-   "title": "Customer Success Manager, Public Sector & Defence",
+   "title": "Customer Success Manager, Public Sector & Defence (Top Secret Clearance)",
    "department": "Revenue",
    "team": "Customer Success",
    "workplaceType": null,
@@ -3155,22 +2925,48 @@
    "isListed": true
   },
   {
-   "id": "53c89232-1de7-42b5-ab9d-b5290451c7e8",
-   "title": "Financial Analyst, G&A",
-   "department": "Business Operations",
-   "team": "Finance",
+   "id": "dc881634-ca66-46e5-90ff-43ad83080de2",
+   "title": "Adoption Specialist - Infrastructure & Agentic ",
+   "department": "Revenue",
+   "team": "Revenue",
    "workplaceType": "Remote",
-   "location": "United States",
+   "location": "Toronto",
    "address": {
     "postalAddress": {
-     "addressRegion": "California",
-     "addressCountry": "United States",
-     "addressLocality": "San Francisco"
+     "addressRegion": "Ontario",
+     "addressCountry": "Canada",
+     "addressLocality": "Toronto"
     }
    },
    "secondaryLocations": [
     {
-     "location": "San Francisco",
+     "location": "Europe",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "European Union"
+      }
+     }
+    },
+    {
+     "location": "Canada",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Canada"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "London",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "United States",
      "address": {
       "postalAddress": {
        "addressRegion": "California",
@@ -3190,34 +2986,20 @@
      }
     },
     {
-     "location": "Toronto",
+     "location": "United Kingdom",
      "address": {
       "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
+       "addressCountry": "United Kingdom"
       }
+     }
+    },
+    {
+     "location": "Atlanta",
+     "address": {
+      "postalAddress": {}
      }
     }
    ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/53c89232-1de7-42b5-ab9d-b5290451c7e8",
-   "isListed": true
-  },
-  {
-   "id": "dc881634-ca66-46e5-90ff-43ad83080de2",
-   "title": "Adoption Specialist - Infrastructure & Agentic ",
-   "department": "Revenue",
-   "team": "Revenue",
-   "workplaceType": "Remote",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/dc881634-ca66-46e5-90ff-43ad83080de2",
    "isListed": true
   },
@@ -3279,35 +3061,6 @@
    "isListed": true
   },
   {
-   "id": "e906188a-e089-4b86-85b9-aad0d4413c68",
-   "title": "Engineering Manager, FDE Agentic Platform",
-   "department": "Engineering & Infra",
-   "team": "Delivery Engineering | Agentic Platform",
-   "workplaceType": "Remote",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/e906188a-e089-4b86-85b9-aad0d4413c68",
-   "isListed": true
-  },
-  {
    "id": "14a286d9-e415-4198-8d3b-8e0a7882a5b6",
    "title": "Senior Director, Solutions Architecture, APAC",
    "department": "Revenue",
@@ -3333,81 +3086,6 @@
     }
    ],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/14a286d9-e415-4198-8d3b-8e0a7882a5b6",
-   "isListed": true
-  },
-  {
-   "id": "96c74af4-b3d7-4960-a666-212ce4debac8",
-   "title": "Software Engineer, Integrations",
-   "department": "Engineering & Infra",
-   "team": "Product Engineering | North",
-   "workplaceType": "Remote",
-   "location": "Europe",
-   "address": {
-    "postalAddress": {
-     "addressCountry": "European Union"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "London",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "London",
-       "addressCountry": "United Kingdom",
-       "addressLocality": "London"
-      }
-     }
-    },
-    {
-     "location": "United States",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    },
-    {
-     "location": "United Kingdom",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "United Kingdom"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    },
-    {
-     "location": "Montreal",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Quebec ",
-       "addressCountry": "Canada",
-       "addressLocality": "Montreal"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/96c74af4-b3d7-4960-a666-212ce4debac8",
    "isListed": true
   },
   {
@@ -3480,41 +3158,6 @@
    },
    "secondaryLocations": [],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/e2489771-1c24-4ca2-ab5b-03fc961b18b7",
-   "isListed": true
-  },
-  {
-   "id": "a0f174cf-4407-4334-b812-45a767092fca",
-   "title": "Forward Deployed Engineer, Infrastructure Specialist (UK Public Sector)",
-   "department": "Engineering & Infra",
-   "team": "Delivery Engineering | Infrastructure",
-   "workplaceType": "Remote",
-   "location": "United Kingdom",
-   "address": {
-    "postalAddress": {
-     "addressCountry": "United Kingdom"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Europe",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "European Union"
-      }
-     }
-    },
-    {
-     "location": "London",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "London",
-       "addressCountry": "United Kingdom",
-       "addressLocality": "London"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/a0f174cf-4407-4334-b812-45a767092fca",
    "isListed": true
   },
   {
@@ -3688,7 +3331,7 @@
    "id": "c12e3636-ed16-47e7-ba1f-82860f88d340",
    "title": "Senior Full-Stack Engineer, North Admin",
    "department": "Engineering & Infra",
-   "team": "Product Engineering | North",
+   "team": "North",
    "workplaceType": "Remote",
    "location": "Toronto",
    "address": {
@@ -4309,35 +3952,6 @@
    "isListed": true
   },
   {
-   "id": "be14b338-eac9-4099-9599-1e15cfdd11be",
-   "title": "Manager, Executive Assistants, Revenue (EST)",
-   "department": "People Operations",
-   "team": "Admin",
-   "workplaceType": null,
-   "location": "New York",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "New York",
-     "addressCountry": "United States",
-     "addressLocality": "New York"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/be14b338-eac9-4099-9599-1e15cfdd11be",
-   "isListed": true
-  },
-  {
    "id": "49a6485c-c449-4e07-8001-cafc97a39a13",
    "title": "VP of Sales - Public Sector",
    "department": "Revenue",
@@ -4553,6 +4167,63 @@
    "isListed": true
   },
   {
+   "id": "31bfc2b4-472f-4921-86b1-010daa2da1e8",
+   "title": "Managing Editor",
+   "department": "Marketing",
+   "team": "Marketing",
+   "workplaceType": "Remote",
+   "location": "United States",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "United States",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "California",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/31bfc2b4-472f-4921-86b1-010daa2da1e8",
+   "isListed": true
+  },
+  {
    "id": "bdcdc6d1-2379-40fe-bfb6-d61768043b37",
    "title": "Senior Account Executive ",
    "department": "Revenue",
@@ -4626,6 +4297,63 @@
    "isListed": true
   },
   {
+   "id": "58c1bb1d-2a19-42af-84e2-e6d276591ef6",
+   "title": "Content Strategist",
+   "department": "Marketing",
+   "team": "Marketing",
+   "workplaceType": "Remote",
+   "location": "United States",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "United States",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "California",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/58c1bb1d-2a19-42af-84e2-e6d276591ef6",
+   "isListed": true
+  },
+  {
    "id": "eef82766-7e31-430f-a102-bc33a5022597",
    "title": "Member of Technical Staff - Post-training (Data Infrastructure)",
    "department": "Modeling",
@@ -4650,6 +4378,63 @@
     }
    ],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/eef82766-7e31-430f-a102-bc33a5022597",
+   "isListed": true
+  },
+  {
+   "id": "36135ef8-0064-4445-88aa-6ab31ac03a33",
+   "title": "Content Editor",
+   "department": "Marketing",
+   "team": "Marketing",
+   "workplaceType": "Remote",
+   "location": "United States",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "United States",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "California",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/36135ef8-0064-4445-88aa-6ab31ac03a33",
    "isListed": true
   },
   {
@@ -4762,7 +4547,7 @@
    "id": "7e0e08ed-4b12-4aaa-8dda-ad6292992061",
    "title": "Senior Full-Stack Engineer, Cohere Dashboard",
    "department": "Engineering & Infra",
-   "team": "Cohere Dashboard",
+   "team": "North",
    "workplaceType": "Remote",
    "location": "Toronto",
    "address": {
@@ -4910,8 +4695,8 @@
   {
    "id": "4ef5101e-b083-49cd-808a-54c754d159e5",
    "title": "Senior Staff Data Engineer",
-   "department": "Analytics & Data Insights",
-   "team": "Analytics & Data Insights",
+   "department": "Data & Analytics ",
+   "team": "Data Analytics & Insights ",
    "workplaceType": "Hybrid",
    "location": "Toronto",
    "address": {
@@ -5055,7 +4840,7 @@
    "id": "dca93d1a-9ab8-442b-aa76-950595e8b9c3",
    "title": "Engineering Manager, Cohere APIs and DevEx",
    "department": "Engineering & Infra",
-   "team": "Product Engineering | Cohere Dashboard",
+   "team": "APIs & Tooling",
    "workplaceType": "Hybrid",
    "location": "Toronto",
    "address": {
@@ -5185,64 +4970,6 @@
    "isListed": true
   },
   {
-   "id": "f3290fb2-66f1-44c7-9824-3f416f44af5a",
-   "title": "Revenue Operations Intern (Winter, 2027)",
-   "department": "Internships",
-   "team": "Internships",
-   "workplaceType": "Hybrid",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/f3290fb2-66f1-44c7-9824-3f416f44af5a",
-   "isListed": true
-  },
-  {
-   "id": "5da754e4-d83a-4d91-b6fe-a128227ae609",
-   "title": "Talent Sourcer, Tech",
-   "department": "People Operations",
-   "team": "Talent Acquisition",
-   "workplaceType": "Remote",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/5da754e4-d83a-4d91-b6fe-a128227ae609",
-   "isListed": true
-  },
-  {
    "id": "8df498e9-aba8-487f-80ba-362b492bad09",
    "title": "Forward Deployed Engineer, Inference ",
    "department": "Engineering & Infra",
@@ -5258,93 +4985,6 @@
    },
    "secondaryLocations": [],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/8df498e9-aba8-487f-80ba-362b492bad09",
-   "isListed": true
-  },
-  {
-   "id": "bfa95525-f25f-4445-947e-c36308c1fc83",
-   "title": "Talent Partner, G&A (Contract)",
-   "department": "People Operations",
-   "team": "Talent Acquisition",
-   "workplaceType": "Remote",
-   "location": "New York",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "New York",
-     "addressCountry": "United States",
-     "addressLocality": "New York"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Austin",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Texas",
-       "addressCountry": "United States",
-       "addressLocality": "Austin"
-      }
-     }
-    },
-    {
-     "location": "San Francisco",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "Canada",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "Canada"
-      }
-     }
-    },
-    {
-     "location": "Seattle",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Washington",
-       "addressCountry": "United States",
-       "addressLocality": "Seattle"
-      }
-     }
-    },
-    {
-     "location": "United States",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "Los Angeles",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "Los Angeles"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/bfa95525-f25f-4445-947e-c36308c1fc83",
    "isListed": true
   },
   {
@@ -5372,55 +5012,6 @@
     }
    ],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/1a765f7b-ba66-43b1-8b17-86467a897ac4",
-   "isListed": true
-  },
-  {
-   "id": "f161c820-ad71-4be5-adff-2c51126e96d1",
-   "title": "Talent Partner, GTM",
-   "department": "People Operations",
-   "team": "Talent Acquisition",
-   "workplaceType": "Remote",
-   "location": "New York",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "New York",
-     "addressCountry": "United States",
-     "addressLocality": "New York"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "San Francisco",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "Seattle",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Washington",
-       "addressCountry": "United States",
-       "addressLocality": "Seattle"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/f161c820-ad71-4be5-adff-2c51126e96d1",
    "isListed": true
   },
   {
@@ -5626,8 +5217,67 @@
    "isListed": true
   },
   {
+   "id": "5831a16f-745b-4d49-bc7a-a371b4686ab4",
+   "title": "Senior/Staff Software Engineer, Developer Experience",
+   "department": "Engineering & Infra",
+   "team": "North",
+   "workplaceType": "Hybrid",
+   "location": "London",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "London",
+     "addressCountry": "United Kingdom",
+     "addressLocality": "London"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "Ottawa",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Ottawa"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    },
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec ",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/5831a16f-745b-4d49-bc7a-a371b4686ab4",
+   "isListed": true
+  },
+  {
    "id": "3898333d-fcbe-4d3f-afad-8be721b08319",
-   "title": "Senior Manager, GTM & Revenue Finance",
+   "title": "Senior Manager, GTM Strategic Finance",
    "department": "Business Operations",
    "team": "Finance",
    "workplaceType": "OnSite",
@@ -5653,13 +5303,216 @@
    ],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/3898333d-fcbe-4d3f-afad-8be721b08319",
    "isListed": true
+  },
+  {
+   "id": "6d2d5e2e-46bd-4da5-9e03-573578424976",
+   "title": "Data Partnerships Coordinator (1-year contract)",
+   "department": "Data & Analytics ",
+   "team": "Data Analytics & Insights ",
+   "workplaceType": "Remote",
+   "location": "Toronto",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "Ontario",
+     "addressCountry": "Canada",
+     "addressLocality": "Toronto"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Canada",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Canada"
+      }
+     }
+    },
+    {
+     "location": "United States",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "United States",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "Ottawa",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Ottawa"
+      }
+     }
+    },
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec ",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/6d2d5e2e-46bd-4da5-9e03-573578424976",
+   "isListed": true
+  },
+  {
+   "id": "d164d567-58d9-42fc-9e14-68d1dd2cb5a7",
+   "title": "Enterprise B2B Communications Manager",
+   "department": "PR & Communications",
+   "team": "PR & Communications",
+   "workplaceType": "Remote",
+   "location": "New York",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New York",
+     "addressCountry": "United States",
+     "addressLocality": "New York"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "United States",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Washington, DC",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington, DC",
+       "addressCountry": "United States",
+       "addressLocality": "Washington, DC"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/d164d567-58d9-42fc-9e14-68d1dd2cb5a7",
+   "isListed": true
+  },
+  {
+   "id": "2dc422bb-6759-4867-afb6-dc074af9ae58",
+   "title": "Senior Accountant",
+   "department": "Business Operations",
+   "team": "Finance",
+   "workplaceType": "Remote",
+   "location": "San Francisco",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "United States",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "United States",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "United States",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "United States",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/2dc422bb-6759-4867-afb6-dc074af9ae58",
+   "isListed": true
+  },
+  {
+   "id": "c4192057-43fa-45c9-a40e-6f29131bf11d",
+   "title": "Staff Software Engineer, Data Infrastructure",
+   "department": "Engineering & Infra",
+   "team": "Product Engineering | Infrastructure",
+   "workplaceType": null,
+   "location": "New York",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New York",
+     "addressCountry": "United States",
+     "addressLocality": "New York"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/c4192057-43fa-45c9-a40e-6f29131bf11d",
+   "isListed": true
   }
  ],
  "diff": {
   "new_ids": [],
   "removed_jobs": [],
   "summary": {
-   "active": 127,
+   "active": 121,
    "new": 0,
    "removed": 0
   }
