@@ -6,7 +6,17 @@
 export function locationTest(loc) {
   if (!loc || loc.kind === "all") return null;
   if (loc.kind === "country") return l => l.country === loc.country;
-  if (loc.kind === "place") return l => l.country === loc.country && l.name === loc.name;
+  if (loc.kind === "place" || loc.kind === "city") {
+    const target = loc.name.toLowerCase().trim();
+    return l => {
+      if (l.country !== loc.country) return false;
+      if (l.city && l.city.toLowerCase() === target) return true;
+      if (l.locality && l.locality.toLowerCase() === target) return true;
+      if (l.name && l.name.toLowerCase() === target) return true;
+      if (l.name && l.name.toLowerCase().startsWith(target + ",")) return true;
+      return false;
+    };
+  }
   return null;
 }
 

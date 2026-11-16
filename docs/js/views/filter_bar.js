@@ -167,8 +167,12 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     const locTree = new Map();
     for (const j of jobs) {
       for (const l of j.locs) {
-        if (!locTree.has(l.country)) locTree.set(l.country, new Set());
-        if (l.name && l.name !== l.country) locTree.get(l.country).add(l.name);
+        const countryKey = l.country || null;
+        if (!locTree.has(countryKey)) locTree.set(countryKey, new Set());
+        const cityName = l.city || l.name;
+        if (cityName && cityName !== countryKey) {
+          locTree.get(countryKey).add(cityName);
+        }
       }
     }
 
