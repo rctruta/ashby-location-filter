@@ -34,7 +34,7 @@ function row(label, sub, count, isPressed, onClick) {
 }
 
 export function renderLocationsPanel(container, jobs, state, onSelectLoc) {
-  const panel = el("div", { class: "panel" }, el("h2", {}, "Location"));
+  const panel = el("div", { class: "panel" }, el("h2", {}, "Filter by Location"));
   const box = el("div", { id: "locations-list" });
 
   box.append(
@@ -132,7 +132,7 @@ export function renderLocationsPanel(container, jobs, state, onSelectLoc) {
 }
 
 export function renderDepartmentsPanel(container, jobs, state, onSelectDept) {
-  const panel = el("div", { class: "panel" }, el("h2", {}, "Department"));
+  const panel = el("div", { class: "panel" }, el("h2", {}, "Filter by Department"));
   const box = el("div", { id: "departments-list" });
 
   box.append(
@@ -145,7 +145,6 @@ export function renderDepartmentsPanel(container, jobs, state, onSelectDept) {
     )
   );
 
-  // Department -> Teams map
   const deptMap = new Map();
   for (const job of jobs) {
     const dept = job.department || "General";
@@ -199,7 +198,9 @@ export function renderDepartmentsPanel(container, jobs, state, onSelectDept) {
 }
 
 export function renderWorkplacesPanel(container, jobs, state, onToggleWorkplace) {
-  const panel = el("div", { class: "panel" },
+  const panel = el(
+    "div",
+    { class: "panel" },
     el("h2", {}, "Work arrangement"),
     el("div", { id: "workplaces-list" }),
     el("p", { class: "note" }, "The feed records this once per posting, not per location.")
@@ -210,9 +211,10 @@ export function renderWorkplacesPanel(container, jobs, state, onToggleWorkplace)
     if (!passesSearch(j, state.search)) return false;
     if (!passesStatus(j, state.status)) return false;
     if (state.dept.kind !== "all") {
-      const deptCheck = state.dept.kind === "department"
-        ? (j.department === state.dept.name)
-        : (j.department === state.dept.department && j.team === state.dept.name);
+      const deptCheck =
+        state.dept.kind === "department"
+          ? j.department === state.dept.name
+          : j.department === state.dept.department && j.team === state.dept.name;
       if (!deptCheck) return false;
     }
     return state.loc.kind === "all" || hitsLocation(j, state.loc).length > 0;
@@ -234,14 +236,10 @@ export function renderWorkplacesPanel(container, jobs, state, onToggleWorkplace)
 }
 
 export function renderStatusPanel(container, jobs, state, onSelectStatus) {
-  // Only render status filter if there are new or removed jobs
   const hasDiffs = jobs.some(j => j.status === "new" || j.status === "removed");
   if (!hasDiffs) return;
 
-  const panel = el("div", { class: "panel" },
-    el("h2", {}, "Posting Status (Diffs)"),
-    el("div", { id: "status-list" })
-  );
+  const panel = el("div", { class: "panel" }, el("h2", {}, "Posting Status (Diffs)"), el("div", { id: "status-list" }));
 
   const box = panel.querySelector("#status-list");
   const inScope = jobs.filter(j => {
@@ -252,16 +250,11 @@ export function renderStatusPanel(container, jobs, state, onSelectStatus) {
 
   box.replaceChildren(
     ...STATUS_OPTIONS.map(([value, label]) => {
-      const count = value === "all"
-        ? inScope.length
-        : inScope.filter(j => j.status === value).length;
-      return row(
-        label,
-        null,
-        count,
-        state.status === value,
-        () => onSelectStatus(value)
-      );
+      const count =
+        value === "all"
+          ? inScope.length
+          : inScope.filter(j => j.status === value).length;
+      return row(label, null, count, state.status === value, () => onSelectStatus(value));
     })
   );
 
@@ -271,13 +264,12 @@ export function renderStatusPanel(container, jobs, state, onSelectStatus) {
 export function renderFacetSidebar(container, jobs, state, callbacks) {
   container.innerHTML = "";
 
+  // Dedicated clean focus per viewMode
   if (state.viewMode === "department") {
     renderDepartmentsPanel(container, jobs, state, callbacks.onSelectDept);
-    renderLocationsPanel(container, jobs, state, callbacks.onSelectLoc);
   } else {
-    // "location" or "combined"
+    // "location"
     renderLocationsPanel(container, jobs, state, callbacks.onSelectLoc);
-    renderDepartmentsPanel(container, jobs, state, callbacks.onSelectDept);
   }
 
   renderWorkplacesPanel(container, jobs, state, callbacks.onToggleWorkplace);

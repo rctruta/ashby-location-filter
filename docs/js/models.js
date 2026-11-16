@@ -17,7 +17,7 @@ export function readLocation(entry, role) {
   };
 }
 
-export function readJob(job, diffInfo = null) {
+export function readJob(job, diffInfo = null, companyInfo = null) {
   const locs = [
     readLocation(job, "primary"),
     ...(job.secondaryLocations || []).map(s => readLocation(s, "secondary")),
@@ -41,6 +41,7 @@ export function readJob(job, diffInfo = null) {
     workplace: job.workplaceType ?? null,
     locs,
     status,
+    company: companyInfo || job.company || null,
   };
 }
 

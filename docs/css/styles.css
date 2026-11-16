@@ -354,6 +354,14 @@ h2 {
   color: var(--delisted-text);
   border: 1px solid rgba(148, 83, 0, 0.2);
 }
+.badge-company {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid rgba(31, 95, 191, 0.25);
+  font-weight: 600;
+  text-transform: none;
+  font-size: 11px;
+}
 
 .meta {
   font-size: 13px;

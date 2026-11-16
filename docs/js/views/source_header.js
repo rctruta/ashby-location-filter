@@ -12,6 +12,16 @@ export function renderSourceHeader(container, source) {
       })
     : "recently";
 
+  if (source.isMultiCompany) {
+    container.replaceChildren(
+      `Data: Aggregated snapshot of ${source.companyCount || 3} public `,
+      el("span", { style: "font-weight: 600;" }, "Ashby"),
+      ` job board feeds (${source.boardNames || "Cohere, Ramp, Linear"}), downloaded ${day}. ` +
+        `An independent prototype, not affiliated with any of the named companies or Ashby.`
+    );
+    return;
+  }
+
   container.replaceChildren(
     `Data: a snapshot of the public ${source.provider || "Ashby"} `,
     el("a", { href: source.feed_url, rel: "noopener", target: "_blank" }, "job board feed"),

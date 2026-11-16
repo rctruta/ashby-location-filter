@@ -12,6 +12,17 @@ export function renderCompanyPicker(container, companies, currentCompanyId, onSe
     onchange: (e) => onSelect(e.target.value),
   });
 
+  // "All Companies" combined option
+  const allOpt = el(
+    "option",
+    { value: "all" },
+    `★ All Companies (${companies.length} boards combined)`
+  );
+  if (currentCompanyId === "all") {
+    allOpt.setAttribute("selected", "selected");
+  }
+  select.append(allOpt);
+
   for (const c of companies) {
     const opt = el("option", { value: c.id }, `${c.name} (${c.provider})`);
     if (c.id === currentCompanyId) {
@@ -21,8 +32,10 @@ export function renderCompanyPicker(container, companies, currentCompanyId, onSe
   }
 
   container.replaceChildren(
-    el("div", { class: "company-selector" },
-      el("label", { for: "company-select" }, "Company"),
+    el(
+      "div",
+      { class: "company-selector" },
+      el("label", { for: "company-select" }, "Board"),
       select
     )
   );

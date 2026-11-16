@@ -6,18 +6,27 @@ import { addressNote, cityRegion, isCountryWide } from "../models.js";
 function describeQuery(shownCount, state, sampleJob) {
   const parts = [];
 
-  if (state.loc.kind === "all") {
-    parts.push("all locations");
-  } else if (state.loc.kind === "country") {
-    parts.push(`locations in ${state.loc.country}`);
-  } else {
-    parts.push(`location named “${state.loc.name}”`);
+  if (state.currentCompanyId === "all") {
+    parts.push("all tracked companies");
   }
 
-  if (state.dept.kind === "department") {
-    parts.push(`in ${state.dept.name}`);
-  } else if (state.dept.kind === "team") {
-    parts.push(`in ${state.dept.department} (${state.dept.name} team)`);
+  if (state.viewMode === "department") {
+    if (state.dept.kind === "all") {
+      parts.push("all departments");
+    } else if (state.dept.kind === "department") {
+      parts.push(`in ${state.dept.name}`);
+    } else if (state.dept.kind === "team") {
+      parts.push(`in ${state.dept.department} (${state.dept.name} team)`);
+    }
+  } else {
+    // "location" mode
+    if (state.loc.kind === "all") {
+      parts.push("all locations");
+    } else if (state.loc.kind === "country") {
+      parts.push(`locations in ${state.loc.country}`);
+    } else {
+      parts.push(`location named “${state.loc.name}”`);
+    }
   }
 
   if (state.workplaces.size > 0) {
@@ -36,18 +45,24 @@ function describeQuery(shownCount, state, sampleJob) {
   const big = `${shownCount} posting${shownCount === 1 ? "" : "s"} ${parts.join(" · ")}`;
 
   let detail = "";
-  if (state.loc.kind === "country") {
-    detail = `Matches any primary or secondary location whose address country is ${state.loc.country}: cities, regions, and country-wide postings alike.`;
-  } else if (state.loc.kind === "place" && sampleJob) {
-    const sampleLoc = sampleJob.locs.find(locationTest(state.loc));
-    if (sampleLoc) {
-      detail = isCountryWide(sampleLoc)
-        ? `Country-wide location` +
-          (cityRegion(sampleLoc) ? `, feed address says ${cityRegion(sampleLoc)}.` : `.`)
-        : `Matches named location (${addressNote(sampleLoc) || "specific office"}).`;
-    }
+  if (state.viewMode === "department") {
+    detail = state.dept.kind === "all"
+      ? "Showing postings grouped by functional department."
+      : `Filtered by ${state.dept.name}. Postings in other departments are hidden.`;
   } else {
-    detail = "Showing live and tracked postings from the snapshot.";
+    if (state.loc.kind === "country") {
+      detail = `Matches any primary or secondary location whose address country is ${state.loc.country}: cities, regions, and country-wide postings alike.`;
+    } else if (state.loc.kind === "place" && sampleJob) {
+      const sampleLoc = sampleJob.locs.find(locationTest(state.loc));
+      if (sampleLoc) {
+        detail = isCountryWide(sampleLoc)
+          ? `Country-wide location` +
+            (cityRegion(sampleLoc) ? `, feed address says ${cityRegion(sampleLoc)}.` : `.`)
+          : `Matches named location (${addressNote(sampleLoc) || "specific office"}).`;
+      }
+    } else {
+      detail = "Showing live postings grouped by geographic address country.";
+    }
   }
 
   return [big, detail];
@@ -71,7 +86,7 @@ export function renderResults(container, jobs, state) {
         "div",
         { class: "empty-state" },
         el("p", { style: "font-size: 16px; font-weight: 600;" }, "No matching job postings found."),
-        el("p", {}, "Try clearing your search query or loosening your location and department filters.")
+        el("p", {}, "Try clearing your search query or loosening your filters.")
       )
     );
     return;
@@ -84,6 +99,9 @@ export function renderResults(container, jobs, state) {
     const matchedLocs = new Set(filteredLoc ? hitsLocation(job, state.loc) : []);
 
     const badges = [];
+    if (job.company) {
+      badges.push(el("span", { class: "badge badge-company" }, job.company.name));
+    }
     if (job.status === "new") {
       badges.push(el("span", { class: "badge badge-new" }, "New"));
     } else if (job.status === "removed") {
