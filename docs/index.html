@@ -11,17 +11,20 @@
     <div class="top-bar">
       <div>
         <h1>Job board location & department filter</h1>
-        <p class="subtitle">An interactive browser tool that groups postings by address country, department, and work arrangement, with real-time search and diff tracking.</p>
+        <p class="subtitle">An interactive browser tool that normalizes locations by address country, filters across functional departments, and aggregates multiple Ashby boards into one unified search.</p>
       </div>
-      <div id="company-picker-slot"></div>
     </div>
     <p class="source-meta" id="source-slot"></p>
   </header>
 
-  <div class="controls-bar" id="controls-slot"></div>
+  <!-- Modern Top Filter Bar -->
+  <div class="filter-bar" id="filter-bar-slot"></div>
 
-  <div class="page">
-    <aside id="sidebar-slot"></aside>
+  <!-- Active Filter Tag Pills -->
+  <div class="active-pills-bar" id="active-pills-slot"></div>
+
+  <!-- Main Content Container (Full Width) -->
+  <div class="content-container">
     <main id="results-slot"></main>
   </div>
 

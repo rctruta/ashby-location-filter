@@ -1,10 +1,8 @@
 import { DEFAULT_COMPANY, MANIFEST_URL } from "./constants.js";
 import { el } from "./dom.js";
 import { readJob } from "./models.js";
-import { renderCompanyPicker } from "./views/company_picker.js";
-import { renderFacetSidebar } from "./views/facet_sidebar.js";
+import { renderActivePills, renderFilterBar } from "./views/filter_bar.js";
 import { renderResults } from "./views/results_view.js";
-import { renderControlsBar } from "./views/search_bar.js";
 import { renderSourceHeader } from "./views/source_header.js";
 
 // Global reactive application state
@@ -93,24 +91,30 @@ function syncToURL() {
 function render() {
   syncToURL();
 
-  const pickerContainer = document.getElementById("company-picker-slot");
-  if (pickerContainer) {
-    renderCompanyPicker(pickerContainer, state.companies, state.companyId, onSelectCompany);
-  }
-
-  const controlsContainer = document.getElementById("controls-slot");
-  if (controlsContainer) {
-    renderControlsBar(controlsContainer, state, onSearchChange, onGroupChange);
-  }
-
-  const sidebarContainer = document.getElementById("sidebar-slot");
-  if (sidebarContainer) {
-    renderFacetSidebar(sidebarContainer, allJobs, state, {
+  const filterBarContainer = document.getElementById("filter-bar-slot");
+  if (filterBarContainer) {
+    renderFilterBar(filterBarContainer, allJobs, state, {
+      onSearchChange,
       onSelectCompany,
       onSelectLoc,
       onSelectDept,
       onToggleWorkplace,
       onSelectStatus,
+      onGroupChange,
+      onResetAll,
+    });
+  }
+
+  const pillsContainer = document.getElementById("active-pills-slot");
+  if (pillsContainer) {
+    renderActivePills(pillsContainer, state, {
+      onSearchChange,
+      onSelectCompany,
+      onSelectLoc,
+      onSelectDept,
+      onToggleWorkplace,
+      onSelectStatus,
+      onResetAll,
     });
   }
 
@@ -164,8 +168,17 @@ function onSelectStatus(status) {
   render();
 }
 
+function onResetAll() {
+  state.companyId = "all";
+  state.loc = { kind: "all" };
+  state.dept = { kind: "all" };
+  state.workplaces.clear();
+  state.status = "all";
+  state.search = "";
+  render();
+}
+
 async function loadData() {
-  // Load all company snapshots concurrently so full dataset is immediately available
   const results = await Promise.all(
     state.companies.map(async (c) => {
       try {
