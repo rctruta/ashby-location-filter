@@ -5,15 +5,19 @@ public Ashby job board feed and groups each posting's locations by the address
 country the feed records, so selecting a country finds postings in its cities
 as well as postings that name the country itself.
 
-- `docs/index.html` is the whole page. It computes every count in the browser
-  from `docs/snapshot.json`.
-- `docs/snapshot.json` is written by `tools/publish_snapshot.py`. The posting
-  fields it may contain are listed in `tools/publish_snapshot.yaml`; any other
-  field is held back and logged.
+- `docs/index.html` is the frontend application, powered by modular ES modules (`docs/js/`) and CSS (`docs/css/`). It computes every count, search match, and facet filter in the browser from company snapshots.
+- `tools/publish_snapshot.py` writes snapshots and calculates diffs from saved or live Ashby feeds. Posting fields and company endpoints are defined in `tools/publish_snapshot.yaml`.
 
-Rebuild the snapshot from a saved feed:
+Update all company snapshots from live feeds:
 
 ```sh
+.venv/bin/python -m tools.publish_snapshot --all
+```
+
+Or update a specific company or publish from a saved feed:
+
+```sh
+.venv/bin/python -m tools.publish_snapshot --company ramp
 .venv/bin/python -m tools.publish_snapshot path/to/feed.json
 ```
 
@@ -46,4 +50,4 @@ written down.
   agent's environment — one shared `.env` can only hold one value).
 
 ## License
-Add a LICENSE file of your choice (MIT is a common, permissive default).
+Dual-licensed under the Apache License 2.0 (software code and tools) and Creative Commons Attribution 4.0 International (CC BY 4.0) (documentation, case studies, and published snapshot datasets).

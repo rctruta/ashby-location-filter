@@ -5654,5 +5654,14 @@
    "jobUrl": "https://jobs.ashbyhq.com/cohere/3898333d-fcbe-4d3f-afad-8be721b08319",
    "isListed": true
   }
- ]
+ ],
+ "diff": {
+  "new_ids": [],
+  "removed_jobs": [],
+  "summary": {
+   "active": 127,
+   "new": 0,
+   "removed": 0
+  }
+ }
 }
