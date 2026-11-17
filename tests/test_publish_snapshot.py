@@ -1,4 +1,4 @@
-"""The published snapshot holds only what the config names."""
+"""The published snapshots hold only what the config names."""
 import json
 
 import pytest
@@ -33,10 +33,14 @@ def test_config_refuses_an_unknown_key():
         PublishConfig.model_validate(raw)
 
 
-def test_committed_snapshot_matches_the_config():
+def test_committed_snapshots_match_the_config():
     config = load_config()
-    published = json.loads((ROOT / config.output).read_text(encoding="utf-8"))
-    assert published["source"] == config.source.model_dump(mode="json")
-    assert published["jobs"], "the published snapshot has no postings"
-    for job in published["jobs"]:
-        assert list(job) == config.posting_fields
+    assert config.companies, "no companies configured"
+    for company in config.companies:
+        snapshot_path = ROOT / company.output
+        assert snapshot_path.exists(), f"snapshot for {company.id} does not exist at {snapshot_path}"
+        published = json.loads(snapshot_path.read_text(encoding="utf-8"))
+        assert published["source"]["board"] == company.name
+        assert published["jobs"], f"published snapshot for {company.id} has no postings"
+        for job in published["jobs"]:
+            assert list(job) == config.posting_fields

@@ -1,0 +1,40 @@
+name: update-snapshots
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      company:
+        description: 'Company ID to update (leave blank for all)'
+        required: false
+        default: ''
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install dependencies
+        run: |
+          uv sync
+      - name: Fetch and diff snapshots
+        run: |
+          if [ -n "${{ inputs.company }}" ]; then
+            .venv/bin/python -m tools.publish_snapshot --company "${{ inputs.company }}"
+          else
+            .venv/bin/python -m tools.publish_snapshot --all
+          fi
+      - name: Commit snapshot updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain docs/)" ]; then
+            git add docs/
+            git commit -m "chore(data): update job snapshots and diffs [skip ci]"
+            git push
+          else
+            echo "No changes in snapshots."
+          fi

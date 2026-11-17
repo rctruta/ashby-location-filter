@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.github.rctruta/ashby-location-filter",
+  "description": "MCP server for canonical Ashby job board search, location normalization, and scope classification.",
+  "version": "0.2.0",
+  "repository": {
+    "url": "https://github.com/rctruta/ashby-location-filter",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "ashby-location-filter",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

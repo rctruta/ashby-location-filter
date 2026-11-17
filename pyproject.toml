@@ -1,0 +1,30 @@
+[project]
+name = "ashby-location-filter"
+version = "0.2.0"
+description = "Multi-company job board aggregator and multi-faceted filter for Ashby boards"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.0",
+  "pyyaml>=6.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.gates.no_hardcoding]
+min_length = 25
+data_dirs = ["data"]
+code_dirs = ["tools", "src", "templates"]
+data_extensions = [".yaml", ".yml", ".json", ".toml"]
+code_extensions = [".py", ".html", ".js", ".mjs", ".sh"]
+exclude = []
+
+[tool.gates.claim_integrity]
+facts_file = ".gates/FACTS.yaml"

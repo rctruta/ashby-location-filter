@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Ashby Location Filter: Canonical Location Normalizer and Scope Classifier for ATS Feeds"
+message: "If you use this software or normalizer in your work, please cite it using the metadata from this file."
+type: software
+authors:
+  - family-names: Truta
+    given-names: Ramona C
+repository-code: "https://github.com/rctruta/ashby-location-filter"
+url: "https://rctruta.github.io/ashby-location-filter/"
+license: Apache-2.0
+version: "0.2.0"
+date-released: "2026-11-17"
+keywords:
+  - ashby
+  - applicant-tracking-system
+  - location-normalization
+  - unicode-cldr
+  - job-board
+  - mcp-server
