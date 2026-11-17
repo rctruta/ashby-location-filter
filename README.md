@@ -17,22 +17,23 @@ A multi-company job search and filtering engine tailored for public Ashby job bo
 
 ### 1. Prerequisites
 - Python 3.10+
+- [uv](https://github.com/astral-sh/uv) (recommended) or standard Python `pip`
 - A modern web browser
 
 ### 2. Setup
-Clone the repository and install the minimal dependencies:
+Clone the repository and install dependencies:
 
 ```sh
 git clone https://github.com/rctruta/ashby-location-filter.git
 cd ashby-location-filter
 
-# Fast modern setup using uv (recommended):
+# Fast setup with uv (recommended):
 uv sync
 
-# Or traditional pip:
+# Or standard pip:
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install .
 ```
 
 > **Important for contributors:** To enable repository quality and security guardrails:
@@ -56,7 +57,7 @@ python3 tools/add_company.py https://jobs.ashbyhq.com/notion --name "Notion"
 ```
 
 The CLI:
-- Extracts the company slug from a name, slug, or full URL.
+- Extracts the company slug from a name, slug, or full career URL.
 - Validates the remote Ashby Posting API.
 - Checks `isListed` job counts.
 - Appends the company configuration to `tools/publish_snapshot.yaml`.
@@ -84,6 +85,31 @@ python3 -m http.server 8000 --directory docs
 ```
 
 Then open `http://localhost:8000` in your browser.
+
+---
+
+## Hosting Your Own Job Board Filter
+
+You can easily fork this repository and host your own custom job board tracker for your personal list of target companies:
+
+### Option A: Free Static Hosting (GitHub Pages)
+1. **Fork this repository** on GitHub.
+2. **Customize your company list:** Edit `tools/publish_snapshot.yaml` to include the companies you want to track, then run `python3 tools/publish_snapshot.py --all`.
+3. **Enable GitHub Pages:** Go to your repository **Settings → Pages → Source: Deploy from branch (`main`, folder `/docs`)**.
+4. **Daily Updates:** The included GitHub Actions workflow (`.github/workflows/update_snapshots.yml`) will automatically run every day at 06:00 UTC, fetch fresh postings, compute diffs, and commit them back to your repo.
+
+### Option B: Serverless On-Demand Hosting (Vercel)
+If you want an on-demand deployment where visitors can query any company dynamically via an API proxy:
+1. **Connect your repository to Vercel:** Import your GitHub fork into [Vercel](https://vercel.com).
+2. The included [`vercel.json`](vercel.json) and [`api/jobs.py`](api/jobs.py) automatically configure:
+   - Serving `docs/` as the fast static frontend.
+   - An API proxy at `/api/jobs?company=<slug>` that fetches live Ashby feeds and injects CORS headers.
+3. Test locally with the serverless endpoint:
+   ```sh
+   python3 api/jobs.py
+   # In another terminal:
+   curl "http://localhost:3000/api/jobs?company=linear"
+   ```
 
 ---
 
@@ -131,7 +157,7 @@ manifest_output: docs/data/manifest.json
 This repository adheres to strict agent and human pair-programming contracts documented in `AGENTS.md`:
 - `pre-commit` and `pre-push` hooks enforce clean trees, conventional commits, secret detection, and test suite passage.
 - Run gate proof suite: `sh .gates/tests/prove_gates.sh`.
-- Run pytest suite: `pytest tests/`.
+- Run pytest suite: `uv run pytest`.
 
 ---
 
