@@ -123,6 +123,14 @@ p.subtitle {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-bg);
 }
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration,
+.search-input::-webkit-search-results-button,
+.search-input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
 .clear-search-btn {
   position: absolute;
   right: 12px;

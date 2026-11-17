@@ -25,6 +25,11 @@ Clone the repository and install the minimal dependencies:
 ```sh
 git clone https://github.com/rctruta/ashby-location-filter.git
 cd ashby-location-filter
+
+# Fast modern setup using uv (recommended):
+uv sync
+
+# Or traditional pip:
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
