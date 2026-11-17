@@ -10,11 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
       - run: |
-          uv venv
-          uv pip install -r requirements.txt
+          uv sync --extra dev
           git config core.hooksPath .githooks   # hooks do not clone
           .venv/bin/pytest
+          npm test
 
   gates:  # the hooks are local policy and bypassable; this copy is not
     runs-on: ubuntu-latest

@@ -1,5 +1,12 @@
 # ashby-location-filter
 
+[![CI](https://github.com/rctruta/ashby-location-filter/actions/workflows/ci.yml/badge.svg)](https://github.com/rctruta/ashby-location-filter/actions/workflows/ci.yml)
+[![Snapshots Sync](https://github.com/rctruta/ashby-location-filter/actions/workflows/update_snapshots.yml/badge.svg)](https://github.com/rctruta/ashby-location-filter/actions/workflows/update_snapshots.yml)
+[![Version](https://img.shields.io/github/package-json/v/rctruta/ashby-location-filter?label=version&color=blue)](https://github.com/rctruta/ashby-location-filter/blob/main/package.json)
+[![MCP Server](https://img.shields.io/badge/MCP-stdio-7c3aed)](https://github.com/rctruta/ashby-location-filter#mcp-server-claude-desktop-cursor-antigravity)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://github.com/rctruta/ashby-location-filter/blob/main/LICENSE)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://rctruta.github.io/ashby-location-filter/)
+
 A multi-company job search and filtering engine tailored for public Ashby job boards. It aggregates job postings from multiple companies into a single cohesive interface, normalizes inconsistent recruiter location entries, tracks daily additions and delistings, and provides real-time multi-faceted filtering.
 
 ## What Problems This Solves
