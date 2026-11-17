@@ -208,7 +208,7 @@ async function loadData() {
   const results = await Promise.all(
     state.companies.map(async (c) => {
       try {
-        const resp = await fetch(c.snapshot);
+        const resp = await fetch(`${c.snapshot}?_=${Date.now()}`);
         if (!resp.ok) return { company: c, data: { jobs: [] } };
         const data = await resp.json();
         return { company: c, data };
@@ -247,7 +247,7 @@ async function main() {
   initFromURL();
 
   try {
-    const manifestResp = await fetch(MANIFEST_URL);
+    const manifestResp = await fetch(`${MANIFEST_URL}?_=${Date.now()}`);
     if (!manifestResp.ok) throw new Error(`HTTP ${manifestResp.status}`);
     const manifest = await manifestResp.json();
     state.companies = manifest.companies || [];
