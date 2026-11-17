@@ -8,7 +8,7 @@ import { renderSourceHeader } from "./views/source_header.js";
 // Global reactive application state
 const state = {
   companies: [],
-  companyId: DEFAULT_COMPANY, // "all" or specific company id
+  selectedCompanies: new Set(["all"]), // "all" or Set of specific company IDs
   groupMode: "department", // "company" | "department" | "location" | "flat"
   search: "",
   loc: { kind: "all" },
@@ -22,7 +22,13 @@ let sourceMeta = null;
 
 function initFromURL() {
   const params = new URLSearchParams(window.location.search);
-  if (params.get("company")) state.companyId = params.get("company");
+  if (params.get("companies")) {
+    const list = params.get("companies").split(",").filter(Boolean);
+    state.selectedCompanies = list.length > 0 ? new Set(list) : new Set(["all"]);
+  } else if (params.get("company")) {
+    const c = params.get("company");
+    state.selectedCompanies = c && c !== "all" ? new Set([c]) : new Set(["all"]);
+  }
   if (params.get("group")) state.groupMode = params.get("group");
   if (params.get("q")) state.search = params.get("q");
 
@@ -58,8 +64,8 @@ function initFromURL() {
 
 function syncToURL() {
   const params = new URLSearchParams();
-  if (state.companyId && state.companyId !== "all") {
-    params.set("company", state.companyId);
+  if (state.selectedCompanies && !state.selectedCompanies.has("all") && state.selectedCompanies.size > 0) {
+    params.set("companies", [...state.selectedCompanies].join(","));
   }
   if (state.groupMode !== "department") params.set("group", state.groupMode);
   if (state.search) params.set("q", state.search);
@@ -95,7 +101,8 @@ function render() {
   if (filterBarContainer) {
     renderFilterBar(filterBarContainer, allJobs, state, {
       onSearchChange,
-      onSelectCompany,
+      onToggleCompany,
+      onToggleAllCompanies,
       onSelectLoc,
       onSelectDept,
       onToggleWorkplace,
@@ -109,7 +116,8 @@ function render() {
   if (pillsContainer) {
     renderActivePills(pillsContainer, state, {
       onSearchChange,
-      onSelectCompany,
+      onToggleCompany,
+      onToggleAllCompanies,
       onSelectLoc,
       onSelectDept,
       onToggleWorkplace,
@@ -139,8 +147,22 @@ function onGroupChange(mode) {
   render();
 }
 
-function onSelectCompany(companyId) {
-  state.companyId = companyId;
+function onToggleCompany(companyId, isChecked) {
+  state.selectedCompanies.delete("all");
+  if (isChecked) {
+    state.selectedCompanies.add(companyId);
+  } else {
+    state.selectedCompanies.delete(companyId);
+  }
+  if (state.selectedCompanies.size === 0) {
+    state.selectedCompanies.add("all");
+  }
+  render();
+}
+
+function onToggleAllCompanies(isChecked) {
+  state.selectedCompanies.clear();
+  state.selectedCompanies.add("all");
   render();
 }
 
@@ -169,7 +191,7 @@ function onSelectStatus(status) {
 }
 
 function onResetAll() {
-  state.companyId = "all";
+  state.selectedCompanies = new Set(["all"]);
   state.loc = { kind: "all" };
   state.dept = { kind: "all" };
   state.workplaces.clear();

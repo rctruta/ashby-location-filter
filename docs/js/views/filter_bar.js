@@ -45,13 +45,21 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     // Filter controls row
     const controlsRow = el("div", { class: "filters-row" });
 
-    // 1. Company Select
-    const companySelect = el("select", {
-      class: "filter-select",
-      id: "company-filter",
-      "aria-label": "Filter by company",
-      onchange: (e) => callbacks.onSelectCompany(e.target.value),
-    });
+    // 1. Company Multi-Select Dropdown Popover
+    const companyDropdown = el("div", { class: "company-dropdown-wrapper" },
+      el("button", {
+        type: "button",
+        class: "company-toggle-btn",
+        onclick: (e) => {
+          e.stopPropagation();
+          const pop = container.querySelector(".company-popover");
+          if (pop) pop.classList.toggle("open");
+          const wpPop = container.querySelector(".workplace-popover");
+          if (wpPop) wpPop.classList.remove("open");
+        },
+      }, "Companies: All ▾"),
+      el("div", { class: "company-popover" })
+    );
 
     // 2. Location Select (Grouped by Country)
     const locationSelect = el("select", {
@@ -122,7 +130,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     }, "Reset Filters");
 
     controlsRow.append(
-      el("div", { class: "filter-item" }, el("label", {}, "Company:"), companySelect),
+      el("div", { class: "filter-item" }, el("label", {}, "Company:"), companyDropdown),
       el("div", { class: "filter-item" }, el("label", {}, "Location:"), locationSelect),
       el("div", { class: "filter-item" }, el("label", {}, "Department:"), departmentSelect),
       el("div", { class: "filter-item" }, el("label", {}, "Workplace:"), workplaceDropdown),
@@ -132,10 +140,12 @@ export function renderFilterBar(container, jobs, state, callbacks) {
 
     container.replaceChildren(searchBox, controlsRow);
 
-    // Close workplace popover on outside click
+    // Close popovers on outside click
     document.addEventListener("click", () => {
-      const pop = container.querySelector(".workplace-popover");
-      if (pop) pop.classList.remove("open");
+      const cPop = container.querySelector(".company-popover");
+      if (cPop) cPop.classList.remove("open");
+      const wpPop = container.querySelector(".workplace-popover");
+      if (wpPop) wpPop.classList.remove("open");
     });
   } else {
     if (document.activeElement !== searchInput) {
@@ -144,21 +154,71 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     clearSearchBtn.style.display = state.search ? "" : "none";
   }
 
-  // Populate Company Select Options
-  const companySelect = container.querySelector("#company-filter");
-  if (companySelect) {
+  // Populate Company Popover Checkboxes (Multi-select)
+  const companyPopover = container.querySelector(".company-popover");
+  const companyToggleBtn = container.querySelector(".company-toggle-btn");
+  if (companyPopover && companyToggleBtn) {
+    const isAll = !state.selectedCompanies || state.selectedCompanies.has("all") || state.selectedCompanies.size === 0;
+    const selectedCount = isAll ? 0 : state.selectedCompanies.size;
+    companyToggleBtn.textContent = isAll
+      ? "Companies: All ▾"
+      : `Companies (${selectedCount}) ▾`;
+
     const totalAllCount = countForCompany(jobs, state, "all");
-    const options = [
-      el("option", { value: "all" }, `All Companies (${totalAllCount})`)
-    ];
-    for (const c of state.companies) {
+
+    // All Companies row
+    const allCheckbox = el("input", {
+      type: "checkbox",
+      checked: isAll ? "checked" : null,
+      onchange: (e) => {
+        e.stopPropagation();
+        callbacks.onToggleAllCompanies(e.target.checked);
+      },
+    });
+
+    const allRow = el("label", {
+      class: "company-checkbox-row all-row",
+      onclick: (e) => e.stopPropagation(),
+    },
+      allCheckbox,
+      el("span", { class: "cb-label" }, "All Companies"),
+      el("span", { class: "cb-count" }, String(totalAllCount))
+    );
+
+    const divider = el("div", { class: "popover-divider" });
+
+    // Individual company rows (disabled when All Companies is checked)
+    const companyRows = state.companies.map((c) => {
       const count = countForCompany(jobs, state, c.id);
-      const opt = el("option", { value: c.id }, `${c.name} (${count})`);
-      if (state.companyId === c.id) opt.setAttribute("selected", "selected");
-      options.push(opt);
-    }
-    companySelect.replaceChildren(...options);
-    companySelect.value = state.companyId || "all";
+      const isChecked = !isAll && state.selectedCompanies.has(c.id);
+
+      const cb = el("input", {
+        type: "checkbox",
+        checked: isChecked ? "checked" : null,
+        disabled: isAll ? "disabled" : null,
+        onchange: (e) => {
+          e.stopPropagation();
+          callbacks.onToggleCompany(c.id, e.target.checked);
+        },
+      });
+
+      return el("label", {
+        class: `company-checkbox-row ${isAll ? "disabled" : ""}`,
+        title: isAll ? `Select ${c.name}` : "",
+        onclick: (e) => {
+          e.stopPropagation();
+          if (isAll) {
+            callbacks.onToggleCompany(c.id, true);
+          }
+        },
+      },
+        cb,
+        el("span", { class: "cb-label" }, c.name),
+        el("span", { class: "cb-count" }, String(count))
+      );
+    });
+
+    companyPopover.replaceChildren(allRow, divider, ...companyRows);
   }
 
   // Populate Location Select Options (Hierarchical Countries & Cities)
@@ -301,8 +361,9 @@ export function renderFilterBar(container, jobs, state, callbacks) {
   // Toggle Reset Button Visibility
   const resetBtn = container.querySelector(".reset-all-btn");
   if (resetBtn) {
+    const hasActiveCompanies = state.selectedCompanies && !state.selectedCompanies.has("all") && state.selectedCompanies.size > 0;
     const hasActiveFilters =
-      (state.companyId && state.companyId !== "all") ||
+      hasActiveCompanies ||
       (state.loc && state.loc.kind !== "all") ||
       (state.dept && state.dept.kind !== "all") ||
       state.workplaces.size > 0 ||
@@ -326,12 +387,15 @@ export function renderActivePills(container, state, callbacks) {
     );
   }
 
-  // Company pill
-  if (state.companyId && state.companyId !== "all") {
-    const c = state.companies.find((comp) => comp.id === state.companyId);
-    pills.push(
-      createPill(`Company: ${c ? c.name : state.companyId}`, () => callbacks.onSelectCompany("all"))
-    );
+  // Company pills
+  if (state.selectedCompanies && !state.selectedCompanies.has("all") && state.selectedCompanies.size > 0) {
+    for (const cid of state.selectedCompanies) {
+      const c = state.companies.find((comp) => comp.id === cid);
+      const name = c ? c.name : cid;
+      pills.push(
+        createPill(`Company: ${name}`, () => callbacks.onToggleCompany(cid, false))
+      );
+    }
   }
 
   // Location pill

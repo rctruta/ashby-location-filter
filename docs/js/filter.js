@@ -32,9 +32,17 @@ export function hitsLocation(job, loc) {
   return test ? job.locs.filter(test) : job.locs;
 }
 
-export function passesCompany(job, companyId) {
-  if (!companyId || companyId === "all") return true;
-  return job.company && job.company.id === companyId;
+export function passesCompany(job, companyFilter) {
+  if (!companyFilter || companyFilter === "all") return true;
+  if (companyFilter instanceof Set) {
+    if (companyFilter.size === 0 || companyFilter.has("all")) return true;
+    return Boolean(job.company && companyFilter.has(job.company.id));
+  }
+  if (Array.isArray(companyFilter)) {
+    if (companyFilter.length === 0 || companyFilter.includes("all")) return true;
+    return Boolean(job.company && companyFilter.includes(job.company.id));
+  }
+  return Boolean(job.company && job.company.id === companyFilter);
 }
 
 export function passesLocation(job, loc) {
@@ -74,7 +82,7 @@ export function passesSearch(job, query) {
 
 export function matchesJob(job, state, excludeFacet = null) {
   if (!passesSearch(job, state.search)) return false;
-  if (excludeFacet !== "company" && !passesCompany(job, state.companyId)) return false;
+  if (excludeFacet !== "company" && !passesCompany(job, state.selectedCompanies || state.companyId)) return false;
   if (excludeFacet !== "location" && !passesLocation(job, state.loc)) return false;
   if (excludeFacet !== "department" && !passesDepartment(job, state.dept)) return false;
   if (excludeFacet !== "workplace" && !passesWorkplace(job, state.workplaces)) return false;
