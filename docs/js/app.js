@@ -1,20 +1,14 @@
 import { DEFAULT_COMPANY, MANIFEST_URL } from "./constants.js";
 import { el } from "./dom.js";
 import { normalizeCountryName, readJob } from "./models.js";
-import { parseAshbySlug } from "./normalizers/location_normalizer.js";
 import { renderActivePills, renderFilterBar } from "./views/filter_bar.js";
 import { renderResults } from "./views/results_view.js";
 import { renderSourceHeader } from "./views/source_header.js";
-
-const LIVE_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes in sessionStorage
 
 // Global reactive application state
 const state = {
   companies: [],
   selectedCompanies: new Set(["all"]), // "all" or Set of specific company IDs
-  customSlugs: new Set(), // On-demand live Ashby company slugs
-  customLoading: false,
-  customError: null,
   groupMode: "department", // "company" | "department" | "location" | "flat"
   search: "",
   loc: { kind: "all" },
@@ -32,14 +26,6 @@ function initFromURL() {
   const testParam = params.get("test");
   if (testParam === "1" || testParam === "true") {
     state.testMode = true;
-  }
-  if (params.get("custom")) {
-    params
-      .get("custom")
-      .split(",")
-      .map((s) => parseAshbySlug(s))
-      .filter(Boolean)
-      .forEach((s) => state.customSlugs.add(s));
   }
   if (params.get("companies")) {
     const list = params.get("companies").split(",").filter(Boolean);
@@ -86,9 +72,6 @@ function syncToURL() {
   if (state.testMode) {
     params.set("test", "1");
   }
-  if (state.customSlugs && state.customSlugs.size > 0) {
-    params.set("custom", [...state.customSlugs].join(","));
-  }
   if (state.selectedCompanies && !state.selectedCompanies.has("all") && state.selectedCompanies.size > 0) {
     params.set("companies", [...state.selectedCompanies].join(","));
   }
@@ -128,7 +111,6 @@ function render() {
       onSearchChange,
       onToggleCompany,
       onToggleAllCompanies,
-      onAddCustomCompany,
       onSelectLoc,
       onSelectDept,
       onToggleWorkplace,
@@ -269,111 +251,6 @@ async function loadData() {
   };
 }
 
-function formatSlugName(slug) {
-  return slug
-    .split(/[-_.]/)
-    .filter(Boolean)
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-async function fetchLiveAshbyBoard(slug) {
-  const cacheKey = `ashby_live_board_${slug}`;
-  try {
-    const cachedRaw = sessionStorage.getItem(cacheKey);
-    if (cachedRaw) {
-      const cached = JSON.parse(cachedRaw);
-      if (cached && cached.ts && Date.now() - cached.ts < LIVE_CACHE_TTL_MS && cached.data) {
-        return cached.data;
-      }
-    }
-  } catch {
-    // Ignore storage read errors
-  }
-
-  const resp = await fetch(`https://api.ashbyhq.com/posting-api/job-board/${encodeURIComponent(slug)}`);
-  if (!resp.ok) {
-    throw new Error(resp.status === 404 ? `No public Ashby board found for '${slug}'` : `HTTP ${resp.status}`);
-  }
-  const data = await resp.json();
-  if (!data || !Array.isArray(data.jobs)) {
-    throw new Error(`Invalid Ashby feed for '${slug}'`);
-  }
-
-  try {
-    sessionStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), data }));
-  } catch {
-    // Ignore storage quota errors
-  }
-  return data;
-}
-
-async function onAddCustomCompany(rawInput, selectExclusively = true) {
-  const slug = parseAshbySlug(rawInput);
-  if (!slug) {
-    state.customError = "Enter a valid Ashby company slug or URL";
-    render();
-    return false;
-  }
-
-  const existing = state.companies.find((c) => c.id.toLowerCase() === slug);
-  if (existing) {
-    state.customError = null;
-    if (selectExclusively) {
-      state.selectedCompanies = new Set([existing.id]);
-    } else if (!state.selectedCompanies.has("all")) {
-      state.selectedCompanies.add(existing.id);
-    }
-    render();
-    return true;
-  }
-
-  state.customLoading = true;
-  state.customError = null;
-  render();
-
-  try {
-    const data = await fetchLiveAshbyBoard(slug);
-    const listed = (data.jobs || []).filter(
-      (j) => j.isListed === true || j.isListed === undefined
-    );
-    const displayName = formatSlugName(slug);
-    const companyEntry = {
-      id: slug,
-      name: `${displayName} (Live)`,
-      provider: "Ashby Live",
-      isCustom: true,
-    };
-
-    state.companies.push(companyEntry);
-    state.customSlugs.add(slug);
-
-    const companyInfo = { id: companyEntry.id, name: displayName };
-    const newJobs = listed.map((j) => readJob(j, null, companyInfo));
-    allJobs.push(...newJobs);
-
-    if (selectExclusively) {
-      state.selectedCompanies = new Set([slug]);
-    }
-
-    sourceMeta = {
-      isMultiCompany: true,
-      companyCount: state.companies.length,
-      boardNames: state.companies.map((c) => c.name).join(", "),
-      downloaded: new Date().toISOString(),
-    };
-    state.customLoading = false;
-    state.customError = null;
-    render();
-    return true;
-  } catch (err) {
-    state.customLoading = false;
-    state.customError = err.message || `Could not load '${slug}'`;
-    render();
-    return false;
-  }
-}
-
 async function main() {
   initFromURL();
 
@@ -390,21 +267,6 @@ async function main() {
   }
 
   await loadData();
-
-  // If URL requested any company not in manifest, treat it as a live custom slug
-  const knownIds = new Set(state.companies.map((c) => c.id.toLowerCase()));
-  for (const sel of state.selectedCompanies) {
-    if (sel !== "all" && !knownIds.has(sel.toLowerCase())) {
-      state.customSlugs.add(sel.toLowerCase());
-    }
-  }
-
-  if (state.customSlugs.size > 0) {
-    for (const slug of [...state.customSlugs]) {
-      await onAddCustomCompany(slug, false);
-    }
-  }
-
   render();
 }
 
