@@ -16,7 +16,14 @@ from typing import Any
 
 import yaml
 
-from tools.publish_snapshot import CONFIG_PATH, CompanyConfig, load_config, publish_one, write_manifest
+from tools.publish_snapshot import (
+    CONFIG_PATH,
+    ROOT,
+    CompanyConfig,
+    load_config,
+    publish_one,
+    write_manifest,
+)
 
 log = logging.getLogger(__name__)
 
@@ -117,15 +124,55 @@ def add_company(identifier: str, display_name: str | None = None, dry_run: bool 
     return True
 
 
+def remove_company(identifier: str, dry_run: bool = False) -> bool:
+    """Remove a company from publish_snapshot.yaml, delete its snapshot, and update manifest."""
+    slug = extract_slug(identifier)
+    config = load_config()
+    existing = next((c for c in config.companies if c.id == slug), None)
+    if not existing:
+        log.error("Company '%s' is not registered in %s.", slug, CONFIG_PATH)
+        return False
+
+    snapshot_file = ROOT / existing.output
+    if dry_run:
+        log.info(
+            "[DRY-RUN] Would remove '%s' from %s and delete %s.",
+            slug,
+            CONFIG_PATH,
+            snapshot_file,
+        )
+        return True
+
+    raw_yaml = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
+    raw_yaml["companies"] = [
+        c for c in raw_yaml.get("companies", []) if c.get("id") != slug
+    ]
+    CONFIG_PATH.write_text(yaml.dump(raw_yaml, sort_keys=False), encoding="utf-8")
+    log.info("✓ Removed '%s' from %s", slug, CONFIG_PATH)
+
+    if snapshot_file.exists():
+        snapshot_file.unlink()
+        log.info("✓ Deleted snapshot %s", snapshot_file)
+
+    reloaded_config = load_config()
+    write_manifest(reloaded_config)
+    log.info("✓ Updated manifest (%d companies remaining).", len(reloaded_config.companies))
+    return True
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("company", help="Company slug, name, or Ashby board identifier (e.g. 'notion')")
     parser.add_argument("--name", help="Display name (e.g. 'Notion')")
-    parser.add_argument("--dry-run", action="store_true", help="Test and validate without saving to config")
+    parser.add_argument("--remove", action="store_true", help="Remove company from config, delete snapshot, and update manifest")
+    parser.add_argument("--dry-run", action="store_true", help="Test and validate without modifying files")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    success = add_company(args.company, args.name, args.dry_run)
+    if args.remove:
+        success = remove_company(args.company, args.dry_run)
+    else:
+        success = add_company(args.company, args.name, args.dry_run)
     if not success:
         raise SystemExit(1)
 

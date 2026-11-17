@@ -3,7 +3,12 @@ import json
 from unittest.mock import MagicMock, patch
 import urllib.error
 
-from tools.add_company import add_company, extract_slug, validate_ashby_endpoint
+from tools.add_company import (
+    add_company,
+    extract_slug,
+    remove_company,
+    validate_ashby_endpoint,
+)
 
 
 def test_extract_slug():
@@ -63,3 +68,10 @@ def test_add_company_dry_run():
     with patch("tools.add_company.validate_ashby_endpoint", return_value=(True, "OK", payload)):
         success = add_company("testcompany", display_name="Test Company", dry_run=True)
         assert success is True
+
+
+def test_remove_company_dry_run_and_missing():
+    # Existing company in dry-run mode returns True without mutating files
+    assert remove_company("cohere", dry_run=True) is True
+    # Non-existent company returns False
+    assert remove_company("nonexistent_company_xyz", dry_run=True) is False

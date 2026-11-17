@@ -15,27 +15,6 @@
    "snapshot": "data/cohere.json"
   },
   {
-   "id": "ramp",
-   "name": "Ramp",
-   "provider": "Ashby",
-   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/ramp",
-   "snapshot": "data/ramp.json"
-  },
-  {
-   "id": "linear",
-   "name": "Linear",
-   "provider": "Ashby",
-   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/linear",
-   "snapshot": "data/linear.json"
-  },
-  {
-   "id": "influxdata",
-   "name": "InfluxData",
-   "provider": "Ashby",
-   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/influxdata",
-   "snapshot": "data/influxdata.json"
-  },
-  {
    "id": "crafty_testing",
    "name": "Crafty Testing",
    "provider": "Synthetic",
