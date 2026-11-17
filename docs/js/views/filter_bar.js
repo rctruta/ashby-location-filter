@@ -252,10 +252,22 @@ export function renderFilterBar(container, jobs, state, callbacks) {
         return { city, count: cityCount, selected: isSelectedCity };
       }).filter(c => c.count > 0 || c.selected);
 
-      // If the country has NO specific cities, show a single clean option: "Canada (33)"
+      // If the country has NO specific cities, or only 1 city matching 100% of the listings:
       if (activeCities.length === 0) {
         const opt = el("option", { value: `c:${country}` }, `${country} (${cCount})`);
         if (isSelectedCountry) opt.setAttribute("selected", "selected");
+        locOptions.push(opt);
+      } else if (activeCities.length === 1 && activeCities[0].count === cCount) {
+        const cityObj = activeCities[0];
+        const city = cityObj.city;
+        let label;
+        if (city.toLowerCase() === country.toLowerCase() || city.toLowerCase().startsWith("remote") || city.toLowerCase().includes(country.toLowerCase())) {
+          label = `${country} (${cCount})`;
+        } else {
+          label = `${country} – ${city} (${cCount})`;
+        }
+        const opt = el("option", { value: `c:${country}` }, label);
+        if (isSelectedCountry || cityObj.selected) opt.setAttribute("selected", "selected");
         locOptions.push(opt);
       } else {
         // Has sub-cities: show optgroup with "All <Country>" + cities
@@ -296,6 +308,9 @@ export function renderFilterBar(container, jobs, state, callbacks) {
       locationSelect.value = `c:${state.loc.country}`;
     } else if (state.loc.kind === "place") {
       locationSelect.value = `p:${state.loc.country || ""}|||${state.loc.name}`;
+      if (!locationSelect.value && state.loc.country) {
+        locationSelect.value = `c:${state.loc.country}`;
+      }
     } else {
       locationSelect.value = "all";
     }
@@ -330,10 +345,25 @@ export function renderFilterBar(container, jobs, state, callbacks) {
         return { team, count: tCount, selected: isSelectedTeam };
       }).filter(t => t.count > 0 || t.selected);
 
-      // If the department has NO sub-teams, show a single clean option: "Design (4)"
+      // If the department has NO sub-teams:
       if (activeTeams.length === 0) {
         const opt = el("option", { value: `d:${dept}` }, `${dept} (${dCount})`);
         if (isSelectedDept) opt.setAttribute("selected", "selected");
+        deptOptions.push(opt);
+      } else if (activeTeams.length === 1 && activeTeams[0].count === dCount) {
+        // Only 1 sub-team and it covers 100% of the department's listings: single clean option
+        const teamObj = activeTeams[0];
+        const team = teamObj.team;
+        let label;
+        if (team.toLowerCase() === dept.toLowerCase()) {
+          label = `${dept} (${dCount})`;
+        } else if (team.toLowerCase().startsWith(dept.toLowerCase()) || team.toLowerCase().includes(dept.toLowerCase())) {
+          label = `${team} (${dCount})`;
+        } else {
+          label = `${dept} – ${team} (${dCount})`;
+        }
+        const opt = el("option", { value: `d:${dept}` }, label);
+        if (isSelectedDept || teamObj.selected) opt.setAttribute("selected", "selected");
         deptOptions.push(opt);
       } else {
         // Has sub-teams: show optgroup with "All <Dept>" + sub-teams
@@ -357,6 +387,9 @@ export function renderFilterBar(container, jobs, state, callbacks) {
       departmentSelect.value = `d:${state.dept.name}`;
     } else if (state.dept.kind === "team") {
       departmentSelect.value = `t:${state.dept.department}|||${state.dept.name}`;
+      if (!departmentSelect.value && state.dept.department) {
+        departmentSelect.value = `d:${state.dept.department}`;
+      }
     } else {
       departmentSelect.value = "all";
     }
