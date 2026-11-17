@@ -158,28 +158,33 @@ export function renderFilterBar(container, jobs, state, callbacks) {
   const companyPopover = container.querySelector(".company-popover");
   const companyToggleBtn = container.querySelector(".company-toggle-btn");
   if (companyPopover && companyToggleBtn) {
-    const isAll = !state.selectedCompanies || state.selectedCompanies.has("all") || state.selectedCompanies.size === 0;
-    const selectedCount = isAll ? 0 : state.selectedCompanies.size;
-    companyToggleBtn.textContent = isAll
-      ? "Companies: All ▾"
-      : `Companies (${selectedCount}) ▾`;
+    const isAll = state.selectedCompanies && state.selectedCompanies.has("all");
+    let buttonLabel = "Companies: All ▾";
+    if (isAll) {
+      buttonLabel = "Companies: All ▾";
+    } else if (!state.selectedCompanies || state.selectedCompanies.size === 0) {
+      buttonLabel = "Companies (0) ▾";
+    } else if (state.selectedCompanies.size === 1) {
+      const singleId = [...state.selectedCompanies][0];
+      const comp = state.companies.find((c) => c.id === singleId);
+      buttonLabel = `Company: ${comp ? comp.name : singleId} ▾`;
+    } else {
+      buttonLabel = `Companies (${state.selectedCompanies.size}) ▾`;
+    }
+    companyToggleBtn.textContent = buttonLabel;
 
     const totalAllCount = countForCompany(jobs, state, "all");
 
-    // All Companies row
+    // All Companies row (honest toggle)
     const allCheckbox = el("input", {
       type: "checkbox",
       checked: isAll ? "checked" : null,
       onchange: (e) => {
-        e.stopPropagation();
         callbacks.onToggleAllCompanies(e.target.checked);
       },
     });
 
-    const allRow = el("label", {
-      class: "company-checkbox-row all-row",
-      onclick: (e) => e.stopPropagation(),
-    },
+    const allRow = el("label", { class: "company-checkbox-row all-row" },
       allCheckbox,
       el("span", { class: "cb-label" }, "All Companies"),
       el("span", { class: "cb-count" }, String(totalAllCount))
@@ -187,31 +192,20 @@ export function renderFilterBar(container, jobs, state, callbacks) {
 
     const divider = el("div", { class: "popover-divider" });
 
-    // Individual company rows (disabled when All Companies is checked)
+    // Individual company rows - standard clickable checkboxes
     const companyRows = state.companies.map((c) => {
       const count = countForCompany(jobs, state, c.id);
-      const isChecked = !isAll && state.selectedCompanies.has(c.id);
+      const isChecked = !isAll && state.selectedCompanies && state.selectedCompanies.has(c.id);
 
       const cb = el("input", {
         type: "checkbox",
         checked: isChecked ? "checked" : null,
-        disabled: isAll ? "disabled" : null,
         onchange: (e) => {
-          e.stopPropagation();
           callbacks.onToggleCompany(c.id, e.target.checked);
         },
       });
 
-      return el("label", {
-        class: `company-checkbox-row ${isAll ? "disabled" : ""}`,
-        title: isAll ? `Select ${c.name}` : "",
-        onclick: (e) => {
-          e.stopPropagation();
-          if (isAll) {
-            callbacks.onToggleCompany(c.id, true);
-          }
-        },
-      },
+      return el("label", { class: "company-checkbox-row" },
         cb,
         el("span", { class: "cb-label" }, c.name),
         el("span", { class: "cb-count" }, String(count))
@@ -358,20 +352,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     groupSelect.value = state.groupMode || "department";
   }
 
-  // Update Reset Button State
-  const resetBtn = container.querySelector(".reset-all-btn");
-  if (resetBtn) {
-    const hasActiveCompanies = state.selectedCompanies && !state.selectedCompanies.has("all") && state.selectedCompanies.size > 0;
-    const hasActiveFilters =
-      hasActiveCompanies ||
-      (state.loc && state.loc.kind !== "all") ||
-      (state.dept && state.dept.kind !== "all") ||
-      state.workplaces.size > 0 ||
-      (state.status && state.status !== "all") ||
-      Boolean(state.search);
-
-    resetBtn.disabled = !hasActiveFilters;
-  }
+  // Reset Button is always enabled and visible
 }
 
 /**

@@ -154,7 +154,8 @@ function onToggleCompany(companyId, isChecked) {
   } else {
     state.selectedCompanies.delete(companyId);
   }
-  if (state.selectedCompanies.size === 0) {
+  if (state.selectedCompanies.size === state.companies.length) {
+    state.selectedCompanies.clear();
     state.selectedCompanies.add("all");
   }
   render();
@@ -162,7 +163,9 @@ function onToggleCompany(companyId, isChecked) {
 
 function onToggleAllCompanies(isChecked) {
   state.selectedCompanies.clear();
-  state.selectedCompanies.add("all");
+  if (isChecked) {
+    state.selectedCompanies.add("all");
+  }
   render();
 }
 
@@ -191,12 +194,13 @@ function onSelectStatus(status) {
 }
 
 function onResetAll() {
+  state.search = "";
   state.selectedCompanies = new Set(["all"]);
   state.loc = { kind: "all" };
   state.dept = { kind: "all" };
   state.workplaces.clear();
   state.status = "all";
-  state.search = "";
+  state.groupMode = "department";
   render();
 }
 

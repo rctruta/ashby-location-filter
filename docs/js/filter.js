@@ -33,15 +33,18 @@ export function hitsLocation(job, loc) {
 }
 
 export function passesCompany(job, companyFilter) {
-  if (!companyFilter || companyFilter === "all") return true;
+  if (!companyFilter) return true;
   if (companyFilter instanceof Set) {
-    if (companyFilter.size === 0 || companyFilter.has("all")) return true;
+    if (companyFilter.has("all")) return true;
+    if (companyFilter.size === 0) return false;
     return Boolean(job.company && companyFilter.has(job.company.id));
   }
   if (Array.isArray(companyFilter)) {
-    if (companyFilter.length === 0 || companyFilter.includes("all")) return true;
+    if (companyFilter.includes("all")) return true;
+    if (companyFilter.length === 0) return false;
     return Boolean(job.company && companyFilter.includes(job.company.id));
   }
+  if (companyFilter === "all") return true;
   return Boolean(job.company && job.company.id === companyFilter);
 }
 
