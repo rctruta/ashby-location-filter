@@ -122,9 +122,14 @@ another repository."""
 
 [[surfaces]]
 id = "npm"
-status = "planned"
+status = "live"
 trigger = "package.json"
 why = "a Node package on npm"
+
+  [[surfaces.requires]]
+  kind = "json_version_matches_source"
+  path = "package.json"
+  field = "version"
 
 
 [[surfaces]]

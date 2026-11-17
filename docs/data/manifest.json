@@ -40,7 +40,8 @@
    "name": "Crafty Testing",
    "provider": "Synthetic",
    "feed_url": "synthetic://crafty_testing",
-   "snapshot": "data/crafty_testing.json"
+   "snapshot": "data/crafty_testing.json",
+   "test_only": true
   }
  ]
 }

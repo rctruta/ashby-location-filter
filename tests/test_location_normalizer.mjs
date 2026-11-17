@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import {
   classifyScope,
   normalizeCountry,
@@ -130,4 +133,31 @@ test("normalizeLocation produces complete canonical location object", () => {
   assert.equal(multiRegion.scope, "global");
   assert.equal(multiRegion.canonicalCity, null);
   assert.equal(multiRegion.isRemote, true);
+});
+
+test("crafty_testing synthetic fixture stress-tests all edge cases cleanly", () => {
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const fixturePath = path.join(__dirname, "../docs/data/crafty_testing.json");
+  const fixture = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assert.ok(Array.isArray(fixture.jobs) && fixture.jobs.length > 0);
+
+  const normalizedByJobId = new Map();
+  for (const job of fixture.jobs) {
+    const addr = job.address?.postalAddress || {};
+    const primary = normalizeLocation({
+      rawName: job.location,
+      locality: addr.addressLocality,
+      region: addr.addressRegion,
+      country: addr.addressCountry,
+    });
+    normalizedByJobId.set(job.id, primary);
+    assert.ok(["global", "country", "region", "metro", "unspecified"].includes(primary.scope));
+  }
+
+  assert.equal(normalizedByJobId.get("crafty-001").canonicalCountry, "Iceland");
+  assert.equal(normalizedByJobId.get("crafty-001").scope, "country");
+  assert.equal(normalizedByJobId.get("crafty-002").scope, "global");
+  assert.equal(normalizedByJobId.get("crafty-003").canonicalCity, "Reykjavík");
+  assert.equal(normalizedByJobId.get("crafty-005").canonicalCity, "Zürich");
+  assert.equal(normalizedByJobId.get("crafty-006").scope, "region");
 });

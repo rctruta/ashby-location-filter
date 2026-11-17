@@ -86,3 +86,21 @@ def test_write_manifest(tmp_path: Path):
         assert content["companies"][0]["snapshot"] == "data/cohere.json"
         assert content["companies"][1]["id"] == "ramp"
         assert content["companies"][1]["snapshot"] == "data/ramp.json"
+
+        # Verify test_only synthetic entries are preserved across manifest rebuilds
+        content["companies"].append(
+            {
+                "id": "crafty_testing",
+                "name": "Crafty Testing",
+                "provider": "Synthetic",
+                "feed_url": "synthetic://crafty_testing",
+                "snapshot": "data/crafty_testing.json",
+                "test_only": True,
+            }
+        )
+        manifest_file.write_text(json.dumps(content), encoding="utf-8")
+        write_manifest(config)
+        rebuilt = json.loads(manifest_file.read_text(encoding="utf-8"))
+        assert len(rebuilt["companies"]) == 3
+        assert rebuilt["companies"][2]["id"] == "crafty_testing"
+        assert rebuilt["companies"][2]["test_only"] is True

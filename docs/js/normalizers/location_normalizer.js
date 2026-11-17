@@ -90,9 +90,10 @@ export function classifyScope(rawLocation, country = null) {
   if (!rawLocation || typeof rawLocation !== "string") return "unspecified";
   const raw = rawLocation.trim().toLowerCase();
   if (!raw || raw === "unspecified") return "unspecified";
+  const stripped = stripDecorators(rawLocation).toLowerCase();
 
   // 1. Multi-national or global broad scope
-  if (GLOBAL_SCOPES.has(raw)) return "global";
+  if (GLOBAL_SCOPES.has(raw) || GLOBAL_SCOPES.has(stripped)) return "global";
 
   // 2. Direct country match
   const directCountry = COUNTRY_SYNONYMS[raw];

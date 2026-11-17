@@ -82,6 +82,38 @@ Then open `http://localhost:8080` in your browser.
 
 ---
 
+## Integrating the Normalizer in Custom Job Boards
+
+If you are building a custom career site with Ashby's Posting API, you can install and import the canonical normalizer directly (zero runtime dependencies, native Unicode CLDR):
+
+```sh
+npm install github:rctruta/ashby-location-filter
+```
+
+```javascript
+import { normalizeLocation, classifyScope } from "ashby-location-filter";
+
+const result = normalizeLocation({
+  rawName: "San Fransisco, CA [Hiring Immediately]",
+  locality: "San Francisco",
+  region: "California",
+  country: "USA"
+});
+
+console.log(result);
+// {
+//   canonicalCity: "San Francisco",
+//   canonicalRegion: "California",
+//   canonicalCountry: "United States",
+//   scope: "metro",
+//   isRemote: false,
+//   displayName: "San Francisco, United States",
+//   compoundKey: "p:United States|||San Francisco"
+// }
+```
+
+---
+
 ## Hosting Your Own Job Board Filter
 
 You can easily fork this repository and host your own custom job board tracker for your personal list of target companies:

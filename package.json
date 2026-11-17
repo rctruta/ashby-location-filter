@@ -1,0 +1,47 @@
+{
+  "name": "ashby-location-filter",
+  "version": "0.2.0",
+  "description": "Canonical location normalizer and scope classifier for Ashby job boards",
+  "type": "module",
+  "main": "./docs/js/normalizers/location_normalizer.js",
+  "module": "./docs/js/normalizers/location_normalizer.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./docs/js/normalizers/location_normalizer.js",
+      "default": "./docs/js/normalizers/location_normalizer.js"
+    },
+    "./normalizer": {
+      "types": "./types/index.d.ts",
+      "import": "./docs/js/normalizers/location_normalizer.js",
+      "default": "./docs/js/normalizers/location_normalizer.js"
+    },
+    "./geo": {
+      "import": "./docs/js/normalizers/geo_aliases.js",
+      "default": "./docs/js/normalizers/geo_aliases.js"
+    }
+  },
+  "files": [
+    "docs/js/normalizers",
+    "types"
+  ],
+  "scripts": {
+    "test": "node --test tests/test_location_normalizer.mjs"
+  },
+  "keywords": [
+    "ashby",
+    "job-board",
+    "ats",
+    "location-normalizer",
+    "cldr",
+    "geocoding",
+    "unicode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rctruta/ashby-location-filter.git"
+  },
+  "author": "Ramona Truta",
+  "license": "Apache-2.0"
+}

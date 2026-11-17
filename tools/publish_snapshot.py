@@ -109,6 +109,19 @@ def write_manifest(config: PublishConfig) -> None:
     manifest_path = ROOT / config.manifest_output
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
 
+    preserved_test_entries: list[dict[str, Any]] = []
+    if manifest_path.exists():
+        try:
+            existing = json.loads(manifest_path.read_text(encoding="utf-8"))
+            configured_ids = {c.id for c in config.companies}
+            preserved_test_entries = [
+                entry
+                for entry in existing.get("companies", [])
+                if entry.get("test_only") is True and entry.get("id") not in configured_ids
+            ]
+        except Exception as e:
+            log.warning("Could not read existing manifest at %s: %s", manifest_path, e)
+
     entries = []
     for c in config.companies:
         # Snapshot path relative to docs/
@@ -126,6 +139,7 @@ def write_manifest(config: PublishConfig) -> None:
             }
         )
 
+    entries.extend(preserved_test_entries)
     manifest_data = {"companies": entries}
     manifest_path.write_text(
         json.dumps(manifest_data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"

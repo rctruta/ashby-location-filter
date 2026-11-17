@@ -15,6 +15,7 @@ const state = {
   dept: { kind: "all" },
   workplaces: new Set(),
   status: "all",
+  testMode: false, // Only include synthetic/test_only companies when ?test=1 is set
 };
 
 let allJobs = [];
@@ -22,6 +23,10 @@ let sourceMeta = null;
 
 function initFromURL() {
   const params = new URLSearchParams(window.location.search);
+  const testParam = params.get("test");
+  if (testParam === "1" || testParam === "true") {
+    state.testMode = true;
+  }
   if (params.get("companies")) {
     const list = params.get("companies").split(",").filter(Boolean);
     state.selectedCompanies = list.length > 0 ? new Set(list) : new Set(["all"]);
@@ -64,6 +69,9 @@ function initFromURL() {
 
 function syncToURL() {
   const params = new URLSearchParams();
+  if (state.testMode) {
+    params.set("test", "1");
+  }
   if (state.selectedCompanies && !state.selectedCompanies.has("all") && state.selectedCompanies.size > 0) {
     params.set("companies", [...state.selectedCompanies].join(","));
   }
@@ -250,7 +258,10 @@ async function main() {
     const manifestResp = await fetch(`${MANIFEST_URL}?_=${Date.now()}`);
     if (!manifestResp.ok) throw new Error(`HTTP ${manifestResp.status}`);
     const manifest = await manifestResp.json();
-    state.companies = manifest.companies || [];
+    const rawCompanies = manifest.companies || [];
+    state.companies = rawCompanies.filter(
+      (c) => !c.test_only || state.testMode || state.selectedCompanies.has(c.id)
+    );
   } catch (e) {
     console.error("Could not load manifest:", e);
   }
