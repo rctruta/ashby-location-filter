@@ -94,7 +94,7 @@ export const SUBDIVISIONS = {
   "wy": { name: "Wyoming", country: "United States" },
   "dc": { name: "Washington, DC", country: "United States" },
 
-  // Canadian Provinces
+  // Canadian Provinces & Territories
   "ab": { name: "Alberta", country: "Canada" },
   "bc": { name: "British Columbia", country: "Canada" },
   "mb": { name: "Manitoba", country: "Canada" },
@@ -105,6 +105,9 @@ export const SUBDIVISIONS = {
   "pe": { name: "Prince Edward Island", country: "Canada" },
   "qc": { name: "Quebec", country: "Canada" },
   "sk": { name: "Saskatchewan", country: "Canada" },
+  "nt": { name: "Northwest Territories", country: "Canada" },
+  "nu": { name: "Nunavut", country: "Canada" },
+  "yt": { name: "Yukon", country: "Canada" },
 };
 
 // Recruiter typos and tech hub abbreviations
