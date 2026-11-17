@@ -23,3 +23,12 @@ if [ -x "$PY" ]; then
         exit 1
     fi
 fi
+
+if [ -f "$ROOT/package.json" ] && command -v npm >/dev/null 2>&1; then
+    echo "[pre-push] running Node test suite..."
+    if ! npm --prefix "$ROOT" test; then
+        echo "" >&2
+        echo "[pre-push] REFUSING PUSH: Node test suite is red." >&2
+        exit 1
+    fi
+fi

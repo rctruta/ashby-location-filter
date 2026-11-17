@@ -133,6 +133,22 @@ why = "a Node package on npm"
   path = "package.json"
   field = "version"
 
+  [[surfaces.requires]]
+  kind = "file_exists"
+  path = "README.md"
+
+  [[surfaces.requires]]
+  kind = "file_exists"
+  path = "LICENSE"
+
+  [[surfaces.requires]]
+  kind = "file_exists"
+  path = "NOTICE"
+
+  [[surfaces.requires]]
+  kind = "file_exists"
+  path = "types/index.d.ts"
+
 
 [[surfaces]]
 id = "docker"
