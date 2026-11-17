@@ -119,7 +119,7 @@ def add_company(identifier: str, display_name: str | None = None, dry_run: bool 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("company", help="Company slug, name, or Ashby career URL (e.g. 'notion' or 'https://jobs.ashbyhq.com/notion')")
+    parser.add_argument("company", help="Company slug, name, or Ashby board identifier (e.g. 'notion')")
     parser.add_argument("--name", help="Display name (e.g. 'Notion')")
     parser.add_argument("--dry-run", action="store_true", help="Test and validate without saving to config")
     args = parser.parse_args()

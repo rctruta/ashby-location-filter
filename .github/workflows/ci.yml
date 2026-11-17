@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: "20"
       - run: |
-          uv sync --extra dev
+          uv sync
           git config core.hooksPath .githooks   # hooks do not clone
           .venv/bin/pytest
           npm test
