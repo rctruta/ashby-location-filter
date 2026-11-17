@@ -6,7 +6,7 @@ import {
   countForLocation,
   countForWorkplace,
 } from "../filter.js";
-import { isCountryWide } from "../models.js";
+import { isCountryWide, normalizeCountryName } from "../models.js";
 
 /**
  * Modern top filter bar with dropdowns and active filter pills.
@@ -72,10 +72,10 @@ export function renderFilterBar(container, jobs, state, callbacks) {
         if (!val || val === "all") {
           callbacks.onSelectLoc({ kind: "all" });
         } else if (val.startsWith("c:")) {
-          callbacks.onSelectLoc({ kind: "country", country: val.slice(2) });
+          callbacks.onSelectLoc({ kind: "country", country: normalizeCountryName(val.slice(2)) });
         } else if (val.startsWith("p:")) {
           const [country, name] = val.slice(2).split("|||");
-          callbacks.onSelectLoc({ kind: "place", country: country || null, name });
+          callbacks.onSelectLoc({ kind: "place", country: normalizeCountryName(country) || null, name });
         }
       },
     });
@@ -304,12 +304,13 @@ export function renderFilterBar(container, jobs, state, callbacks) {
 
     locationSelect.replaceChildren(...locOptions);
 
+    const normStateCountry = state.loc.country ? normalizeCountryName(state.loc.country) : null;
     if (state.loc.kind === "country") {
-      locationSelect.value = `c:${state.loc.country}`;
+      locationSelect.value = `c:${normStateCountry}`;
     } else if (state.loc.kind === "place") {
-      locationSelect.value = `p:${state.loc.country || ""}|||${state.loc.name}`;
-      if (!locationSelect.value && state.loc.country) {
-        locationSelect.value = `c:${state.loc.country}`;
+      locationSelect.value = `p:${normStateCountry || ""}|||${state.loc.name}`;
+      if (!locationSelect.value && normStateCountry) {
+        locationSelect.value = `c:${normStateCountry}`;
       }
     } else {
       locationSelect.value = "all";

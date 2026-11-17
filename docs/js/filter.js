@@ -3,13 +3,19 @@
  * Fully synchronizes Company, Location, Department, Workplace, and Status facets.
  */
 
+import { normalizeCountryName } from "./models.js";
+
 export function locationTest(loc) {
   if (!loc || loc.kind === "all") return null;
-  if (loc.kind === "country") return l => l.country === loc.country;
+  if (loc.kind === "country") {
+    const targetCountry = normalizeCountryName(loc.country);
+    return l => l.country === targetCountry || l.country === loc.country;
+  }
   if (loc.kind === "place" || loc.kind === "city") {
+    const targetCountry = loc.country ? normalizeCountryName(loc.country) : null;
     const target = loc.name.toLowerCase().trim();
     return l => {
-      if (l.country !== loc.country) return false;
+      if (targetCountry && l.country !== targetCountry && l.country !== loc.country) return false;
       if (l.city && l.city.toLowerCase() === target) return true;
       if (l.locality && l.locality.toLowerCase() === target) return true;
       if (l.name && l.name.toLowerCase() === target) return true;

@@ -6,59 +6,117 @@ export function cleanString(v) {
   return (typeof v === "string" && v.trim()) || null;
 }
 
-export function normalizeCityName(rawName, locality, country = null) {
-  if (locality && locality.trim()) {
-    const locClean = locality.trim();
-    if (country && locClean.toLowerCase() === country.toLowerCase()) {
-      return null;
-    }
-    return locClean;
+export function normalizeCountryName(country) {
+  if (!country) return null;
+  const c = country.trim();
+  const low = c.toLowerCase();
+  if (low === "usa" || low === "us" || low === "united states" || low === "united states of america") {
+    return "United States";
   }
-  if (!rawName) return null;
-  let city = rawName.replace(/\s*\([^)]*\)/g, "").trim();
+  if (low === "uk" || low === "united kingdom" || low === "great britain") {
+    return "United Kingdom";
+  }
+  if (low === "uae") {
+    return "United Arab Emirates";
+  }
+  if (low === "south korea" || low === "korea") {
+    return "South Korea";
+  }
+  return c;
+}
 
-  // If rawName is country-wide or remote country, it has no city
+export const KNOWN_CITY_CANONICAL = {
+  "san fransisco": "San Francisco",
+  "san francisco": "San Francisco",
+  "new york city": "New York",
+  "nyc": "New York",
+  "new york": "New York",
+  "washington d.c.": "Washington, DC",
+  "washington dc": "Washington, DC",
+  "washington, dc": "Washington, DC",
+  "washington, d.c.": "Washington, DC",
+  "washington": "Washington, DC",
+};
+
+export function isCountryWideLocationName(rawName, country = null) {
+  if (!rawName) return true;
+  const r = rawName.toLowerCase().trim();
+  if (r === "unspecified") return true;
+  if (
+    country &&
+    (r === country.toLowerCase() ||
+      (country === "United States" && (r === "usa" || r === "us")))
+  ) {
+    return true;
+  }
+  if (
+    r === "remote" ||
+    r.startsWith("remote -") ||
+    r.startsWith("remote (") ||
+    r.startsWith("remote,") ||
+    r === "remote us" ||
+    r === "remote usa" ||
+    r === "remote uk" ||
+    r === "remote canada" ||
+    r === "remote germany" ||
+    r === "remote italy" ||
+    r === "remote european union" ||
+    r === "north america" ||
+    r === "europe"
+  ) {
+    return true;
+  }
   if (country) {
     const cLow = country.toLowerCase();
-    const rLow = city.toLowerCase();
-    if (
-      rLow === cLow ||
-      rLow === `remote - ${cLow}` ||
-      rLow === `remote, ${cLow}` ||
-      rLow === `${cLow} - remote` ||
-      rLow === `anywhere in ${cLow}` ||
-      rLow.startsWith(`remote - ${cLow}`)
-    ) {
-      return null;
-    }
+    if (r.includes("remote") && r.includes(cLow)) return true;
+    if (r === `remote - ${cLow}` || r === `${cLow} - remote`) return true;
+  }
+  return false;
+}
+
+export function normalizeCityName(rawName, locality, country = null) {
+  if (isCountryWideLocationName(rawName, country)) {
+    return null;
   }
 
-  if (city.toLowerCase().startsWith("remote - ")) {
-    const afterRemote = city.slice(9).trim();
-    if (country && afterRemote.toLowerCase() === country.toLowerCase()) {
-      return null;
-    }
-  }
+  let candidate = (rawName || "").replace(/\s*\([^)]*\)/g, "").trim();
+  if (candidate.includes(",")) candidate = candidate.split(",")[0].trim();
 
-  if (city.includes(",")) {
-    city = city.split(",")[0].trim();
+  if (
+    country &&
+    (candidate.toLowerCase() === country.toLowerCase() ||
+      (country === "United States" &&
+        (candidate.toLowerCase() === "usa" || candidate.toLowerCase() === "us")) ||
+      (country === "South Korea" && candidate.toLowerCase() === "korea"))
+  ) {
+    candidate = locality || "";
   }
-  return city || null;
+  if (!candidate && locality) candidate = locality;
+
+  let clean = candidate.trim();
+  if (!clean) return null;
+  const low = clean.toLowerCase();
+  if (KNOWN_CITY_CANONICAL[low]) {
+    return KNOWN_CITY_CANONICAL[low];
+  }
+  if (country && low === country.toLowerCase()) return null;
+  return clean;
 }
 
 export function readLocation(entry, role) {
   const postal = (entry && entry.address && entry.address.postalAddress) || {};
-  const locality = cleanString(postal.addressLocality);
+  const rawCountry = cleanString(postal.addressCountry);
+  const country = normalizeCountryName(rawCountry);
+  const rawLocality = cleanString(postal.addressLocality);
   const region = cleanString(postal.addressRegion);
-  const country = cleanString(postal.addressCountry);
   const rawName = (entry && entry.location) || "Unspecified";
-  const city = normalizeCityName(rawName, locality, country);
+  const city = normalizeCityName(rawName, rawLocality, country);
 
   return {
     name: rawName,
     city: city || null,
     role,
-    locality,
+    locality: city || rawLocality,
     region,
     country,
   };
@@ -97,7 +155,8 @@ export function isCountryWide(l) {
   const name = (l.name || "").toLowerCase().trim();
   const country = l.country.toLowerCase().trim();
   if (name === country || l.city === l.country) return true;
-  if (name.includes("remote") && name.includes(country)) return true;
+  if (name === "usa" || name === "us" || name === "united states") return true;
+  if (isCountryWideLocationName(l.name, l.country)) return true;
   if (!l.locality && !l.region && (!l.city || l.city === l.country)) return true;
   return false;
 }

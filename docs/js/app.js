@@ -1,6 +1,6 @@
 import { DEFAULT_COMPANY, MANIFEST_URL } from "./constants.js";
 import { el } from "./dom.js";
-import { readJob } from "./models.js";
+import { normalizeCountryName, readJob } from "./models.js";
 import { renderActivePills, renderFilterBar } from "./views/filter_bar.js";
 import { renderResults } from "./views/results_view.js";
 import { renderSourceHeader } from "./views/source_header.js";
@@ -33,11 +33,11 @@ function initFromURL() {
   if (params.get("q")) state.search = params.get("q");
 
   if (params.get("country")) {
-    state.loc = { kind: "country", country: params.get("country") };
+    state.loc = { kind: "country", country: normalizeCountryName(params.get("country")) };
   } else if (params.get("place")) {
     state.loc = {
       kind: "place",
-      country: params.get("p_country") || null,
+      country: normalizeCountryName(params.get("p_country")),
       name: params.get("place"),
     };
   }
