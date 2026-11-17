@@ -75,10 +75,10 @@ python3 tools/publish_snapshot.py path/to/sample_feed.json
 Start a local web server to view and interact with the application:
 
 ```sh
-python3 -m http.server 8000 --directory docs
+python3 -m http.server 8080 --directory docs
 ```
 
-Then open `http://localhost:8000` in your browser.
+Then open `http://localhost:8080` in your browser.
 
 ---
 
