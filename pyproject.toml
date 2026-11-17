@@ -1,6 +1,6 @@
 [project]
 name = "ashby-location-filter"
-version = "0.2.0"
+version = "0.2.1"
 description = "Multi-company job board aggregator and multi-faceted filter for Ashby boards"
 readme = "README.md"
 requires-python = ">=3.10"

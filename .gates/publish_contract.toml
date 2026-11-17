@@ -106,6 +106,13 @@ that the declared version matches the package."""
   field = "name"
   template = "mcp-name: {}"
 
+  [[surfaces.requires]]
+  kind = "file_contains_json_field"
+  path = "package.json"
+  from = "server.json"
+  field = "name"
+  template = "\"mcpName\": \"{}\""
+
 
 [[surfaces]]
 id = "citation"
