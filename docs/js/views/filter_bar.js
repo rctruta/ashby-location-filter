@@ -6,6 +6,7 @@ import {
   countForLocation,
   countForWorkplace,
 } from "../filter.js";
+import { isCountryWide } from "../models.js";
 
 /**
  * Modern top filter bar with dropdowns and active filter pills.
@@ -225,9 +226,9 @@ export function renderFilterBar(container, jobs, state, callbacks) {
       for (const l of j.locs) {
         const countryKey = l.country || null;
         if (!locTree.has(countryKey)) locTree.set(countryKey, new Set());
-        const cityName = l.city || l.name;
-        if (cityName && cityName !== countryKey) {
-          locTree.get(countryKey).add(cityName);
+        // Only include genuine city names (not country-wide or identical to country)
+        if (l.city && l.city !== countryKey && !isCountryWide(l)) {
+          locTree.get(countryKey).add(l.city);
         }
       }
     }
@@ -239,30 +240,54 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     const sortedCountries = [...locTree.keys()].filter(Boolean).sort();
     for (const country of sortedCountries) {
       const cCount = countForLocation(jobs, state, { kind: "country", country });
-      const group = el("optgroup", { label: `${country} (${cCount})` });
+      const isSelectedCountry = state.loc.kind === "country" && state.loc.country === country;
 
-      // Country-wide option
-      const countryOpt = el("option", { value: `c:${country}` }, `All ${country} (${cCount})`);
-      group.append(countryOpt);
+      // Skip empty countries unless currently selected
+      if (cCount === 0 && !isSelectedCountry) continue;
 
-      const cities = [...locTree.get(country)].sort();
-      for (const city of cities) {
+      const rawCities = [...locTree.get(country)].sort();
+      const activeCities = rawCities.map(city => {
         const cityCount = countForLocation(jobs, state, { kind: "place", country, name: city });
-        if (cityCount > 0 || (state.loc.kind === "place" && state.loc.name === city)) {
-          group.append(el("option", { value: `p:${country}|||${city}` }, `${city} (${cityCount})`));
+        const isSelectedCity = state.loc.kind === "place" && state.loc.name === city && state.loc.country === country;
+        return { city, count: cityCount, selected: isSelectedCity };
+      }).filter(c => c.count > 0 || c.selected);
+
+      // If the country has NO specific cities, show a single clean option: "Canada (33)"
+      if (activeCities.length === 0) {
+        const opt = el("option", { value: `c:${country}` }, `${country} (${cCount})`);
+        if (isSelectedCountry) opt.setAttribute("selected", "selected");
+        locOptions.push(opt);
+      } else {
+        // Has sub-cities: show optgroup with "All <Country>" + cities
+        const group = el("optgroup", { label: `${country} (${cCount})` });
+        const countryOpt = el("option", { value: `c:${country}` }, `All ${country} (${cCount})`);
+        if (isSelectedCountry) countryOpt.setAttribute("selected", "selected");
+        group.append(countryOpt);
+
+        for (const { city, count, selected } of activeCities) {
+          const cityOpt = el("option", { value: `p:${country}|||${city}` }, `${city} (${count})`);
+          if (selected) cityOpt.setAttribute("selected", "selected");
+          group.append(cityOpt);
         }
+        locOptions.push(group);
       }
-      locOptions.push(group);
     }
 
     if (locTree.has(null)) {
       const otherPlaces = [...locTree.get(null)].sort();
-      const otherGroup = el("optgroup", { label: "Other / Unspecified" });
-      for (const place of otherPlaces) {
+      const activePlaces = otherPlaces.map(place => {
         const pCount = countForLocation(jobs, state, { kind: "place", country: null, name: place });
-        otherGroup.append(el("option", { value: `p:|||${place}` }, `${place} (${pCount})`));
+        const isSelected = state.loc.kind === "place" && state.loc.country === null && state.loc.name === place;
+        return { place, count: pCount, selected: isSelected };
+      }).filter(p => p.count > 0 || p.selected);
+
+      if (activePlaces.length > 0) {
+        const otherGroup = el("optgroup", { label: "Other / Unspecified" });
+        for (const { place, count } of activePlaces) {
+          otherGroup.append(el("option", { value: `p:|||${place}` }, `${place} (${count})`));
+        }
+        locOptions.push(otherGroup);
       }
-      locOptions.push(otherGroup);
     }
 
     locationSelect.replaceChildren(...locOptions);
@@ -283,7 +308,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     for (const j of jobs) {
       const dept = j.department || "General";
       if (!deptTree.has(dept)) deptTree.set(dept, new Set());
-      if (j.team) deptTree.get(dept).add(j.team);
+      if (j.team && j.team !== dept) deptTree.get(dept).add(j.team);
     }
 
     const deptOptions = [
@@ -293,18 +318,37 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     const sortedDepts = [...deptTree.keys()].sort();
     for (const dept of sortedDepts) {
       const dCount = countForDepartment(jobs, state, { kind: "department", name: dept });
-      const group = el("optgroup", { label: `${dept} (${dCount})` });
+      const isSelectedDept = state.dept.kind === "department" && state.dept.name === dept;
 
-      group.append(el("option", { value: `d:${dept}` }, `All ${dept} (${dCount})`));
+      // Skip 0-count departments unless currently selected
+      if (dCount === 0 && !isSelectedDept) continue;
 
-      const teams = [...deptTree.get(dept)].sort();
-      for (const team of teams) {
+      const rawTeams = [...deptTree.get(dept)].sort();
+      const activeTeams = rawTeams.map(team => {
         const tCount = countForDepartment(jobs, state, { kind: "team", department: dept, name: team });
-        if (tCount > 0 || (state.dept.kind === "team" && state.dept.name === team)) {
-          group.append(el("option", { value: `t:${dept}|||${team}` }, `${team} (${tCount})`));
+        const isSelectedTeam = state.dept.kind === "team" && state.dept.name === team && state.dept.department === dept;
+        return { team, count: tCount, selected: isSelectedTeam };
+      }).filter(t => t.count > 0 || t.selected);
+
+      // If the department has NO sub-teams, show a single clean option: "Design (4)"
+      if (activeTeams.length === 0) {
+        const opt = el("option", { value: `d:${dept}` }, `${dept} (${dCount})`);
+        if (isSelectedDept) opt.setAttribute("selected", "selected");
+        deptOptions.push(opt);
+      } else {
+        // Has sub-teams: show optgroup with "All <Dept>" + sub-teams
+        const group = el("optgroup", { label: `${dept} (${dCount})` });
+        const deptOpt = el("option", { value: `d:${dept}` }, `All ${dept} (${dCount})`);
+        if (isSelectedDept) deptOpt.setAttribute("selected", "selected");
+        group.append(deptOpt);
+
+        for (const { team, count, selected } of activeTeams) {
+          const teamOpt = el("option", { value: `t:${dept}|||${team}` }, `${team} (${count})`);
+          if (selected) teamOpt.setAttribute("selected", "selected");
+          group.append(teamOpt);
         }
+        deptOptions.push(group);
       }
-      deptOptions.push(group);
     }
 
     departmentSelect.replaceChildren(...deptOptions);

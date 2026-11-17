@@ -6,14 +6,44 @@ export function cleanString(v) {
   return (typeof v === "string" && v.trim()) || null;
 }
 
-export function normalizeCityName(rawName, locality) {
-  if (locality && locality.trim()) return locality.trim();
+export function normalizeCityName(rawName, locality, country = null) {
+  if (locality && locality.trim()) {
+    const locClean = locality.trim();
+    if (country && locClean.toLowerCase() === country.toLowerCase()) {
+      return null;
+    }
+    return locClean;
+  }
   if (!rawName) return null;
   let city = rawName.replace(/\s*\([^)]*\)/g, "").trim();
+
+  // If rawName is country-wide or remote country, it has no city
+  if (country) {
+    const cLow = country.toLowerCase();
+    const rLow = city.toLowerCase();
+    if (
+      rLow === cLow ||
+      rLow === `remote - ${cLow}` ||
+      rLow === `remote, ${cLow}` ||
+      rLow === `${cLow} - remote` ||
+      rLow === `anywhere in ${cLow}` ||
+      rLow.startsWith(`remote - ${cLow}`)
+    ) {
+      return null;
+    }
+  }
+
+  if (city.toLowerCase().startsWith("remote - ")) {
+    const afterRemote = city.slice(9).trim();
+    if (country && afterRemote.toLowerCase() === country.toLowerCase()) {
+      return null;
+    }
+  }
+
   if (city.includes(",")) {
     city = city.split(",")[0].trim();
   }
-  return city || rawName;
+  return city || null;
 }
 
 export function readLocation(entry, role) {
@@ -22,11 +52,11 @@ export function readLocation(entry, role) {
   const region = cleanString(postal.addressRegion);
   const country = cleanString(postal.addressCountry);
   const rawName = (entry && entry.location) || "Unspecified";
-  const city = normalizeCityName(rawName, locality);
+  const city = normalizeCityName(rawName, locality, country);
 
   return {
     name: rawName,
-    city: city || rawName,
+    city: city || null,
     role,
     locality,
     region,
@@ -64,11 +94,12 @@ export function readJob(job, diffInfo = null, companyInfo = null) {
 
 export function isCountryWide(l) {
   if (!l.country) return false;
-  return (
-    l.name === l.country ||
-    l.city === l.country ||
-    (!l.locality && !l.region && (!l.city || l.city === l.country))
-  );
+  const name = (l.name || "").toLowerCase().trim();
+  const country = l.country.toLowerCase().trim();
+  if (name === country || l.city === l.country) return true;
+  if (name.includes("remote") && name.includes(country)) return true;
+  if (!l.locality && !l.region && (!l.city || l.city === l.country)) return true;
+  return false;
 }
 
 export function cityRegion(l) {
