@@ -26,9 +26,6 @@ const DATA_DIR = path.join(ROOT_DIR, "docs", "data");
 const DEFAULT_COMPANIES = [
   { id: "ashby", name: "Ashby", provider: "Ashby" },
   { id: "cohere", name: "Cohere", provider: "Ashby" },
-  { id: "ramp", name: "Ramp", provider: "Ashby" },
-  { id: "linear", name: "Linear", provider: "Ashby" },
-  { id: "influxdata", name: "InfluxData", provider: "Ashby" },
 ];
 
 export const SERVER_INFO = {

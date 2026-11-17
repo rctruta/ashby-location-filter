@@ -211,7 +211,7 @@ test("MCP server handles initialize, tools/list, and tools/call over JSON-RPC 2.
     },
   });
   const companiesData = JSON.parse(companiesResp.result.content[0].text);
-  assert.ok(companiesData.count >= 5);
+  assert.ok(companiesData.count >= 1);
   assert.ok(!companiesData.companies.some((c) => c.id === "crafty_testing"));
 
   const searchResp = await handleJsonRpcRequest({
@@ -221,7 +221,7 @@ test("MCP server handles initialize, tools/list, and tools/call over JSON-RPC 2.
     params: {
       name: "search_jobs",
       arguments: {
-        company: "linear",
+        company: "crafty_testing",
         country: "USA",
         limit: 5,
       },
