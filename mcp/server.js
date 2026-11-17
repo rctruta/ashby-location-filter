@@ -30,7 +30,7 @@ const DEFAULT_COMPANIES = [
 
 export const SERVER_INFO = {
   name: "ashby-location-filter",
-  version: "0.2.0",
+  version: "0.2.1",
 };
 
 export const TOOLS = [

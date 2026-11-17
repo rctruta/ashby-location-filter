@@ -172,7 +172,7 @@ test("MCP server handles initialize, tools/list, and tools/call over JSON-RPC 2.
     params: { protocolVersion: "2024-11-05" },
   });
   assert.equal(initResp.result.serverInfo.name, "ashby-location-filter");
-  assert.equal(initResp.result.serverInfo.version, "0.2.0");
+  assert.equal(initResp.result.serverInfo.version, "0.2.1");
 
   const listResp = await handleJsonRpcRequest({
     jsonrpc: "2.0",
