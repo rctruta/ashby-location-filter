@@ -1,4 +1,4 @@
-import { GROUP_MODES, WORKPLACES } from "../constants.js";
+import { getCompanyHue, GROUP_MODES, WORKPLACES } from "../constants.js";
 import { el } from "../dom.js";
 import {
   countForCompany,
@@ -192,10 +192,11 @@ export function renderFilterBar(container, jobs, state, callbacks) {
 
     const divider = el("div", { class: "popover-divider" });
 
-    // Individual company rows - standard clickable checkboxes
+    // Individual company rows - standard clickable checkboxes with dynamic color indicator
     const companyRows = state.companies.map((c) => {
       const count = countForCompany(jobs, state, c.id);
       const isChecked = !isAll && state.selectedCompanies && state.selectedCompanies.has(c.id);
+      const hue = getCompanyHue(c.id);
 
       const cb = el("input", {
         type: "checkbox",
@@ -207,6 +208,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
 
       return el("label", { class: "company-checkbox-row" },
         cb,
+        el("span", { class: "company-dot", style: `--badge-hue: ${hue};` }),
         el("span", { class: "cb-label" }, c.name),
         el("span", { class: "cb-count" }, String(count))
       );

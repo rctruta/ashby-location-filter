@@ -1,6 +1,13 @@
 {
  "companies": [
   {
+   "id": "ashby",
+   "name": "Ashby",
+   "provider": "Ashby",
+   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/ashby",
+   "snapshot": "data/ashby.json"
+  },
+  {
    "id": "cohere",
    "name": "Cohere",
    "provider": "Ashby",

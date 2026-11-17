@@ -1,4 +1,4 @@
-import { WORKPLACES } from "../constants.js";
+import { getCompanyHue, WORKPLACES } from "../constants.js";
 import { el } from "../dom.js";
 import { filterJobs, hitsLocation, locationTest } from "../filter.js";
 import { addressNote, cityRegion, isCountryWide } from "../models.js";
@@ -64,10 +64,14 @@ function renderJobCard(job, state, labels) {
 
   const headerLeft = [];
   if (job.company) {
+    const hue = getCompanyHue(job.company.id);
     headerLeft.push(
       el(
         "span",
-        { class: `company-badge company-${job.company.id}` },
+        {
+          class: "company-badge",
+          style: `--badge-hue: ${hue};`,
+        },
         job.company.name
       )
     );

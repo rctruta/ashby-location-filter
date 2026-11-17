@@ -1,0 +1,5509 @@
+{
+ "source": {
+  "board": "Ashby",
+  "provider": "Ashby",
+  "feed_url": "https://api.ashbyhq.com/posting-api/job-board/ashby",
+  "downloaded": "2026-11-16"
+ },
+ "jobs": [
+  {
+   "id": "7458d4e9-da2e-47bd-98cb-adfda43d42b2",
+   "title": "Engineering Manager - EU",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Spain",
+       "addressCountry": "Spain",
+       "addressLocality": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Italy",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Italy",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Denmark",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Denmark",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Norway",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Norway",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Croatia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Croatia",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ireland",
+       "addressCountry": "Ireland",
+       "addressLocality": "Ireland"
+      }
+     }
+    },
+    {
+     "location": "Stockholm",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Stockholm",
+       "addressCountry": "Sweden",
+       "addressLocality": "Stockholm"
+      }
+     }
+    },
+    {
+     "location": "Romania",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Romania",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Austria",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Austria"
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Netherlands",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "Portugal",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Portugal"
+      }
+     }
+    },
+    {
+     "location": "France",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "France",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Sweden",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Sweden",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Hungary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Hungary",
+       "addressCountry": "Hungary",
+       "addressLocality": "Budapest"
+      }
+     }
+    },
+    {
+     "location": "Estonia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Estonia",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/7458d4e9-da2e-47bd-98cb-adfda43d42b2",
+   "isListed": true
+  },
+  {
+   "id": "86a60834-ba64-484d-9658-afa1bc97a957",
+   "title": "Mid Market Account Executive - EMEA (French Speaking)",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "France",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "France",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Belgium",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Belgium",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Austria",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Austria"
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Stuttgart",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Baden-Wurttemberg",
+       "addressCountry": "Germany",
+       "addressLocality": "Stuttgart"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/86a60834-ba64-484d-9658-afa1bc97a957",
+   "isListed": true
+  },
+  {
+   "id": "f40ef345-82a8-4956-9150-193b4fdf8183",
+   "title": "Senior Product Designer",
+   "department": "Design",
+   "team": "Design",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Waterloo",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Waterloo"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/f40ef345-82a8-4956-9150-193b4fdf8183",
+   "isListed": true
+  },
+  {
+   "id": "d573471b-2005-482c-9fbf-d1df9550cb57",
+   "title": "Engineering Manager - UK",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Cardiff",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cardiff"
+      }
+     }
+    },
+    {
+     "location": "Birmingham",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Birmingham"
+      }
+     }
+    },
+    {
+     "location": "Bristol",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Bristol"
+      }
+     }
+    },
+    {
+     "location": "Manchester",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Manchester"
+      }
+     }
+    },
+    {
+     "location": "Leeds",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Leeds"
+      }
+     }
+    },
+    {
+     "location": "Oxford",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Oxford"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Cambridge",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cambridge"
+      }
+     }
+    },
+    {
+     "location": "Glasgow",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Glasgow"
+      }
+     }
+    },
+    {
+     "location": "Edinburgh",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Edinburgh"
+      }
+     }
+    },
+    {
+     "location": "Belfast",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Belfast"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/d573471b-2005-482c-9fbf-d1df9550cb57",
+   "isListed": true
+  },
+  {
+   "id": "7e4e8a93-c35d-43c1-a739-c53aba8b682f",
+   "title": "Enterprise Account Executive - DACH",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "Germany",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "Germany",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Belgium",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Belgium",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Czech Republic",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Czech Republic",
+       "addressCountry": "Czech Republic",
+       "addressLocality": "Prague"
+      }
+     }
+    },
+    {
+     "location": "Austria",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Austria"
+      }
+     }
+    },
+    {
+     "location": "Poland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Poland",
+       "addressCountry": "Poland",
+       "addressLocality": "Warsaw"
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Netherlands",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "France",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "France",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Hungary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Hungary",
+       "addressCountry": "Hungary",
+       "addressLocality": "Budapest"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/7e4e8a93-c35d-43c1-a739-c53aba8b682f",
+   "isListed": true
+  },
+  {
+   "id": "56941cfb-f595-4df7-9051-d514fffbe113",
+   "title": "Recruiting Operations Consultant",
+   "department": "Customer Success",
+   "team": "Dedicated Customer Success",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/56941cfb-f595-4df7-9051-d514fffbe113",
+   "isListed": true
+  },
+  {
+   "id": "5ccfc540-35d4-4fc8-aeb6-7f11b2ad8258",
+   "title": "Engineering Manager - Canada",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - Canada",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "Canada",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Calgary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Alberta",
+       "addressCountry": "Canada",
+       "addressLocality": "Calgary"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/5ccfc540-35d4-4fc8-aeb6-7f11b2ad8258",
+   "isListed": true
+  },
+  {
+   "id": "695b1ce6-c375-4fad-94ef-61b50a3fbd28",
+   "title": "Engineering Manager - Americas",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Boulder",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Boulder"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Atlanta",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Georgia",
+       "addressCountry": "USA",
+       "addressLocality": "Atlanta"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Ann Arbor",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Michigan",
+       "addressCountry": "USA",
+       "addressLocality": "Ann Arbor"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    },
+    {
+     "location": "Raleigh",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "North Carolina",
+       "addressCountry": "USA",
+       "addressLocality": "Raleigh"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/695b1ce6-c375-4fad-94ef-61b50a3fbd28",
+   "isListed": true
+  },
+  {
+   "id": "cc846e56-27dd-41b5-bf5b-64d5eeb5ff1a",
+   "title": "Staff Design Engineer - Americas",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/cc846e56-27dd-41b5-bf5b-64d5eeb5ff1a",
+   "isListed": true
+  },
+  {
+   "id": "97c6542c-7ff9-43e5-ac54-b77b45fc7378",
+   "title": "Staff Design Engineer - Canada",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - Canada",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "Canada",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/97c6542c-7ff9-43e5-ac54-b77b45fc7378",
+   "isListed": true
+  },
+  {
+   "id": "6a15668c-3f98-4404-8f1f-927cddfc5af7",
+   "title": "Staff Product Engineer - Americas",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Boulder",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Boulder"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Ann Arbor",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Michigan",
+       "addressCountry": "USA",
+       "addressLocality": "Ann Arbor"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    },
+    {
+     "location": "Raleigh",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "North Carolina",
+       "addressCountry": "USA",
+       "addressLocality": "Raleigh"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/6a15668c-3f98-4404-8f1f-927cddfc5af7",
+   "isListed": true
+  },
+  {
+   "id": "272bc3f4-5af6-4c14-b797-a424b62d306c",
+   "title": "Senior Product Engineer - Canada",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - Canada",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "Canada",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Waterloo",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Waterloo"
+      }
+     }
+    },
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    },
+    {
+     "location": "Calgary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Alberta",
+       "addressCountry": "Canada",
+       "addressLocality": "Calgary"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    },
+    {
+     "location": "Edmonton",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Alberta",
+       "addressCountry": "Canada",
+       "addressLocality": "Edmonton"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/272bc3f4-5af6-4c14-b797-a424b62d306c",
+   "isListed": true
+  },
+  {
+   "id": "751768c6-8d97-4e91-a57d-6b85ce4b5a37",
+   "title": "Senior Product Engineer - Americas",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Boulder",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Boulder"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Atlanta",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Georgia",
+       "addressCountry": "USA",
+       "addressLocality": "Atlanta"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Ann Arbor",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Michigan",
+       "addressCountry": "USA",
+       "addressLocality": "Ann Arbor"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    },
+    {
+     "location": "Raleigh",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "North Carolina",
+       "addressCountry": "USA",
+       "addressLocality": "Raleigh"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/751768c6-8d97-4e91-a57d-6b85ce4b5a37",
+   "isListed": true
+  },
+  {
+   "id": "b64e1498-04ae-4747-8930-a42d4ce6c047",
+   "title": "Product Support Specialist - Americas",
+   "department": "Customer Success",
+   "team": "Technical Support",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/b64e1498-04ae-4747-8930-a42d4ce6c047",
+   "isListed": true
+  },
+  {
+   "id": "3b9b0141-86e7-46b2-b6b4-ed039b84cdc4",
+   "title": "Senior Software Engineer, Product Engineering - EU",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Spain",
+       "addressCountry": "Spain",
+       "addressLocality": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Italy",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Italy",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Croatia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Croatia",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Stockholm",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Stockholm",
+       "addressCountry": "Sweden",
+       "addressLocality": "Stockholm"
+      }
+     }
+    },
+    {
+     "location": "Romania",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Romania",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Portugal",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Portugal"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Sweden",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Sweden",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Estonia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Estonia",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/3b9b0141-86e7-46b2-b6b4-ed039b84cdc4",
+   "isListed": true
+  },
+  {
+   "id": "c3c7125d-7883-4dff-a2bf-f5a55de4a364",
+   "title": "Staff Software Engineer, Product Engineering - EU",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Spain",
+       "addressCountry": "Spain",
+       "addressLocality": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Italy",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Italy",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Croatia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Croatia",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ireland",
+       "addressCountry": "Ireland",
+       "addressLocality": "Ireland"
+      }
+     }
+    },
+    {
+     "location": "Stockholm",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Stockholm",
+       "addressCountry": "Sweden",
+       "addressLocality": "Stockholm"
+      }
+     }
+    },
+    {
+     "location": "Romania",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Romania",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Portugal",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Portugal"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Sweden",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Sweden",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Estonia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Estonia",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/c3c7125d-7883-4dff-a2bf-f5a55de4a364",
+   "isListed": true
+  },
+  {
+   "id": "0020099f-9bb3-4da9-9808-4556564f5301",
+   "title": "Staff Software Engineer, Product Engineering - UK",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Manchester",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Manchester"
+      }
+     }
+    },
+    {
+     "location": "Oxford",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Oxford"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Cambridge",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cambridge"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/0020099f-9bb3-4da9-9808-4556564f5301",
+   "isListed": true
+  },
+  {
+   "id": "472eef28-6e52-43b4-9bff-9113522890f5",
+   "title": "Senior Software Engineer, Product Engineering - UK",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Manchester",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Manchester"
+      }
+     }
+    },
+    {
+     "location": "Oxford",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Oxford"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Cambridge",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cambridge"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/472eef28-6e52-43b4-9bff-9113522890f5",
+   "isListed": true
+  },
+  {
+   "id": "fa001346-ea81-41b2-bfbe-2271d3faac1a",
+   "title": "Staff Platform Engineer - EU",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Spain",
+       "addressCountry": "Spain",
+       "addressLocality": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Italy",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Italy",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Denmark",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Denmark",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Norway",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Norway",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Croatia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Croatia",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ireland",
+       "addressCountry": "Ireland",
+       "addressLocality": "Ireland"
+      }
+     }
+    },
+    {
+     "location": "Stockholm",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Stockholm",
+       "addressCountry": "Sweden",
+       "addressLocality": "Stockholm"
+      }
+     }
+    },
+    {
+     "location": "Romania",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Romania",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Austria",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Austria"
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Netherlands",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "Portugal",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Portugal"
+      }
+     }
+    },
+    {
+     "location": "France",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "France",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Sweden",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Sweden",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Hungary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Hungary",
+       "addressCountry": "Hungary",
+       "addressLocality": "Budapest"
+      }
+     }
+    },
+    {
+     "location": "Estonia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Estonia",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/fa001346-ea81-41b2-bfbe-2271d3faac1a",
+   "isListed": true
+  },
+  {
+   "id": "87b96eef-edc1-4de4-adb6-d460126d02f8",
+   "title": "Staff Design Engineer - EU",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "Portugal",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "Portugal"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Spain",
+       "addressCountry": "Spain",
+       "addressLocality": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Italy",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Italy",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Croatia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Croatia",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ireland",
+       "addressCountry": "Ireland",
+       "addressLocality": "Ireland"
+      }
+     }
+    },
+    {
+     "location": "Stockholm",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Stockholm",
+       "addressCountry": "Sweden",
+       "addressLocality": "Stockholm"
+      }
+     }
+    },
+    {
+     "location": "Romania",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Romania",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Sweden",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Sweden",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Estonia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Estonia",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/87b96eef-edc1-4de4-adb6-d460126d02f8",
+   "isListed": true
+  },
+  {
+   "id": "306a353b-aab5-49d6-a711-a77aa0f5a660",
+   "title": "Staff Design Engineer - UK",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Manchester",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Manchester"
+      }
+     }
+    },
+    {
+     "location": "Oxford",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Oxford"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Cambridge",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cambridge"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/306a353b-aab5-49d6-a711-a77aa0f5a660",
+   "isListed": true
+  },
+  {
+   "id": "448baa35-cd72-468a-bcab-51dd55b7a275",
+   "title": "Staff Product Engineer - Canada",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - Canada",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "Canada",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Waterloo",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Waterloo"
+      }
+     }
+    },
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    },
+    {
+     "location": "Calgary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Alberta",
+       "addressCountry": "Canada",
+       "addressLocality": "Calgary"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    },
+    {
+     "location": "Edmonton",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Alberta",
+       "addressCountry": "Canada",
+       "addressLocality": "Edmonton"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/448baa35-cd72-468a-bcab-51dd55b7a275",
+   "isListed": true
+  },
+  {
+   "id": "ae720f13-ad8b-4fdd-a8c3-5625bdc83a33",
+   "title": "Staff Platform Engineer - UK",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Cardiff",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cardiff"
+      }
+     }
+    },
+    {
+     "location": "Birmingham",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Birmingham"
+      }
+     }
+    },
+    {
+     "location": "Bristol",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Bristol"
+      }
+     }
+    },
+    {
+     "location": "Manchester",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Manchester"
+      }
+     }
+    },
+    {
+     "location": "Leeds",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Leeds"
+      }
+     }
+    },
+    {
+     "location": "Oxford",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Oxford"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Cambridge",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cambridge"
+      }
+     }
+    },
+    {
+     "location": "Glasgow",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Glasgow"
+      }
+     }
+    },
+    {
+     "location": "Edinburgh",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Edinburgh"
+      }
+     }
+    },
+    {
+     "location": "Belfast",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Belfast"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/ae720f13-ad8b-4fdd-a8c3-5625bdc83a33",
+   "isListed": true
+  },
+  {
+   "id": "51061458-3a38-4bea-84f4-7ea0ac3e417f",
+   "title": "Product Support Specialist - EMEA",
+   "department": "Customer Success",
+   "team": "Technical Support",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Madrid",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Madrid",
+       "addressCountry": "Spain",
+       "addressLocality": "Madrid"
+      }
+     }
+    },
+    {
+     "location": "Czech Republic",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Czech Republic",
+       "addressCountry": "Czech Republic",
+       "addressLocality": "Prague"
+      }
+     }
+    },
+    {
+     "location": "Poland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Poland",
+       "addressCountry": "Poland",
+       "addressLocality": "Warsaw"
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Netherlands",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "France",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "France",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Hungary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Hungary",
+       "addressCountry": "Hungary",
+       "addressLocality": "Budapest"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/51061458-3a38-4bea-84f4-7ea0ac3e417f",
+   "isListed": true
+  },
+  {
+   "id": "d46e79d4-43fd-477f-aa06-25b604715223",
+   "title": "Strategy & Operations, Customer Success",
+   "department": "Sales",
+   "team": "Revenue Operations",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/d46e79d4-43fd-477f-aa06-25b604715223",
+   "isListed": true
+  },
+  {
+   "id": "fe44e5a8-1b61-4330-a02d-7f7b66f5ade2",
+   "title": "Senior Strategic Implementation Specialist - Americas",
+   "department": "Customer Success",
+   "team": "Professional Services",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/fe44e5a8-1b61-4330-a02d-7f7b66f5ade2",
+   "isListed": true
+  },
+  {
+   "id": "e1d3d4ee-8d23-4433-be21-385df9d263c4",
+   "title": "Mid-Market Implementation Specialist - EMEA",
+   "department": "Customer Success",
+   "team": "Professional Services",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Belgium",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Belgium",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Hamburg",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Hamburg",
+       "addressCountry": "Germany",
+       "addressLocality": "Hamburg"
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Netherlands",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "Portugal",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Portugal"
+      }
+     }
+    },
+    {
+     "location": "France",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "France",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/e1d3d4ee-8d23-4433-be21-385df9d263c4",
+   "isListed": true
+  },
+  {
+   "id": "92f723a8-6fb1-4314-a311-8fcf25ea286b",
+   "title": "Mid Market Account Executive - Americas (West)",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/92f723a8-6fb1-4314-a311-8fcf25ea286b",
+   "isListed": true
+  },
+  {
+   "id": "36df1986-8af2-4cc4-a96a-4f307d493ac0",
+   "title": "Enterprise Account Executive - Americas (East)",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Atlanta",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Georgia",
+       "addressCountry": "USA",
+       "addressLocality": "Atlanta"
+      }
+     }
+    },
+    {
+     "location": "Waterloo",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Waterloo"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    },
+    {
+     "location": "Ann Arbor",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Michigan",
+       "addressCountry": "USA",
+       "addressLocality": "Ann Arbor"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    },
+    {
+     "location": "Raleigh",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "North Carolina",
+       "addressCountry": "USA",
+       "addressLocality": "Raleigh"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/36df1986-8af2-4cc4-a96a-4f307d493ac0",
+   "isListed": true
+  },
+  {
+   "id": "9fba6b38-f324-49b1-ae3d-40894ad12bb1",
+   "title": "Enterprise Account Executive - Americas (West)",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Boulder",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Boulder"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "Calgary",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Alberta",
+       "addressCountry": "Canada",
+       "addressLocality": "Calgary"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Edmonton",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Alberta",
+       "addressCountry": "Canada",
+       "addressLocality": "Edmonton"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/9fba6b38-f324-49b1-ae3d-40894ad12bb1",
+   "isListed": true
+  },
+  {
+   "id": "be52a88a-02c5-445f-a7c6-60c96b80f19c",
+   "title": "Mid-Market Implementation Specialist - Americas",
+   "department": "Customer Success",
+   "team": "Professional Services",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/be52a88a-02c5-445f-a7c6-60c96b80f19c",
+   "isListed": true
+  },
+  {
+   "id": "188cc71b-a625-4022-94dc-7c43fa1a8b06",
+   "title": "Design Engineer - EU",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "Portugal",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "Portugal"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Spain",
+       "addressCountry": "Spain",
+       "addressLocality": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Italy",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Italy",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Croatia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Croatia",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ireland",
+       "addressCountry": "Ireland",
+       "addressLocality": "Ireland"
+      }
+     }
+    },
+    {
+     "location": "Stockholm",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Stockholm",
+       "addressCountry": "Sweden",
+       "addressLocality": "Stockholm"
+      }
+     }
+    },
+    {
+     "location": "Romania",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Romania",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Sweden",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Sweden",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Estonia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Estonia",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/188cc71b-a625-4022-94dc-7c43fa1a8b06",
+   "isListed": true
+  },
+  {
+   "id": "35a01a05-8efd-4bc3-a4bf-0a31d902102d",
+   "title": "Manager of Implementations, High Touch - EMEA",
+   "department": "Customer Success",
+   "team": "Professional Services",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Birmingham",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Birmingham"
+      }
+     }
+    },
+    {
+     "location": "Bristol",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Bristol"
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/35a01a05-8efd-4bc3-a4bf-0a31d902102d",
+   "isListed": true
+  },
+  {
+   "id": "cb45928e-c7c7-4163-84d0-a962755a3593",
+   "title": "Design Engineer - UK",
+   "department": "Engineering",
+   "team": "EMEA Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Manchester",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Manchester"
+      }
+     }
+    },
+    {
+     "location": "Oxford",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Oxford"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Cambridge",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "Cambridge"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/cb45928e-c7c7-4163-84d0-a962755a3593",
+   "isListed": true
+  },
+  {
+   "id": "238c230f-3dc6-455c-98fd-81872a12d34c",
+   "title": "Senior DevSecOps Engineer",
+   "department": "Security & IT",
+   "team": "Security",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/238c230f-3dc6-455c-98fd-81872a12d34c",
+   "isListed": true
+  },
+  {
+   "id": "95aecf44-abba-4d06-8fea-7987b6ea9db5",
+   "title": "Manager, Product Support - APAC",
+   "department": "Customer Success",
+   "team": "Technical Support",
+   "workplaceType": "Remote",
+   "location": "Australia",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New South Wales",
+     "addressCountry": "Australia",
+     "addressLocality": "Sydney"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Singapore",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Singapore",
+       "addressCountry": "Singapore",
+       "addressLocality": "Singapore"
+      }
+     }
+    },
+    {
+     "location": "South Korea",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "South Korea",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Philippines",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Metro Manila",
+       "addressCountry": "Philippines",
+       "addressLocality": "Manila"
+      }
+     }
+    },
+    {
+     "location": "Japan",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Tokyo",
+       "addressCountry": "Japan",
+       "addressLocality": "Tokyo"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/95aecf44-abba-4d06-8fea-7987b6ea9db5",
+   "isListed": true
+  },
+  {
+   "id": "206c6a86-74e3-4fcf-9175-fdfe07858676",
+   "title": "Manager of Renewals, SMB",
+   "department": "Customer Success",
+   "team": "Contract Management",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/206c6a86-74e3-4fcf-9175-fdfe07858676",
+   "isListed": true
+  },
+  {
+   "id": "287cf227-c8a7-4f42-81c1-8b1e4de5a33d",
+   "title": "Mid Market Account Executive - EMEA (UKI)",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Belgium",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Belgium",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Switzerland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Switzerland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Austria",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Austria"
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Stuttgart",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Baden-Wurttemberg",
+       "addressCountry": "Germany",
+       "addressLocality": "Stuttgart"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/287cf227-c8a7-4f42-81c1-8b1e4de5a33d",
+   "isListed": true
+  },
+  {
+   "id": "fd86edd7-3af0-4977-a61a-215212c296fa",
+   "title": "Design Engineer - Americas",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/fd86edd7-3af0-4977-a61a-215212c296fa",
+   "isListed": true
+  },
+  {
+   "id": "ac5a2281-806d-4aed-b742-69527b3e4575",
+   "title": "Sales Leader, Enterprise - Americas ",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Boulder",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Boulder"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Atlanta",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Georgia",
+       "addressCountry": "USA",
+       "addressLocality": "Atlanta"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/ac5a2281-806d-4aed-b742-69527b3e4575",
+   "isListed": true
+  },
+  {
+   "id": "85713f4a-ad14-4edd-8c56-0065f5897551",
+   "title": "Design Engineer - Canada",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - Canada",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "Canada",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/85713f4a-ad14-4edd-8c56-0065f5897551",
+   "isListed": true
+  },
+  {
+   "id": "cf34cf62-5348-4bd5-bd8c-22a77467162d",
+   "title": "Product Support Engineer - APAC",
+   "department": "Customer Success",
+   "team": "Support Engineering",
+   "workplaceType": "Remote",
+   "location": "Australia",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New South Wales",
+     "addressCountry": "Australia",
+     "addressLocality": "Sydney"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "New Zealand",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "New Zealand"
+      }
+     }
+    },
+    {
+     "location": "Singapore",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Singapore",
+       "addressCountry": "Singapore",
+       "addressLocality": "Singapore"
+      }
+     }
+    },
+    {
+     "location": "South Korea",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "South Korea",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Japan",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Tokyo",
+       "addressCountry": "Japan",
+       "addressLocality": "Tokyo"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/cf34cf62-5348-4bd5-bd8c-22a77467162d",
+   "isListed": true
+  },
+  {
+   "id": "893cd08a-929c-4077-b39c-64bc34f347ea",
+   "title": "Founding Customer Success Manager - APAC",
+   "department": "Customer Success",
+   "team": "Strategic Customer Success",
+   "workplaceType": "Remote",
+   "location": "Australia",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New South Wales",
+     "addressCountry": "Australia",
+     "addressLocality": "Sydney"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Singapore",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Singapore",
+       "addressCountry": "Singapore",
+       "addressLocality": "Singapore"
+      }
+     }
+    },
+    {
+     "location": "South Korea",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "South Korea",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Philippines",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Metro Manila",
+       "addressCountry": "Philippines",
+       "addressLocality": "Manila"
+      }
+     }
+    },
+    {
+     "location": "Japan",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Tokyo",
+       "addressCountry": "Japan",
+       "addressLocality": "Tokyo"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/893cd08a-929c-4077-b39c-64bc34f347ea",
+   "isListed": true
+  },
+  {
+   "id": "7d8ec4fe-50aa-4d7e-9eec-db7b2d14bcbd",
+   "title": "Mid-Market Solutions Engineering Manager",
+   "department": "Sales",
+   "team": "Solutions Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/7d8ec4fe-50aa-4d7e-9eec-db7b2d14bcbd",
+   "isListed": true
+  },
+  {
+   "id": "0f5dbf59-687b-4d88-88a7-73ee0a66b48d",
+   "title": "Staff Platform Engineer - Americas",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Atlanta",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Georgia",
+       "addressCountry": "USA",
+       "addressLocality": "Atlanta"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/0f5dbf59-687b-4d88-88a7-73ee0a66b48d",
+   "isListed": true
+  },
+  {
+   "id": "2373fcd5-144b-4d66-a98b-dd0efb4eb9d1",
+   "title": "Staff Product Designer",
+   "department": "Design",
+   "team": "Design",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Portland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Oregon",
+       "addressCountry": "USA",
+       "addressLocality": "Portland"
+      }
+     }
+    },
+    {
+     "location": "Salt Lake City",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Utah",
+       "addressCountry": "USA",
+       "addressLocality": "Salt Lake City"
+      }
+     }
+    },
+    {
+     "location": "Boston",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Massachusetts",
+       "addressCountry": "USA",
+       "addressLocality": "Boston"
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/2373fcd5-144b-4d66-a98b-dd0efb4eb9d1",
+   "isListed": true
+  },
+  {
+   "id": "ce9f0432-7abf-4911-b644-69d0fb08d67f",
+   "title": "Renewal Manager, SMB - Americas",
+   "department": "Customer Success",
+   "team": "Contract Management",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/ce9f0432-7abf-4911-b644-69d0fb08d67f",
+   "isListed": true
+  },
+  {
+   "id": "5d4b0ed6-da8c-4377-a43a-c45bf90a0073",
+   "title": "Sr. Total Rewards Manager",
+   "department": "People & Talent",
+   "team": "Human Resources",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/5d4b0ed6-da8c-4377-a43a-c45bf90a0073",
+   "isListed": true
+  },
+  {
+   "id": "2b401986-a491-4f9b-9c22-63079bcd64c2",
+   "title": "Strategic Customer Success Manager - Americas",
+   "department": "Customer Success",
+   "team": "Strategic Customer Success",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/2b401986-a491-4f9b-9c22-63079bcd64c2",
+   "isListed": true
+  },
+  {
+   "id": "1290fe74-72f6-4544-ad7d-562f89ecd780",
+   "title": "Sr. Product Marketing Manager, Enterprise",
+   "department": "Marketing",
+   "team": "Product Marketing",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/1290fe74-72f6-4544-ad7d-562f89ecd780",
+   "isListed": true
+  },
+  {
+   "id": "7a3ff629-6c67-4aa5-bea4-f1d88b3b4777",
+   "title": "Manager of Strategic Customer Success",
+   "department": "Customer Success",
+   "team": "Strategic Customer Success",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/7a3ff629-6c67-4aa5-bea4-f1d88b3b4777",
+   "isListed": true
+  },
+  {
+   "id": "43417a55-d261-4351-9841-7d15551a91b9",
+   "title": "Community Lead & Talent Acquisition Advisor - AMER",
+   "department": "Marketing",
+   "team": "Partnerships",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/43417a55-d261-4351-9841-7d15551a91b9",
+   "isListed": true
+  },
+  {
+   "id": "db46ff5d-e469-4bba-b8af-c55ac04f311f",
+   "title": "Data Analytics Manager",
+   "department": "Data",
+   "team": "Data",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Denver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Colorado",
+       "addressCountry": "USA",
+       "addressLocality": "Denver"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/db46ff5d-e469-4bba-b8af-c55ac04f311f",
+   "isListed": true
+  },
+  {
+   "id": "dd3601fc-3a21-467b-aaff-43fceb65864b",
+   "title": "SMB Customer Success Manager - Americas",
+   "department": "Customer Success",
+   "team": "Start-up Customer Success",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/dd3601fc-3a21-467b-aaff-43fceb65864b",
+   "isListed": true
+  },
+  {
+   "id": "88119c51-6f10-4c84-806c-e9a18c8774ba",
+   "title": "Mid-Market Implementation Specialist - EMEA (German speaking)",
+   "department": "Customer Success",
+   "team": "Professional Services",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Belgium",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Belgium",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Hamburg",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Hamburg",
+       "addressCountry": "Germany",
+       "addressLocality": "Hamburg"
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Netherlands",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "Portugal",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Portugal"
+      }
+     }
+    },
+    {
+     "location": "France",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "France",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/88119c51-6f10-4c84-806c-e9a18c8774ba",
+   "isListed": true
+  },
+  {
+   "id": "50edd021-cc90-48aa-916a-aead552e4d4f",
+   "title": "Enterprise Account Executive - Germany",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "Germany",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "Germany",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Stuttgart",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Baden-Wurttemberg",
+       "addressCountry": "Germany",
+       "addressLocality": "Stuttgart"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/50edd021-cc90-48aa-916a-aead552e4d4f",
+   "isListed": true
+  },
+  {
+   "id": "c62ec47a-8de9-4781-b1f7-563a229c4e90",
+   "title": "GTM Systems Analyst",
+   "department": "Sales",
+   "team": "Revenue Operations",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - European Union",
+     "address": {
+      "postalAddress": {
+       "postalCode": "",
+       "addressRegion": "",
+       "addressCountry": "European Union",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/c62ec47a-8de9-4781-b1f7-563a229c4e90",
+   "isListed": true
+  },
+  {
+   "id": "1cf7c730-caba-4fc3-8b98-52a0735ef14b",
+   "title": "Strategic Customer Success Manager - EMEA",
+   "department": "Customer Success",
+   "team": "Strategic Customer Success",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/1cf7c730-caba-4fc3-8b98-52a0735ef14b",
+   "isListed": true
+  },
+  {
+   "id": "38281574-0880-473a-a4f1-bfbb7eedfa18",
+   "title": "Mid-Market Customer Success Manager - Americas",
+   "department": "Customer Success",
+   "team": "High Touch Customer Success",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/38281574-0880-473a-a4f1-bfbb7eedfa18",
+   "isListed": true
+  },
+  {
+   "id": "ae9df091-112c-4a59-b3d1-49d6e0ed3de9",
+   "title": "Integrations Consultant - Americas",
+   "department": "Customer Success",
+   "team": "Professional Services",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/ae9df091-112c-4a59-b3d1-49d6e0ed3de9",
+   "isListed": true
+  },
+  {
+   "id": "1f2542f3-4cb1-417a-8661-d0a52515d34c",
+   "title": "Senior Paid Marketing Manager",
+   "department": "Marketing",
+   "team": "Demand Generation",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/1f2542f3-4cb1-417a-8661-d0a52515d34c",
+   "isListed": true
+  },
+  {
+   "id": "1d7ac90f-ce1c-41ed-9c5b-b0dc8e561a39",
+   "title": "Demo Engineer ",
+   "department": "Sales",
+   "team": "Solutions Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/1d7ac90f-ce1c-41ed-9c5b-b0dc8e561a39",
+   "isListed": true
+  },
+  {
+   "id": "9599c771-a837-462f-8e03-39d18be54a51",
+   "title": "Senior Product Manager",
+   "department": "Product",
+   "team": "Product",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/9599c771-a837-462f-8e03-39d18be54a51",
+   "isListed": true
+  },
+  {
+   "id": "2d03f0fe-2f3c-4c8e-9b89-7c6a35f9e7a4",
+   "title": "Product Support Engineer - EMEA",
+   "department": "Customer Success",
+   "team": "Support Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Italy",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Italy",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Germany",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Germany",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Denmark",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Denmark",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Ireland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Ireland",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Romania",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Romania",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Czech Republic",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Czech Republic",
+       "addressCountry": "Czech Republic",
+       "addressLocality": "Prague"
+      }
+     }
+    },
+    {
+     "location": "Poland",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Poland",
+       "addressCountry": "Poland",
+       "addressLocality": "Warsaw"
+      }
+     }
+    },
+    {
+     "location": "Spain",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Spain"
+      }
+     }
+    },
+    {
+     "location": "Netherlands",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "Portugal",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Portugal"
+      }
+     }
+    },
+    {
+     "location": "France",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "France",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Sweden",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Sweden",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/2d03f0fe-2f3c-4c8e-9b89-7c6a35f9e7a4",
+   "isListed": true
+  },
+  {
+   "id": "54714e14-7cbc-4402-b8d4-c0a2dae97299",
+   "title": "Head of Mid Market Sales, Americas",
+   "department": "Sales",
+   "team": "Sales",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/54714e14-7cbc-4402-b8d4-c0a2dae97299",
+   "isListed": true
+  },
+  {
+   "id": "40320f3a-9d7d-4d53-a30e-a1bf7d74793b",
+   "title": "Staff Product Manager",
+   "department": "Product",
+   "team": "Product",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/40320f3a-9d7d-4d53-a30e-a1bf7d74793b",
+   "isListed": true
+  },
+  {
+   "id": "43095123-207d-4b0e-bcfe-3c6629ac1ed7",
+   "title": "Product Marketing Manager, Release Marketer",
+   "department": "Marketing",
+   "team": "Product Marketing",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/43095123-207d-4b0e-bcfe-3c6629ac1ed7",
+   "isListed": true
+  },
+  {
+   "id": "5d4863d7-e1d9-4f4e-aed4-79d558185ac9",
+   "title": "Head of Platform & Infrastructure Engineering",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "USA",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Los Angeles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "USA",
+       "addressLocality": "Los Angeles"
+      }
+     }
+    },
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "USA",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "USA",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "CA",
+       "addressCountry": "USA",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Chicago",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Illinois",
+       "addressCountry": "USA",
+       "addressLocality": "Chicago"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/5d4863d7-e1d9-4f4e-aed4-79d558185ac9",
+   "isListed": true
+  },
+  {
+   "id": "7f0f3837-3433-4ffe-8842-f3dbc3b621da",
+   "title": "Head of Platform & Infrastructure Engineering",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - Canada",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "Canada",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Vancouver",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "British Columbia",
+       "addressCountry": "Canada",
+       "addressLocality": "Vancouver"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/7f0f3837-3433-4ffe-8842-f3dbc3b621da",
+   "isListed": true
+  },
+  {
+   "id": "debff2b9-3833-47a6-9489-de4e7ab45ee0",
+   "title": "Head of Platform & Infrastructure Engineering",
+   "department": "Engineering",
+   "team": "Americas Engineering",
+   "workplaceType": "Remote",
+   "location": "United Kingdom",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United Kingdom",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/debff2b9-3833-47a6-9489-de4e7ab45ee0",
+   "isListed": true
+  },
+  {
+   "id": "31f604bd-a660-427f-9522-6bbb2539d6e2",
+   "title": "Global Payroll Lead",
+   "department": "Finance & Operations",
+   "team": "Finance & Operations",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/31f604bd-a660-427f-9522-6bbb2539d6e2",
+   "isListed": true
+  },
+  {
+   "id": "dfc35159-ffe5-4d42-bea3-552b5dc17628",
+   "title": "Enterprise Solutions Engineering Manager",
+   "department": "Sales",
+   "team": "Solutions Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/dfc35159-ffe5-4d42-bea3-552b5dc17628",
+   "isListed": true
+  },
+  {
+   "id": "9225e1fa-66aa-45d2-bf92-2ac653744434",
+   "title": "Senior Security Platform Engineer - Secure Delivery",
+   "department": "Security & IT",
+   "team": "Security",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/9225e1fa-66aa-45d2-bf92-2ac653744434",
+   "isListed": true
+  },
+  {
+   "id": "f63dcac2-dfcc-482d-9111-e902f274ce75",
+   "title": "Mid-Market Customer Success Manager - EMEA (German speaking)",
+   "department": "Customer Success",
+   "team": "High Touch Customer Success",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/f63dcac2-dfcc-482d-9111-e902f274ce75",
+   "isListed": true
+  },
+  {
+   "id": "80c20b00-c3c3-441b-95bd-56eb870e77fb",
+   "title": "Product Support Engineer - NAMER",
+   "department": "Customer Success",
+   "team": "Support Engineering",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/80c20b00-c3c3-441b-95bd-56eb870e77fb",
+   "isListed": true
+  },
+  {
+   "id": "78dc4099-949f-4503-a881-3a0c6f01e6b4",
+   "title": "Senior DevSecOps Engineer",
+   "department": "Security & IT",
+   "team": "Security",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/78dc4099-949f-4503-a881-3a0c6f01e6b4",
+   "isListed": true
+  },
+  {
+   "id": "ae8fee4d-fd75-40c8-a049-6557384b15e0",
+   "title": "Senior Security Platform Engineer - Secure Delivery",
+   "department": "Security & IT",
+   "team": "Security",
+   "workplaceType": "Remote",
+   "location": "Remote - European Union",
+   "address": {
+    "postalAddress": {
+     "postalCode": "",
+     "addressRegion": "",
+     "addressCountry": "European Union",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United Kingdom",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/ae8fee4d-fd75-40c8-a049-6557384b15e0",
+   "isListed": true
+  }
+ ],
+ "diff": {
+  "new_ids": [],
+  "removed_jobs": [],
+  "summary": {
+   "active": 77,
+   "new": 0,
+   "removed": 0
+  }
+ }
+}

@@ -27,13 +27,7 @@ Clone the repository and install dependencies:
 git clone https://github.com/rctruta/ashby-location-filter.git
 cd ashby-location-filter
 
-# Fast setup with uv (recommended):
 uv sync
-
-# Or standard pip:
-python3 -m venv .venv
-source .venv/bin/activate
-pip install .
 ```
 
 > **Important for contributors:** To enable repository quality and security guardrails:
@@ -142,11 +136,11 @@ companies:
     provider: Ashby
     feed_url: https://api.ashbyhq.com/posting-api/job-board/cohere
     output: docs/data/cohere.json
-  - id: ramp
-    name: Ramp
+  - id: ashby
+    name: Ashby
     provider: Ashby
-    feed_url: https://api.ashbyhq.com/posting-api/job-board/ramp
-    output: docs/data/ramp.json
+    feed_url: https://api.ashbyhq.com/posting-api/job-board/ashby
+    output: docs/data/ashby.json
 
 manifest_output: docs/data/manifest.json
 ```
