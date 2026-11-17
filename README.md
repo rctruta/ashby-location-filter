@@ -15,8 +15,9 @@ A multi-company job search and filtering engine tailored for public Ashby job bo
 2. **Normalized City & Country Hierarchy:** Recruiter strings like `"Toronto"` (Cohere) and `"Toronto, ON"` (Ramp) are automatically merged into a single bucket (`Toronto (76)`), avoiding fragmented search buckets.
 3. **Collision-Proof Location Scoping:** Grouped by country (`optgroup`) and scoped strictly by country code, ensuring `London, ON` (Canada) never merges with `London` (UK).
 4. **Multi-Select Company & Workplace:** Compare any subset of companies (e.g., Ramp + Linear) or view all companies with one click. Filter across Remote, Hybrid, and In-office simultaneously.
-5. **Diff Tracking:** Highlights new openings added since the last run and marks roles delisted/removed by companies.
-6. **Zero-Build Architecture:** Modern ES modules and CSS with no Node.js build step or bundler needed. Runs directly in any modern browser.
+5. **On-Demand Live Board Loader & Userscript:** Type *any* public Ashby company slug or URL (e.g. `notion`, `deel`, `vanta`) directly in the Company dropdown (or share a link like `?custom=notion`) to normalize its live board in your browser with 15-minute `sessionStorage` caching — or install the [1-click Userscript](docs/ashby-filter.user.js) for `jobs.ashbyhq.com/*`.
+6. **Diff Tracking:** Highlights new openings added since the last run and marks roles delisted/removed by companies.
+7. **Zero-Build Architecture:** Modern ES modules and CSS with no Node.js build step or bundler needed. Runs directly in any modern browser.
 
 ---
 

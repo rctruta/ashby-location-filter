@@ -42,3 +42,4 @@ export declare function normalizeMetro(
   region?: string | null
 ): string | null;
 export declare function normalizeLocation(input: RawLocationInput): CanonicalNormalizedLocation;
+export declare function parseAshbySlug(input?: string | null): string | null;

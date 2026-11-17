@@ -278,3 +278,25 @@ export function normalizeLocation({ rawName, locality, region, country }) {
     compoundKey,
   };
 }
+
+/**
+ * Extracts a clean Ashby board slug from a raw slug or Ashby URL.
+ * Supports https://jobs.ashbyhq.com/<slug> and https://api.ashbyhq.com/posting-api/job-board/<slug>.
+ *
+ * @param {string|null} input
+ * @returns {string|null}
+ */
+export function parseAshbySlug(input) {
+  if (!input || typeof input !== "string") return null;
+  const trimmed = input.trim();
+  if (!trimmed) return null;
+
+  const jobsMatch = trimmed.match(/jobs\.ashbyhq\.com\/([a-zA-Z0-9_.-]+)/i);
+  if (jobsMatch) return jobsMatch[1].toLowerCase();
+
+  const apiMatch = trimmed.match(/job-board\/([a-zA-Z0-9_.-]+)/i);
+  if (apiMatch) return apiMatch[1].toLowerCase();
+
+  const slug = trimmed.toLowerCase().replace(/[^a-z0-9_.-]/g, "");
+  return slug || null;
+}
