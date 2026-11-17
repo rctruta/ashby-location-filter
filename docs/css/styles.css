@@ -554,18 +554,34 @@ p.subtitle {
   gap: 6px;
 }
 .chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
   font-size: 12px;
+  line-height: normal;
   padding: 3px 9px;
   border-radius: 999px;
   border: 1px solid var(--line);
   color: var(--muted);
   background: var(--panel-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--fg);
+  background: var(--panel-hover, rgba(255, 255, 255, 0.08));
 }
 .chip.hit {
   border-color: var(--accent);
   background: var(--accent-bg);
   color: var(--accent);
   font-weight: 600;
+}
+.chip.hit:hover {
+  background: var(--accent-bg);
+  opacity: 0.9;
 }
 .chip .role {
   font-weight: 400;

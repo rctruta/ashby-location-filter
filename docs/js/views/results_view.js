@@ -58,7 +58,7 @@ function describeQuery(shownCount, state, sampleJob) {
   return [big, detail];
 }
 
-function renderJobCard(job, state, labels) {
+function renderJobCard(job, state, labels, handlers) {
   const filteredLoc = state.loc.kind !== "all";
   const matchedLocs = new Set(filteredLoc ? hitsLocation(job, state.loc) : []);
 
@@ -126,25 +126,37 @@ function renderJobCard(job, state, labels) {
   const chips = el(
     "div",
     { class: "chips" },
-    ...job.locs.map(l =>
-      el(
-        "span",
+    ...job.locs.map(l => {
+      const isHit = matchedLocs.has(l);
+      return el(
+        "button",
         {
-          class: matchedLocs.has(l) ? "chip hit" : "chip",
-          title:
-            [l.locality, l.region, l.country].filter(Boolean).join(", ") ||
-            "no address in the feed",
+          type: "button",
+          class: isHit ? "chip hit" : "chip",
+          title: isHit
+            ? `Active location filter: ${l.name}. Click to clear.`
+            : `Filter jobs by ${l.name} (${[l.locality, l.region, l.country].filter(Boolean).join(", ") || "no address"})`,
+          onClick: handlers && handlers.onSelectLoc
+            ? (e) => {
+                e.preventDefault();
+                if (isHit) {
+                  handlers.onSelectLoc({ kind: "all" });
+                } else {
+                  handlers.onSelectLoc({ kind: "place", country: l.country, name: l.name });
+                }
+              }
+            : undefined,
         },
         l.name,
         l.role === "primary" ? el("span", { class: "role" }, " · primary") : null
-      )
-    )
+      );
+    })
   );
 
   return el("div", { class: "job" }, header, metaLine, chips);
 }
 
-export function renderResults(container, jobs, state) {
+export function renderResults(container, jobs, state, handlers) {
   const shown = filterJobs(jobs, state);
   const [big, detail] = describeQuery(shown.length, state, shown[0]);
 
@@ -188,7 +200,7 @@ export function renderResults(container, jobs, state) {
       const compJobs = groups.get(compName).sort((a, b) => a.title.localeCompare(b.title));
       elements.push(
         el("h3", { class: "group-header" }, `${compName} (${compJobs.length})`),
-        ...compJobs.map(job => renderJobCard(job, state, labels))
+        ...compJobs.map(job => renderJobCard(job, state, labels, handlers))
       );
     }
   } else if (state.groupMode === "department") {
@@ -203,7 +215,7 @@ export function renderResults(container, jobs, state) {
       const deptJobs = groups.get(deptName).sort((a, b) => a.title.localeCompare(b.title));
       elements.push(
         el("h3", { class: "group-header" }, `${deptName} (${deptJobs.length})`),
-        ...deptJobs.map(job => renderJobCard(job, state, labels))
+        ...deptJobs.map(job => renderJobCard(job, state, labels, handlers))
       );
     }
   } else if (state.groupMode === "location") {
@@ -218,13 +230,13 @@ export function renderResults(container, jobs, state) {
       const locJobs = groups.get(country).sort((a, b) => a.title.localeCompare(b.title));
       elements.push(
         el("h3", { class: "group-header" }, `${country} (${locJobs.length})`),
-        ...locJobs.map(job => renderJobCard(job, state, labels))
+        ...locJobs.map(job => renderJobCard(job, state, labels, handlers))
       );
     }
   } else {
     // Flat List
     const sortedJobs = [...shown].sort((a, b) => a.title.localeCompare(b.title));
-    elements.push(...sortedJobs.map(job => renderJobCard(job, state, labels)));
+    elements.push(...sortedJobs.map(job => renderJobCard(job, state, labels, handlers)));
   }
 
   container.replaceChildren(...elements);

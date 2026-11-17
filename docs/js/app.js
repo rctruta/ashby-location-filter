@@ -128,7 +128,7 @@ function render() {
 
   const resultsContainer = document.getElementById("results-slot");
   if (resultsContainer) {
-    renderResults(resultsContainer, allJobs, state);
+    renderResults(resultsContainer, allJobs, state, { onSelectLoc });
   }
 
   const sourceContainer = document.getElementById("source-slot");
