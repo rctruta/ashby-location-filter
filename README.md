@@ -114,6 +114,31 @@ console.log(result);
 
 ---
 
+## MCP Server (Claude Desktop, Cursor, Antigravity)
+
+<!-- mcp-name: io.github.rctruta/ashby-location-filter -->
+
+This repository includes a zero-dependency **Model Context Protocol (MCP)** server (`mcp-name: io.github.rctruta/ashby-location-filter`) that exposes canonical Ashby job search, location normalization, and scope classification tools over `stdio`:
+
+- `normalize_location` — Normalize raw ATS location strings + postal addresses using Unicode CLDR (`Intl.DisplayNames`) and recruiter alias rules.
+- `list_companies` — List tracked Ashby job boards available in local snapshots.
+- `search_jobs` — Search and filter jobs across tracked companies (or any live Ashby company slug) by canonical country, city, scope (`global`, `country`, `region`, `metro`), workplace type, department, or keyword.
+
+Add to your MCP client configuration (e.g. `claude_desktop_config.json` or `.cursor/mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "ashby-location-filter": {
+      "command": "npx",
+      "args": ["-y", "github:rctruta/ashby-location-filter"]
+    }
+  }
+}
+```
+
+---
+
 ## Hosting Your Own Job Board Filter
 
 You can easily fork this repository and host your own custom job board tracker for your personal list of target companies:

@@ -81,43 +81,45 @@ why = "a Python distribution on PyPI, published by a release workflow"
 
 [[surfaces]]
 id = "mcp-registry"
-status = "planned"
+status = "live"
 trigger = "server.json"
 why = """
 an MCP server in the official registry. The registry matches a `mcp-name:` \
 token in the package README against the name in server.json to confirm the \
 publisher; a release whose README lacks it is rejected. It does NOT check \
 that the declared version matches the package."""
-# When this goes live:
-#   [[surfaces.requires]]
-#   kind = "json_version_matches_source"
-#   path = "server.json"
-#   field = "version"
-#   [[surfaces.requires]]
-#   kind = "json_version_matches_source"
-#   path = "server.json"
-#   field = "packages[].version"
-#   [[surfaces.requires]]
-#   kind = "file_contains_json_field"
-#   path = "README.md"
-#   from = "server.json"
-#   field = "name"
-#   template = "mcp-name: {}"
+
+  [[surfaces.requires]]
+  kind = "json_version_matches_source"
+  path = "server.json"
+  field = "version"
+
+  [[surfaces.requires]]
+  kind = "json_version_matches_source"
+  path = "server.json"
+  field = "packages[].version"
+
+  [[surfaces.requires]]
+  kind = "file_contains_json_field"
+  path = "README.md"
+  from = "server.json"
+  field = "name"
+  template = "mcp-name: {}"
 
 
 [[surfaces]]
 id = "citation"
-status = "planned"
+status = "live"
 trigger = "CITATION.cff"
 why = """
 what a reader copies into a bibliography. It carries its own version and \
 drifts silently; found three releases stale on this gate's first run in \
 another repository."""
-# When this goes live:
-#   [[surfaces.requires]]
-#   kind = "yaml_version_matches_source"
-#   path = "CITATION.cff"
-#   field = "version"
+
+  [[surfaces.requires]]
+  kind = "yaml_version_matches_source"
+  path = "CITATION.cff"
+  field = "version"
 
 
 [[surfaces]]

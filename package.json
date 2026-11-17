@@ -6,6 +6,9 @@
   "main": "./docs/js/normalizers/location_normalizer.js",
   "module": "./docs/js/normalizers/location_normalizer.js",
   "types": "./types/index.d.ts",
+  "bin": {
+    "ashby-location-filter-mcp": "./mcp/server.js"
+  },
   "exports": {
     ".": {
       "types": "./types/index.d.ts",
@@ -20,11 +23,19 @@
     "./geo": {
       "import": "./docs/js/normalizers/geo_aliases.js",
       "default": "./docs/js/normalizers/geo_aliases.js"
+    },
+    "./mcp": {
+      "import": "./mcp/server.js",
+      "default": "./mcp/server.js"
     }
   },
   "files": [
     "docs/js/normalizers",
-    "types"
+    "mcp",
+    "types",
+    "NOTICE",
+    "CITATION.cff",
+    "server.json"
   ],
   "scripts": {
     "test": "node --test tests/test_location_normalizer.mjs"

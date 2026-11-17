@@ -10,6 +10,7 @@ import {
   normalizeMetro,
   stripDecorators,
 } from "../docs/js/normalizers/location_normalizer.js";
+import { handleJsonRpcRequest } from "../mcp/server.js";
 
 test("normalizeCountry unifies synonyms, aliases, and native Intl ISO codes", () => {
   // Recruiter synonyms
@@ -160,4 +161,72 @@ test("crafty_testing synthetic fixture stress-tests all edge cases cleanly", () 
   assert.equal(normalizedByJobId.get("crafty-003").canonicalCity, "Reykjavík");
   assert.equal(normalizedByJobId.get("crafty-005").canonicalCity, "Zürich");
   assert.equal(normalizedByJobId.get("crafty-006").scope, "region");
+});
+
+test("MCP server handles initialize, tools/list, and tools/call over JSON-RPC 2.0", async () => {
+  const initResp = await handleJsonRpcRequest({
+    jsonrpc: "2.0",
+    id: 1,
+    method: "initialize",
+    params: { protocolVersion: "2024-11-05" },
+  });
+  assert.equal(initResp.result.serverInfo.name, "ashby-location-filter");
+  assert.equal(initResp.result.serverInfo.version, "0.2.0");
+
+  const listResp = await handleJsonRpcRequest({
+    jsonrpc: "2.0",
+    id: 2,
+    method: "tools/list",
+  });
+  const toolNames = listResp.result.tools.map((t) => t.name);
+  assert.deepEqual(toolNames, ["normalize_location", "list_companies", "search_jobs"]);
+
+  const normResp = await handleJsonRpcRequest({
+    jsonrpc: "2.0",
+    id: 3,
+    method: "tools/call",
+    params: {
+      name: "normalize_location",
+      arguments: {
+        rawName: "San Fransisco, CA (HQ)",
+        locality: "San Fransisco",
+        region: "California",
+        country: "USA",
+      },
+    },
+  });
+  const normData = JSON.parse(normResp.result.content[0].text);
+  assert.equal(normData.canonicalCountry, "United States");
+  assert.equal(normData.canonicalCity, "San Francisco");
+  assert.equal(normData.scope, "metro");
+
+  const companiesResp = await handleJsonRpcRequest({
+    jsonrpc: "2.0",
+    id: 4,
+    method: "tools/call",
+    params: {
+      name: "list_companies",
+      arguments: {},
+    },
+  });
+  const companiesData = JSON.parse(companiesResp.result.content[0].text);
+  assert.ok(companiesData.count >= 5);
+  assert.ok(!companiesData.companies.some((c) => c.id === "crafty_testing"));
+
+  const searchResp = await handleJsonRpcRequest({
+    jsonrpc: "2.0",
+    id: 5,
+    method: "tools/call",
+    params: {
+      name: "search_jobs",
+      arguments: {
+        company: "linear",
+        country: "USA",
+        limit: 5,
+      },
+    },
+  });
+  const searchData = JSON.parse(searchResp.result.content[0].text);
+  assert.ok(Array.isArray(searchData.jobs));
+  assert.ok(searchData.returned <= 5);
 });
