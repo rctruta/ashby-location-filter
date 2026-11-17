@@ -8,6 +8,7 @@ import {
   normalizeCountry,
   normalizeLocation,
   normalizeMetro,
+  parseAshbySlug,
   stripDecorators,
 } from "../docs/js/normalizers/location_normalizer.js";
 import { handleJsonRpcRequest } from "../mcp/server.js";
@@ -229,4 +230,17 @@ test("MCP server handles initialize, tools/list, and tools/call over JSON-RPC 2.
   const searchData = JSON.parse(searchResp.result.content[0].text);
   assert.ok(Array.isArray(searchData.jobs));
   assert.ok(searchData.returned <= 5);
+});
+
+test("parseAshbySlug extracts clean company slugs from raw inputs and Ashby URLs", () => {
+  assert.equal(parseAshbySlug("notion"), "notion");
+  assert.equal(parseAshbySlug("  Deel "), "deel");
+  assert.equal(parseAshbySlug("https://jobs.ashbyhq.com/vanta"), "vanta");
+  assert.equal(parseAshbySlug("https://jobs.ashbyhq.com/openai/1234-5678"), "openai");
+  assert.equal(
+    parseAshbySlug("https://api.ashbyhq.com/posting-api/job-board/retool"),
+    "retool"
+  );
+  assert.equal(parseAshbySlug(""), null);
+  assert.equal(parseAshbySlug(null), null);
 });

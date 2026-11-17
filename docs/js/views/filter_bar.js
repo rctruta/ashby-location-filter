@@ -59,7 +59,10 @@ export function renderFilterBar(container, jobs, state, callbacks) {
           if (wpPop) wpPop.classList.remove("open");
         },
       }, "Companies: All ▾"),
-      el("div", { class: "company-popover" })
+      el("div", {
+        class: "company-popover",
+        onclick: (e) => e.stopPropagation(),
+      })
     );
 
     // 2. Location Select (Grouped by Country)
@@ -109,7 +112,10 @@ export function renderFilterBar(container, jobs, state, callbacks) {
           if (pop) pop.classList.toggle("open");
         },
       }, "Workplace ▾"),
-      el("div", { class: "workplace-popover" })
+      el("div", {
+        class: "workplace-popover",
+        onclick: (e) => e.stopPropagation(),
+      })
     );
 
     // 5. Group Mode Select
@@ -215,7 +221,49 @@ export function renderFilterBar(container, jobs, state, callbacks) {
       );
     });
 
-    companyPopover.replaceChildren(allRow, divider, ...companyRows);
+    // Live On-Demand Ashby Board Loader (Tier 3)
+    const customDivider = el("div", { class: "popover-divider" });
+    const customInput = el("input", {
+      type: "text",
+      class: "custom-company-input",
+      placeholder: "Try slug/URL (e.g. notion, deel)...",
+      disabled: state.customLoading ? "disabled" : null,
+      onkeydown: (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const val = e.target.value.trim();
+          if (val && callbacks.onAddCustomCompany) {
+            callbacks.onAddCustomCompany(val);
+          }
+        }
+      },
+    });
+    const customAddBtn = el(
+      "button",
+      {
+        type: "button",
+        class: "custom-company-btn",
+        disabled: state.customLoading ? "disabled" : null,
+        onclick: () => {
+          const val = customInput.value.trim();
+          if (val && callbacks.onAddCustomCompany) {
+            callbacks.onAddCustomCompany(val);
+          }
+        },
+      },
+      state.customLoading ? "..." : "+ Load"
+    );
+    const customForm = el(
+      "div",
+      { class: "custom-company-form" },
+      el("div", { class: "custom-company-label" }, "Load any live Ashby board:"),
+      el("div", { class: "custom-company-row" }, customInput, customAddBtn),
+      state.customError
+        ? el("div", { class: "custom-company-error" }, state.customError)
+        : null
+    );
+
+    companyPopover.replaceChildren(allRow, divider, ...companyRows, customDivider, customForm);
   }
 
   // Populate Location Select Options (Hierarchical Countries & Cities)
