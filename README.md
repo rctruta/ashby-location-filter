@@ -1,53 +1,134 @@
 # ashby-location-filter
 
-A prototype location filter for a job board. It reads a saved snapshot of a
-public Ashby job board feed and groups each posting's locations by the address
-country the feed records, so selecting a country finds postings in its cities
-as well as postings that name the country itself.
+A multi-company job search and filtering engine tailored for public Ashby job boards. It aggregates job postings from multiple companies into a single cohesive interface, normalizes inconsistent recruiter location entries, tracks daily additions and delistings, and provides real-time multi-faceted filtering.
 
-- `docs/index.html` is the frontend application, powered by modular ES modules (`docs/js/`) and CSS (`docs/css/`). It computes every count, search match, and facet filter in the browser from company snapshots.
-- `tools/publish_snapshot.py` writes snapshots and calculates diffs from saved or live Ashby feeds. Posting fields and company endpoints are defined in `tools/publish_snapshot.yaml`.
+## What Problems This Solves
 
-Update all company snapshots from live feeds:
+1. **Multi-Company Aggregation:** Search across all your target companies (e.g. Cohere, Ramp, Linear, InfluxData) in one place instead of opening dozens of career tabs.
+2. **Normalized City & Country Hierarchy:** Recruiter strings like `"Toronto"` (Cohere) and `"Toronto, ON"` (Ramp) are automatically merged into a single bucket (`Toronto (76)`), avoiding fragmented search buckets.
+3. **Collision-Proof Location Scoping:** Grouped by country (`optgroup`) and scoped strictly by country code, ensuring `London, ON` (Canada) never merges with `London` (UK).
+4. **Multi-Select Company & Workplace:** Compare any subset of companies (e.g., Ramp + Linear) or view all companies with one click. Filter across Remote, Hybrid, and In-office simultaneously.
+5. **Diff Tracking:** Highlights new openings added since the last run and marks roles delisted/removed by companies.
+6. **Zero-Build Architecture:** Modern ES modules and CSS with no Node.js build step or bundler needed. Runs directly in any modern browser.
+
+---
+
+## Getting Started
+
+### 1. Prerequisites
+- Python 3.10+
+- A modern web browser
+
+### 2. Setup
+Clone the repository and install the minimal dependencies:
 
 ```sh
-.venv/bin/python -m tools.publish_snapshot --all
+git clone https://github.com/rctruta/ashby-location-filter.git
+cd ashby-location-filter
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-Or update a specific company or publish from a saved feed:
+> **Important for contributors:** To enable repository quality and security guardrails:
+> ```sh
+> git config core.hooksPath .githooks
+> ```
+
+---
+
+## Workflow & Usage
+
+### 1. Validate & Add New Companies
+You can add any company that uses Ashby for its careers page using the built-in CLI:
 
 ```sh
-.venv/bin/python -m tools.publish_snapshot --company ramp
-.venv/bin/python -m tools.publish_snapshot path/to/feed.json
+# Test & validate an Ashby job board without changing configuration
+python3 tools/add_company.py notion --dry-run
+
+# Automatically validate endpoint, register in config, and fetch snapshot
+python3 tools/add_company.py https://jobs.ashbyhq.com/notion --name "Notion"
 ```
 
-Preview the page:
+The CLI:
+- Extracts the company slug from a name, slug, or full URL.
+- Validates the remote Ashby Posting API.
+- Checks `isListed` job counts.
+- Appends the company configuration to `tools/publish_snapshot.yaml`.
+- Fetches the snapshot to `docs/data/<slug>.json` and rebuilds `docs/data/manifest.json`.
+
+### 2. Update Job Board Snapshots
+Refresh snapshots for all configured companies from live feeds:
 
 ```sh
-python3 -m http.server --directory docs
+python3 tools/publish_snapshot.py --all
 ```
 
-## Workspace
+Or refresh an individual company or parse from a local test file:
 
-An agent-safe workspace: humans and AI coding agents share this repository.
-The rules of engagement
-live in `AGENTS.md` — and they are **enforced by git hooks**, not merely
-written down.
+```sh
+python3 tools/publish_snapshot.py --company ramp
+python3 tools/publish_snapshot.py path/to/sample_feed.json
+```
 
-## Guardrails
-- The pre-push hook refuses a dirty working tree — including untracked
-  files — (and, for Python, a red test suite).
-- `main` is the source of truth: work on branches, open PRs; never commit
-  to `main` directly.
+### 3. Launch the Web Interface Locally
+Start a local web server to view and interact with the application:
 
-## Getting started
-- **Fresh clone? Hooks do NOT clone.** Run this once per clone or the
-  guardrails above are silently absent:
-  `git config core.hooksPath .githooks`
-- Python: open a new terminal and run `source .venv/bin/activate`.
-- Copy `.env.example` to `.env` and set your keys. If you run more than
-  one agent, give each process its own `AGENT_ID` (export it in that
-  agent's environment — one shared `.env` can only hold one value).
+```sh
+python3 -m http.server 8000 --directory docs
+```
+
+Then open `http://localhost:8000` in your browser.
+
+---
+
+## Automated Daily Sync (GitHub Actions)
+The repository includes a GitHub Actions workflow (`.github/workflows/update_snapshots.yml`):
+- **Daily Cron:** Runs automatically at 06:00 UTC every day.
+- **Manual Trigger:** Run on demand via **Actions → Update Job Board Snapshots → Run workflow**.
+- Automatically commits and pushes updated snapshots back to `main`, keeping live deployments up-to-date with zero manual intervention.
+
+---
+
+## Configuration (`tools/publish_snapshot.yaml`)
+Companies and fields are configured declaratively:
+
+```yaml
+posting_fields:
+  - id
+  - title
+  - department
+  - team
+  - location
+  - address
+  - secondaryLocations
+  - workplaceType
+  - jobUrl
+
+companies:
+  - id: cohere
+    name: Cohere
+    provider: Ashby
+    feed_url: https://api.ashbyhq.com/posting-api/job-board/cohere
+    output: docs/data/cohere.json
+  - id: ramp
+    name: Ramp
+    provider: Ashby
+    feed_url: https://api.ashbyhq.com/posting-api/job-board/ramp
+    output: docs/data/ramp.json
+
+manifest_output: docs/data/manifest.json
+```
+
+---
+
+## Repository Guardrails & Integrity
+This repository adheres to strict agent and human pair-programming contracts documented in `AGENTS.md`:
+- `pre-commit` and `pre-push` hooks enforce clean trees, conventional commits, secret detection, and test suite passage.
+- Run gate proof suite: `sh .gates/tests/prove_gates.sh`.
+- Run pytest suite: `pytest tests/`.
+
+---
 
 ## License
-Dual-licensed under the Apache License 2.0 (software code and tools) and Creative Commons Attribution 4.0 International (CC BY 4.0) (documentation, case studies, and published snapshot datasets).
+Dual-licensed under the [Apache License 2.0](LICENSE) (code and tools) and [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE) (documentation and published snapshot data).

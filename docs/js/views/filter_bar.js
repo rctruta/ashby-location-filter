@@ -358,7 +358,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     groupSelect.value = state.groupMode || "department";
   }
 
-  // Toggle Reset Button Visibility
+  // Update Reset Button State
   const resetBtn = container.querySelector(".reset-all-btn");
   if (resetBtn) {
     const hasActiveCompanies = state.selectedCompanies && !state.selectedCompanies.has("all") && state.selectedCompanies.size > 0;
@@ -370,7 +370,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
       (state.status && state.status !== "all") ||
       Boolean(state.search);
 
-    resetBtn.style.display = hasActiveFilters ? "inline-flex" : "none";
+    resetBtn.disabled = !hasActiveFilters;
   }
 }
 

@@ -331,10 +331,15 @@ p.subtitle {
   cursor: pointer;
   transition: all 0.15s ease;
 }
-.reset-all-btn:hover {
+.reset-all-btn:hover:not(:disabled) {
   background: var(--delisted-bg);
   color: var(--delisted-text);
   border-color: var(--delisted-text);
+}
+.reset-all-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: var(--line);
 }
 
 /* Active Filter Pills Bar */
