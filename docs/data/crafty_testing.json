@@ -1,0 +1,223 @@
+{
+ "jobs": [
+  {
+   "id": "crafty-001",
+   "title": "Quantum Cryptographer",
+   "department": "Research & Development",
+   "team": "Theoretical Physics",
+   "workplaceType": "Remote",
+   "location": "rEmOtE - - - Iceland (HQ)",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "",
+     "addressRegion": "",
+     "addressCountry": "IS"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/001",
+   "isListed": true
+  },
+  {
+   "id": "crafty-002",
+   "title": "Global Operations Lead",
+   "department": "Operations",
+   "team": "Global Scaling",
+   "workplaceType": "Remote",
+   "location": "Remote (US or Canada) [Americas HQ]",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "",
+     "addressRegion": "",
+     "addressCountry": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/002",
+   "isListed": true
+  },
+  {
+   "id": "crafty-003",
+   "title": "Distributed Systems Architect",
+   "department": "Engineering",
+   "team": "Core Infrastructure",
+   "workplaceType": "Hybrid",
+   "location": "Reykjavík [Office / Onsite]",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "Reykjavik",
+     "addressRegion": "Capital Region",
+     "addressCountry": "Iceland"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/003",
+   "isListed": true
+  },
+  {
+   "id": "crafty-004",
+   "title": "Senior Frontend Engineer (Canada)",
+   "department": "Engineering",
+   "team": "Product Engineering",
+   "workplaceType": "Onsite",
+   "location": "London, ON, Canada",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "London",
+     "addressRegion": "Ontario",
+     "addressCountry": "Canada"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/004",
+   "isListed": true
+  },
+  {
+   "id": "crafty-005",
+   "title": "Director of Security & Privacy",
+   "department": "Security",
+   "team": "Information Security",
+   "workplaceType": "Hybrid",
+   "location": "Zürich, Zurich, Switzerland (Headquarters) [Hybrid/Flex]",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "Zurich",
+     "addressRegion": "Zurich",
+     "addressCountry": "Switzerland"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/005",
+   "isListed": true
+  },
+  {
+   "id": "crafty-006",
+   "title": "Solutions Architect - Southwest",
+   "department": "Sales",
+   "team": "Pre-Sales",
+   "workplaceType": "Remote",
+   "location": "Remote - - Texas (Americas)",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "Austin",
+     "addressRegion": "TX",
+     "addressCountry": "USA"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/006",
+   "isListed": true
+  },
+  {
+   "id": "crafty-007",
+   "title": "Mobile App Developer",
+   "department": "Engineering",
+   "team": "Mobile",
+   "workplaceType": "Onsite",
+   "location": "Montevideo, Uruguay (Tech Hub)",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "Montevideo",
+     "addressRegion": "Montevideo Department",
+     "addressCountry": "Uruguay"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/007",
+   "isListed": true
+  },
+  {
+   "id": "crafty-008",
+   "title": "Customer Experience Specialist - APAC",
+   "department": "Customer Experience",
+   "team": "Support Tier 2",
+   "workplaceType": "Remote",
+   "location": "APAC (Remote / Flex)",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "",
+     "addressRegion": "",
+     "addressCountry": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/008",
+   "isListed": true
+  },
+  {
+   "id": "crafty-009",
+   "title": "Platform Reliability Engineer",
+   "department": "Engineering",
+   "team": "Platform",
+   "workplaceType": "Remote",
+   "location": "Anywhere in Norway... [100% Remote]",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "Oslo",
+     "addressRegion": "Oslo",
+     "addressCountry": "Norway"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/009",
+   "isListed": true
+  },
+  {
+   "id": "crafty-010",
+   "title": "Senior Compliance Auditor",
+   "department": "Compliance & Audit",
+   "team": "Regulatory Compliance",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "",
+     "addressRegion": "",
+     "addressCountry": "United States"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/010",
+   "isListed": true
+  },
+  {
+   "id": "crafty-011",
+   "title": "Staff Data Scientist",
+   "department": "Data",
+   "team": "Machine Learning",
+   "workplaceType": "Hybrid",
+   "location": "Berlin, Germany",
+   "address": {
+    "postalAddress": {
+     "addressLocality": "Berlin",
+     "addressRegion": "Berlin",
+     "addressCountry": "Germany"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Germany",
+     "address": {
+      "postalAddress": {
+       "addressLocality": "",
+       "addressRegion": "",
+       "addressCountry": "Germany"
+      }
+     }
+    },
+    {
+     "location": "Paris, France",
+     "address": {
+      "postalAddress": {
+       "addressLocality": "Paris",
+       "addressRegion": "Île-de-France",
+       "addressCountry": "France"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/crafty-testing/011",
+   "isListed": true
+  }
+ ]
+}

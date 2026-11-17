@@ -41,3 +41,11 @@ def test_fetch_company_jobs_http_error():
         status, body = fetch_company_jobs("nonexistent")
         assert status == 404
         assert "HTTP 404" in body["error"]
+
+
+def test_fetch_company_jobs_synthetic():
+    status, body = fetch_company_jobs("crafty_testing")
+    assert status == 200
+    assert body["company"] == "crafty_testing"
+    assert body["synthetic"] is True
+    assert body["total"] > 0

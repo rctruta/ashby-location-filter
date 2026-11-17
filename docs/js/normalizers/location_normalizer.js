@@ -79,6 +79,9 @@ export const COUNTRY_CANONICAL_MAP = new Map([
   ["pt", "Portugal"],
   ["prt", "Portugal"],
   ["portugal", "Portugal"],
+  ["is", "Iceland"],
+  ["isl", "Iceland"],
+  ["iceland", "Iceland"],
   ["at", "Austria"],
   ["aut", "Austria"],
   ["austria", "Austria"],
@@ -142,6 +145,15 @@ export const COUNTRY_CANONICAL_MAP = new Map([
   ["bra", "Brazil"],
   ["brazil", "Brazil"],
   ["brasil", "Brazil"],
+  ["uy", "Uruguay"],
+  ["ury", "Uruguay"],
+  ["uruguay", "Uruguay"],
+  ["co", "Colombia"],
+  ["col", "Colombia"],
+  ["colombia", "Colombia"],
+  ["ar", "Argentina"],
+  ["arg", "Argentina"],
+  ["argentina", "Argentina"],
 ]);
 
 // ============================================================================
@@ -253,7 +265,7 @@ export const METRO_CANONICAL_MAP = new Map([
 // 4. ATS Decorator & Keyword Patterns
 // ============================================================================
 
-const DECORATORS_REGEX = /\s*(\((hq|headquarters|office|hybrid|remote|onsite|on-site|americas|emea|apac|latam|us|usa|uk|canada)\)|\[(hq|headquarters|office|hybrid|remote|onsite|on-site)\])\s*/gi;
+const DECORATORS_REGEX = /\s*(\[[^\]]*\]|\((?:hq|headquarters|office|tech hub|hybrid|remote|onsite|on-site|americas|emea|apac|latam|flex)[^)]*\))\s*/gi;
 
 // Global / Multi-country scopes
 const GLOBAL_SCOPES = new Set([
@@ -326,11 +338,14 @@ export function classifyScope(rawLocation, country = null) {
     raw.startsWith("remote ")
   ) {
     let suffix = raw
-      .replace(/^remote\s*[-–(,]?\s*/, "")
-      .replace(/\)$/, "")
+      .replace(/^anywhere\s+(in\s+)?/i, "")
+      .replace(/^remote\s*/i, "")
+      .replace(/^[-–—_,() ]+/, "")
+      .replace(/\[.*?\]|\(.*?\)/g, "")
+      .replace(/[.\-_]+$/, "")
       .trim();
 
-    // Check if suffix is a state or province (e.g. "California", "Idaho", "CA")
+    // Check if suffix is a state or province (e.g. "California", "Idaho", "Texas", "CA")
     if (
       SUBDIVISIONS.has(suffix) ||
       [...SUBDIVISIONS.values()].some((v) => v.name.toLowerCase() === suffix)

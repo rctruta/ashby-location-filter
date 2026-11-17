@@ -34,6 +34,13 @@
    "provider": "Ashby",
    "feed_url": "https://api.ashbyhq.com/posting-api/job-board/influxdata",
    "snapshot": "data/influxdata.json"
+  },
+  {
+   "id": "crafty_testing",
+   "name": "Crafty Testing",
+   "provider": "Synthetic",
+   "feed_url": "synthetic://crafty_testing",
+   "snapshot": "data/crafty_testing.json"
   }
  ]
 }
