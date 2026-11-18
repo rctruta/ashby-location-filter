@@ -3,7 +3,7 @@
   "board": "Cohere",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-  "downloaded": "2026-11-16"
+  "downloaded": "2026-11-18"
  },
  "jobs": [
   {
@@ -543,6 +543,99 @@
    },
    "secondaryLocations": [],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/6d0f0753-ff22-46fd-90e9-08998914a8e7",
+   "isListed": true
+  },
+  {
+   "id": "d5cc437c-2397-4c1a-9d12-3a2bf64d98ea",
+   "title": "Member of Technical Staff, Search",
+   "department": "Embeddings & Search",
+   "team": "Embeddings & Search",
+   "workplaceType": "Remote",
+   "location": "United States",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "San Francisco",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "United States",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "Europe",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "European Union"
+      }
+     }
+    },
+    {
+     "location": "Canada",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Canada"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "London",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "United Kingdom",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "United Kingdom"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    },
+    {
+     "location": "Montreal",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Quebec ",
+       "addressCountry": "Canada",
+       "addressLocality": "Montreal"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/d5cc437c-2397-4c1a-9d12-3a2bf64d98ea",
    "isListed": true
   },
   {
@@ -1228,7 +1321,7 @@
   },
   {
    "id": "cb981ecd-a161-482c-8d8e-5f19bb6e7fdd",
-   "title": "Senior Security Engineer",
+   "title": "Member of Technical Staff, Security",
    "department": "Security",
    "team": "Security",
    "workplaceType": "Remote",
@@ -2467,6 +2560,22 @@
    "isListed": true
   },
   {
+   "id": "74373c60-3ce9-48fd-ae8d-5235fa24c682",
+   "title": "Talent Coordinator",
+   "department": "People Operations",
+   "team": "Talent Acquisition",
+   "workplaceType": "Remote",
+   "location": "Germany",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "Germany"
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/74373c60-3ce9-48fd-ae8d-5235fa24c682",
+   "isListed": true
+  },
+  {
    "id": "582c4a60-14a2-49d5-b4d3-24c4ec50508d",
    "title": "Staff Technical Program Manager, Machine Learning",
    "department": "Product Management & Program Management",
@@ -2629,6 +2738,65 @@
    },
    "secondaryLocations": [],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/85e808ab-ee45-4944-bedc-832bf933d0b6",
+   "isListed": true
+  },
+  {
+   "id": "789f7d5f-d829-45b6-a1ed-b9cff0c92389",
+   "title": "Direct Strategic Sourcing Lead",
+   "department": "Business Operations",
+   "team": "Procurement",
+   "workplaceType": "Remote",
+   "location": "San Francisco",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "London",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "United States",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California",
+       "addressCountry": "United States",
+       "addressLocality": "San Francisco"
+      }
+     }
+    },
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/789f7d5f-d829-45b6-a1ed-b9cff0c92389",
    "isListed": true
   },
   {
@@ -3255,25 +3423,14 @@
    "title": "Technical Program Manager, AI Delivery",
    "department": "Product Management & Program Management",
    "team": "Engineering Program Management",
-   "workplaceType": "OnSite",
-   "location": "United States",
+   "workplaceType": "Remote",
+   "location": "Canada",
    "address": {
     "postalAddress": {
-     "addressRegion": "California",
-     "addressCountry": "United States",
-     "addressLocality": "San Francisco"
+     "addressCountry": "Canada"
     }
    },
-   "secondaryLocations": [
-    {
-     "location": "Canada",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "Canada"
-      }
-     }
-    }
-   ],
+   "secondaryLocations": [],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/41cb2a12-e33a-4368-a9f8-0ae0d19c023e",
    "isListed": true
   },
@@ -5422,7 +5579,7 @@
   },
   {
    "id": "5a61f4d2-5a52-4c98-a8a9-71fbfd67e485",
-   "title": "Compensation Business Partner",
+   "title": "Tech Compensation Business Partner",
    "department": "People Operations",
    "team": "People",
    "workplaceType": "Remote",
@@ -5435,6 +5592,24 @@
     }
    },
    "secondaryLocations": [
+    {
+     "location": "Seattle",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington",
+       "addressCountry": "United States",
+       "addressLocality": "Seattle"
+      }
+     }
+    },
+    {
+     "location": "California",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "California"
+      }
+     }
+    },
     {
      "location": "Washington, DC",
      "address": {
@@ -5547,6 +5722,55 @@
    "isListed": true
   },
   {
+   "id": "40060bf5-5fb1-4969-ba7b-da27ce4a9e38",
+   "title": "Strategic Account Executive - Manufacturing",
+   "department": "Revenue",
+   "team": "Revenue",
+   "workplaceType": "Remote",
+   "location": "Houston",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "Texas",
+     "addressCountry": "United States",
+     "addressLocality": "Houston"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Austin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "United States",
+       "addressLocality": "Austin"
+      }
+     }
+    },
+    {
+     "location": "Dallas",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "United States",
+       "addressLocality": "Dallas"
+      }
+     }
+    },
+    {
+     "location": "San Antonio",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Texas",
+       "addressCountry": "United States",
+       "addressLocality": "San Antonio"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/40060bf5-5fb1-4969-ba7b-da27ce4a9e38",
+   "isListed": true
+  },
+  {
    "id": "0067eb76-92af-497e-a5f8-7521716552f9",
    "title": "Talent Partner, Tech",
    "department": "People Operations",
@@ -5587,11 +5811,16 @@
   }
  ],
  "diff": {
-  "new_ids": [],
+  "new_ids": [
+   "40060bf5-5fb1-4969-ba7b-da27ce4a9e38",
+   "74373c60-3ce9-48fd-ae8d-5235fa24c682",
+   "789f7d5f-d829-45b6-a1ed-b9cff0c92389",
+   "d5cc437c-2397-4c1a-9d12-3a2bf64d98ea"
+  ],
   "removed_jobs": [],
   "summary": {
-   "active": 123,
-   "new": 0,
+   "active": 127,
+   "new": 4,
    "removed": 0
   }
  }
