@@ -3,7 +3,7 @@
   "board": "Cohere",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-  "downloaded": "2026-11-18"
+  "downloaded": "2026-11-19"
  },
  "jobs": [
   {
@@ -2064,63 +2064,6 @@
    "isListed": true
   },
   {
-   "id": "0ef0a9f8-33ac-4360-a833-f8ce8e108a31",
-   "title": "Data Annotation Specialist, Engineering (civil, mechanical, electrical, chemical)",
-   "department": "Data Quality (Contract)",
-   "team": "STEM Annotation - Engineering",
-   "workplaceType": "Remote",
-   "location": "Canada",
-   "address": {
-    "postalAddress": {
-     "addressCountry": "Canada"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Calgary",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Alberta",
-       "addressCountry": "Canada",
-       "addressLocality": "Calgary"
-      }
-     }
-    },
-    {
-     "location": "Vancouver",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "British Columbia",
-       "addressCountry": "Canada",
-       "addressLocality": "Vancouver"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    },
-    {
-     "location": "Montreal",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Quebec ",
-       "addressCountry": "Canada",
-       "addressLocality": "Montreal"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/0ef0a9f8-33ac-4360-a833-f8ce8e108a31",
-   "isListed": true
-  },
-  {
    "id": "52a2b83b-7537-4e88-af7b-e4e9630a96e0",
    "title": "Forward Deployed Engineer, Infrastructure Specialist (Public Sector)",
    "department": "Engineering & Infra",
@@ -3060,7 +3003,7 @@
   },
   {
    "id": "9f8d2b51-7fe9-470d-8108-fe5fb48c8a89",
-   "title": "Business Development Representative - French Speaking",
+   "title": "Business Development Representative ",
    "department": "Revenue",
    "team": "Revenue",
    "workplaceType": "Hybrid",
@@ -4595,35 +4538,6 @@
    "isListed": true
   },
   {
-   "id": "81450c5f-8495-439b-a1b3-ce7ef9739437",
-   "title": "Chief of Staff ",
-   "department": "Corporate Affairs",
-   "team": "Corporate Affairs",
-   "workplaceType": "Hybrid",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Montreal",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Quebec ",
-       "addressCountry": "Canada",
-       "addressLocality": "Montreal"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/81450c5f-8495-439b-a1b3-ce7ef9739437",
-   "isListed": true
-  },
-  {
    "id": "14aef6d9-763e-4f56-a498-206fb31dd0c6",
    "title": "Senior/Staff Software Engineer (Back-End), Inference",
    "department": "Inference",
@@ -5811,17 +5725,99 @@
   }
  ],
  "diff": {
-  "new_ids": [
-   "40060bf5-5fb1-4969-ba7b-da27ce4a9e38",
-   "74373c60-3ce9-48fd-ae8d-5235fa24c682",
-   "789f7d5f-d829-45b6-a1ed-b9cff0c92389",
-   "d5cc437c-2397-4c1a-9d12-3a2bf64d98ea"
+  "new_ids": [],
+  "removed_jobs": [
+   {
+    "id": "0ef0a9f8-33ac-4360-a833-f8ce8e108a31",
+    "title": "Data Annotation Specialist, Engineering (civil, mechanical, electrical, chemical)",
+    "department": "Data Quality (Contract)",
+    "team": "STEM Annotation - Engineering",
+    "workplaceType": "Remote",
+    "location": "Canada",
+    "address": {
+     "postalAddress": {
+      "addressCountry": "Canada"
+     }
+    },
+    "secondaryLocations": [
+     {
+      "location": "Calgary",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Alberta",
+        "addressCountry": "Canada",
+        "addressLocality": "Calgary"
+       }
+      }
+     },
+     {
+      "location": "Vancouver",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "British Columbia",
+        "addressCountry": "Canada",
+        "addressLocality": "Vancouver"
+       }
+      }
+     },
+     {
+      "location": "Toronto",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Ontario",
+        "addressCountry": "Canada",
+        "addressLocality": "Toronto"
+       }
+      }
+     },
+     {
+      "location": "Montreal",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Quebec ",
+        "addressCountry": "Canada",
+        "addressLocality": "Montreal"
+       }
+      }
+     }
+    ],
+    "jobUrl": "https://jobs.ashbyhq.com/cohere/0ef0a9f8-33ac-4360-a833-f8ce8e108a31",
+    "isListed": true
+   },
+   {
+    "id": "81450c5f-8495-439b-a1b3-ce7ef9739437",
+    "title": "Chief of Staff ",
+    "department": "Corporate Affairs",
+    "team": "Corporate Affairs",
+    "workplaceType": "Hybrid",
+    "location": "Toronto",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Ontario",
+      "addressCountry": "Canada",
+      "addressLocality": "Toronto"
+     }
+    },
+    "secondaryLocations": [
+     {
+      "location": "Montreal",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Quebec ",
+        "addressCountry": "Canada",
+        "addressLocality": "Montreal"
+       }
+      }
+     }
+    ],
+    "jobUrl": "https://jobs.ashbyhq.com/cohere/81450c5f-8495-439b-a1b3-ce7ef9739437",
+    "isListed": true
+   }
   ],
-  "removed_jobs": [],
   "summary": {
-   "active": 127,
-   "new": 4,
-   "removed": 0
+   "active": 125,
+   "new": 0,
+   "removed": 2
   }
  }
 }

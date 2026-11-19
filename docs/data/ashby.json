@@ -3,7 +3,7 @@
   "board": "Ashby",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/ashby",
-  "downloaded": "2026-11-18"
+  "downloaded": "2026-11-19"
  },
  "jobs": [
   {
@@ -715,6 +715,24 @@
     }
    ],
    "jobUrl": "https://jobs.ashbyhq.com/Ashby/7e4e8a93-c35d-43c1-a739-c53aba8b682f",
+   "isListed": true
+  },
+  {
+   "id": "f36fb6f7-a960-48d0-974b-9f5a71ea53b7",
+   "title": "Senior Accountant",
+   "department": "Finance & Operations",
+   "team": "Finance & Operations",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/f36fb6f7-a960-48d0-974b-9f5a71ea53b7",
    "isListed": true
   },
   {
@@ -4415,6 +4433,65 @@
    "isListed": true
   },
   {
+   "id": "893cd08a-929c-4077-b39c-64bc34f347ea",
+   "title": "Founding Customer Success Manager - APAC",
+   "department": "Customer Success",
+   "team": "Strategic Customer Success",
+   "workplaceType": "Remote",
+   "location": "Australia",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "New South Wales",
+     "addressCountry": "Australia",
+     "addressLocality": "Sydney"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Singapore",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Singapore",
+       "addressCountry": "Singapore",
+       "addressLocality": "Singapore"
+      }
+     }
+    },
+    {
+     "location": "South Korea",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "South Korea",
+       "addressLocality": ""
+      }
+     }
+    },
+    {
+     "location": "Philippines",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Metro Manila",
+       "addressCountry": "Philippines",
+       "addressLocality": "Manila"
+      }
+     }
+    },
+    {
+     "location": "Japan",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Tokyo",
+       "addressCountry": "Japan",
+       "addressLocality": "Tokyo"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/893cd08a-929c-4077-b39c-64bc34f347ea",
+   "isListed": true
+  },
+  {
    "id": "43417a55-d261-4351-9841-7d15551a91b9",
    "title": "Community Lead & Talent Acquisition Advisor - AMER",
    "department": "Marketing",
@@ -4886,6 +4963,24 @@
    "isListed": true
   },
   {
+   "id": "c372f239-6d41-4027-a216-24ea43def55f",
+   "title": "Integrations Lead, Partnerships - AMER",
+   "department": "Marketing",
+   "team": "Partnerships",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/c372f239-6d41-4027-a216-24ea43def55f",
+   "isListed": true
+  },
+  {
    "id": "9599c771-a837-462f-8e03-39d18be54a51",
    "title": "Senior Product Manager",
    "department": "Product",
@@ -4941,6 +5036,35 @@
     }
    ],
    "jobUrl": "https://jobs.ashbyhq.com/Ashby/54714e14-7cbc-4402-b8d4-c0a2dae97299",
+   "isListed": true
+  },
+  {
+   "id": "a4110b0d-9af7-4724-9fd7-fb3615db5954",
+   "title": "Head of Global Support",
+   "department": "Customer Success",
+   "team": "Customer Support",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - US",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "United States",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/a4110b0d-9af7-4724-9fd7-fb3615db5954",
    "isListed": true
   },
   {
@@ -5419,208 +5543,16 @@
  ],
  "diff": {
   "new_ids": [
-   "330eb697-6e76-4033-9e73-7bd6c841a27a",
-   "a819e537-3a23-4615-bbf8-4ee065d7e25d"
+   "893cd08a-929c-4077-b39c-64bc34f347ea",
+   "a4110b0d-9af7-4724-9fd7-fb3615db5954",
+   "c372f239-6d41-4027-a216-24ea43def55f",
+   "f36fb6f7-a960-48d0-974b-9f5a71ea53b7"
   ],
-  "removed_jobs": [
-   {
-    "id": "2d03f0fe-2f3c-4c8e-9b89-7c6a35f9e7a4",
-    "title": "Product Support Engineer - EMEA",
-    "department": "Customer Success",
-    "team": "Support Engineering",
-    "workplaceType": "Remote",
-    "location": "United Kingdom",
-    "address": {
-     "postalAddress": {
-      "addressRegion": "",
-      "addressCountry": "United Kingdom",
-      "addressLocality": ""
-     }
-    },
-    "secondaryLocations": [
-     {
-      "location": "Italy",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Italy",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Germany",
-      "address": {
-       "postalAddress": {
-        "addressCountry": "Germany",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Denmark",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Denmark",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Ireland",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Ireland",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Romania",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Romania",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Czech Republic",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "Czech Republic",
-        "addressCountry": "Czech Republic",
-        "addressLocality": "Prague"
-       }
-      }
-     },
-     {
-      "location": "Poland",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "Poland",
-        "addressCountry": "Poland",
-        "addressLocality": "Warsaw"
-       }
-      }
-     },
-     {
-      "location": "Spain",
-      "address": {
-       "postalAddress": {
-        "addressCountry": "Spain"
-       }
-      }
-     },
-     {
-      "location": "Netherlands",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Netherlands",
-        "addressLocality": "Amsterdam"
-       }
-      }
-     },
-     {
-      "location": "Portugal",
-      "address": {
-       "postalAddress": {
-        "addressCountry": "Portugal"
-       }
-      }
-     },
-     {
-      "location": "France",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "France",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Sweden",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Sweden",
-        "addressLocality": ""
-       }
-      }
-     }
-    ],
-    "jobUrl": "https://jobs.ashbyhq.com/Ashby/2d03f0fe-2f3c-4c8e-9b89-7c6a35f9e7a4",
-    "isListed": true
-   },
-   {
-    "id": "893cd08a-929c-4077-b39c-64bc34f347ea",
-    "title": "Founding Customer Success Manager - APAC",
-    "department": "Customer Success",
-    "team": "Strategic Customer Success",
-    "workplaceType": "Remote",
-    "location": "Australia",
-    "address": {
-     "postalAddress": {
-      "addressRegion": "New South Wales",
-      "addressCountry": "Australia",
-      "addressLocality": "Sydney"
-     }
-    },
-    "secondaryLocations": [
-     {
-      "location": "Singapore",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "Singapore",
-        "addressCountry": "Singapore",
-        "addressLocality": "Singapore"
-       }
-      }
-     },
-     {
-      "location": "South Korea",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "South Korea",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Philippines",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "Metro Manila",
-        "addressCountry": "Philippines",
-        "addressLocality": "Manila"
-       }
-      }
-     },
-     {
-      "location": "Japan",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "Tokyo",
-        "addressCountry": "Japan",
-        "addressLocality": "Tokyo"
-       }
-      }
-     }
-    ],
-    "jobUrl": "https://jobs.ashbyhq.com/Ashby/893cd08a-929c-4077-b39c-64bc34f347ea",
-    "isListed": true
-   }
-  ],
+  "removed_jobs": [],
   "summary": {
-   "active": 77,
-   "new": 2,
-   "removed": 2
+   "active": 81,
+   "new": 4,
+   "removed": 0
   }
  }
 }
