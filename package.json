@@ -1,7 +1,7 @@
 {
   "name": "ashby-location-filter",
   "mcpName": "io.github.rctruta/ashby-location-filter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Canonical location normalizer and scope classifier for Ashby job boards",
   "type": "module",
   "main": "./docs/js/normalizers/location_normalizer.js",
@@ -39,7 +39,7 @@
     "server.json"
   ],
   "scripts": {
-    "test": "node --test tests/test_location_normalizer.mjs"
+    "test": "node --test tests/test_location_normalizer.mjs tests/test_mcp_server_start.mjs"
   },
   "keywords": [
     "ashby",

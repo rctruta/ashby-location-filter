@@ -8,8 +8,8 @@ authors:
 repository-code: "https://github.com/rctruta/ashby-location-filter"
 url: "https://rctruta.github.io/ashby-location-filter/"
 license: Apache-2.0
-version: "0.2.1"
-date-released: "2026-11-17"
+version: "0.2.2"
+date-released: "2026-11-20"
 keywords:
   - ashby
   - applicant-tracking-system
