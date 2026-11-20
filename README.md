@@ -3,10 +3,11 @@
 [![CI](https://github.com/rctruta/ashby-location-filter/actions/workflows/ci.yml/badge.svg)](https://github.com/rctruta/ashby-location-filter/actions/workflows/ci.yml)
 [![Snapshots Sync](https://github.com/rctruta/ashby-location-filter/actions/workflows/update_snapshots.yml/badge.svg)](https://github.com/rctruta/ashby-location-filter/actions/workflows/update_snapshots.yml)
 [![Version](https://img.shields.io/github/package-json/v/rctruta/ashby-location-filter?label=version&color=blue)](https://github.com/rctruta/ashby-location-filter/blob/main/package.json)
-[![MCP Server](https://img.shields.io/badge/MCP-stdio-7c3aed)](https://github.com/rctruta/ashby-location-filter#mcp-server-claude-desktop-cursor-antigravity)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://github.com/rctruta/ashby-location-filter/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/ashby-location-filter?color=cb3837&logo=npm)](https://www.npmjs.com/package/ashby-location-filter)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-official-7c3aed)](https://registry.modelcontextprotocol.io/v0/servers/io.github.rctruta%2Fashby-location-filter/versions/latest)
+[![MCPRush](https://img.shields.io/badge/MCPRush-listed-7c3aed)](https://mcprush.com/to/ashby-location-filter-mcp-2?ref=badge)
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://rctruta.github.io/ashby-location-filter/)
-[![mcprush](https://img.shields.io/endpoint?url=https%3A%2F%2Fmcprush.com%2Fbadge%2Fashby-location-filter-mcp-2%2Fshields.json)](https://mcprush.com/to/ashby-location-filter-mcp-2?ref=badge)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://github.com/rctruta/ashby-location-filter/blob/main/LICENSE)
 
 A multi-company job search and filtering engine tailored for public Ashby job boards. It aggregates job postings from multiple companies into a single cohesive interface, normalizes inconsistent recruiter location entries, tracks daily additions and delistings, and provides real-time multi-faceted filtering.
 
