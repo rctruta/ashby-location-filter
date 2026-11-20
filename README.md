@@ -71,14 +71,14 @@ The CLI:
 Refresh snapshots for all configured companies from live feeds:
 
 ```sh
-python3 tools/publish_snapshot.py --all
+python3 -m tools.publish_snapshot --all
 ```
 
 Or refresh an individual company or parse from a local test file:
 
 ```sh
-python3 tools/publish_snapshot.py --company ramp
-python3 tools/publish_snapshot.py path/to/sample_feed.json
+python3 -m tools.publish_snapshot --company ramp
+python3 -m tools.publish_snapshot path/to/sample_feed.json
 ```
 
 ### 3. Launch the Web Interface Locally
@@ -155,7 +155,7 @@ You can easily fork this repository and host your own custom job board tracker f
 
 ### Option A: Free Static Hosting (GitHub Pages)
 1. **Fork this repository** on GitHub.
-2. **Customize your company list:** Edit `tools/publish_snapshot.yaml` to include the companies you want to track, then run `python3 tools/publish_snapshot.py --all`.
+2. **Customize your company list:** Edit `tools/publish_snapshot.yaml` to include the companies you want to track, then run `python3 -m tools.publish_snapshot --all`.
 3. **Enable GitHub Pages:** Go to your repository **Settings → Pages → Source: Deploy from branch (`main`, folder `/docs`)**.
 4. **Daily Updates:** The included GitHub Actions workflow (`.github/workflows/update_snapshots.yml`) will automatically run every day at 06:00 UTC, fetch fresh postings, compute diffs, and commit them back to your repo.
 

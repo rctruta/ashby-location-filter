@@ -425,10 +425,11 @@ export function startStdioServer() {
   });
 }
 
-// Run stdio server when invoked directly from CLI
+// Run stdio server when invoked directly from CLI. npx and global installs
+// start this file through a symlink, so both paths are resolved to the real file.
 const isMain =
   process.argv[1] &&
-  path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+  fs.realpathSync(process.argv[1]) === fs.realpathSync(fileURLToPath(import.meta.url));
 if (isMain) {
   startStdioServer();
 }

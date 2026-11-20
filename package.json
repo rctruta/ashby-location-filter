@@ -39,7 +39,7 @@
     "server.json"
   ],
   "scripts": {
-    "test": "node --test tests/test_location_normalizer.mjs"
+    "test": "node --test tests/test_location_normalizer.mjs tests/test_mcp_server_start.mjs"
   },
   "keywords": [
     "ashby",
