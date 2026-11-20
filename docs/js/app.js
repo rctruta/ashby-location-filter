@@ -39,6 +39,8 @@ function initFromURL() {
 
   if (params.get("country")) {
     state.loc = { kind: "country", country: normalizeCountryName(params.get("country")) };
+  } else if (params.get("anywhere")) {
+    state.loc = { kind: "wide", country: normalizeCountryName(params.get("anywhere")) };
   } else if (params.get("place")) {
     state.loc = {
       kind: "place",
@@ -80,6 +82,8 @@ function syncToURL() {
 
   if (state.loc.kind === "country") {
     params.set("country", state.loc.country);
+  } else if (state.loc.kind === "wide") {
+    params.set("anywhere", state.loc.country);
   } else if (state.loc.kind === "place") {
     params.set("place", state.loc.name);
     if (state.loc.country) params.set("p_country", state.loc.country);

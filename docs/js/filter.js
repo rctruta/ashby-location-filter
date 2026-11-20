@@ -3,13 +3,17 @@
  * Fully synchronizes Company, Location, Department, Workplace, and Status facets.
  */
 
-import { normalizeCountryName } from "./models.js";
+import { isCountryWide, normalizeCountryName } from "./models.js";
 
 export function locationTest(loc) {
   if (!loc || loc.kind === "all") return null;
   if (loc.kind === "country") {
     const targetCountry = normalizeCountryName(loc.country);
     return l => l.country === targetCountry || l.country === loc.country;
+  }
+  if (loc.kind === "wide") {
+    const targetCountry = normalizeCountryName(loc.country);
+    return l => (l.country === targetCountry || l.country === loc.country) && isCountryWide(l);
   }
   if (loc.kind === "place" || loc.kind === "city") {
     const targetCountry = loc.country ? normalizeCountryName(loc.country) : null;
@@ -24,6 +28,27 @@ export function locationTest(loc) {
     };
   }
   return null;
+}
+
+/**
+ * Country -> the named cities listed in it, and whether any posting lists the
+ * country itself with no city. The location dropdown is built from this.
+ */
+export function locationTree(jobs) {
+  const tree = new Map();
+  for (const j of jobs) {
+    for (const l of j.locs) {
+      const country = l.country || null;
+      if (!tree.has(country)) tree.set(country, { cities: new Set(), hasWide: false });
+      const node = tree.get(country);
+      if (country && isCountryWide(l)) {
+        node.hasWide = true;
+      } else if (l.city && l.city !== country) {
+        node.cities.add(l.city);
+      }
+    }
+  }
+  return tree;
 }
 
 export function departmentTest(dept) {
