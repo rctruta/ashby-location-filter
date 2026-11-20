@@ -3,7 +3,7 @@
   "board": "Ashby",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/ashby",
-  "downloaded": "2026-11-19"
+  "downloaded": "2026-11-20"
  },
  "jobs": [
   {
@@ -4310,35 +4310,6 @@
    "isListed": true
   },
   {
-   "id": "ce9f0432-7abf-4911-b644-69d0fb08d67f",
-   "title": "Renewal Manager, SMB - Americas",
-   "department": "Customer Success",
-   "team": "Contract Management",
-   "workplaceType": "Remote",
-   "location": "Remote - US",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "",
-     "addressCountry": "United States",
-     "addressLocality": ""
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Remote - Canada",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "",
-       "addressCountry": "Canada",
-       "addressLocality": ""
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/Ashby/ce9f0432-7abf-4911-b644-69d0fb08d67f",
-   "isListed": true
-  },
-  {
    "id": "5d4b0ed6-da8c-4377-a43a-c45bf90a0073",
    "title": "Sr. Total Rewards Manager",
    "department": "People & Talent",
@@ -5251,24 +5222,6 @@
    "isListed": true
   },
   {
-   "id": "31f604bd-a660-427f-9522-6bbb2539d6e2",
-   "title": "Global Payroll Lead",
-   "department": "Finance & Operations",
-   "team": "Finance & Operations",
-   "workplaceType": "Remote",
-   "location": "Remote - US",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "",
-     "addressCountry": "United States",
-     "addressLocality": ""
-    }
-   },
-   "secondaryLocations": [],
-   "jobUrl": "https://jobs.ashbyhq.com/Ashby/31f604bd-a660-427f-9522-6bbb2539d6e2",
-   "isListed": true
-  },
-  {
    "id": "dfc35159-ffe5-4d42-bea3-552b5dc17628",
    "title": "Enterprise Solutions Engineering Manager",
    "department": "Sales",
@@ -5542,17 +5495,60 @@
   }
  ],
  "diff": {
-  "new_ids": [
-   "893cd08a-929c-4077-b39c-64bc34f347ea",
-   "a4110b0d-9af7-4724-9fd7-fb3615db5954",
-   "c372f239-6d41-4027-a216-24ea43def55f",
-   "f36fb6f7-a960-48d0-974b-9f5a71ea53b7"
+  "new_ids": [],
+  "removed_jobs": [
+   {
+    "id": "31f604bd-a660-427f-9522-6bbb2539d6e2",
+    "title": "Global Payroll Lead",
+    "department": "Finance & Operations",
+    "team": "Finance & Operations",
+    "workplaceType": "Remote",
+    "location": "Remote - US",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "",
+      "addressCountry": "United States",
+      "addressLocality": ""
+     }
+    },
+    "secondaryLocations": [],
+    "jobUrl": "https://jobs.ashbyhq.com/Ashby/31f604bd-a660-427f-9522-6bbb2539d6e2",
+    "isListed": true
+   },
+   {
+    "id": "ce9f0432-7abf-4911-b644-69d0fb08d67f",
+    "title": "Renewal Manager, SMB - Americas",
+    "department": "Customer Success",
+    "team": "Contract Management",
+    "workplaceType": "Remote",
+    "location": "Remote - US",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "",
+      "addressCountry": "United States",
+      "addressLocality": ""
+     }
+    },
+    "secondaryLocations": [
+     {
+      "location": "Remote - Canada",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "",
+        "addressCountry": "Canada",
+        "addressLocality": ""
+       }
+      }
+     }
+    ],
+    "jobUrl": "https://jobs.ashbyhq.com/Ashby/ce9f0432-7abf-4911-b644-69d0fb08d67f",
+    "isListed": true
+   }
   ],
-  "removed_jobs": [],
   "summary": {
-   "active": 81,
-   "new": 4,
-   "removed": 0
+   "active": 79,
+   "new": 0,
+   "removed": 2
   }
  }
 }
