@@ -4,9 +4,10 @@ import {
   countForCompany,
   countForDepartment,
   countForLocation,
+  locationTree,
   countForWorkplace,
 } from "../filter.js";
-import { isCountryWide, normalizeCountryName } from "../models.js";
+import { normalizeCountryName } from "../models.js";
 
 /**
  * Modern top filter bar with dropdowns and active filter pills.
@@ -76,6 +77,8 @@ export function renderFilterBar(container, jobs, state, callbacks) {
           callbacks.onSelectLoc({ kind: "all" });
         } else if (val.startsWith("c:")) {
           callbacks.onSelectLoc({ kind: "country", country: normalizeCountryName(val.slice(2)) });
+        } else if (val.startsWith("w:")) {
+          callbacks.onSelectLoc({ kind: "wide", country: normalizeCountryName(val.slice(2)) });
         } else if (val.startsWith("p:")) {
           const [country, name] = val.slice(2).split("|||");
           callbacks.onSelectLoc({ kind: "place", country: normalizeCountryName(country) || null, name });
@@ -227,17 +230,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
   // Populate Location Select Options (Hierarchical Countries & Cities)
   const locationSelect = container.querySelector("#location-filter");
   if (locationSelect) {
-    const locTree = new Map();
-    for (const j of jobs) {
-      for (const l of j.locs) {
-        const countryKey = l.country || null;
-        if (!locTree.has(countryKey)) locTree.set(countryKey, new Set());
-        // Only include genuine city names (not country-wide or identical to country)
-        if (l.city && l.city !== countryKey && !isCountryWide(l)) {
-          locTree.get(countryKey).add(l.city);
-        }
-      }
-    }
+    const locTree = locationTree(jobs);
 
     const locOptions = [
       el("option", { value: "all" }, `All Locations (${countForLocation(jobs, state, { kind: "all" })})`)
@@ -251,7 +244,8 @@ export function renderFilterBar(container, jobs, state, callbacks) {
       // Skip empty countries unless currently selected
       if (cCount === 0 && !isSelectedCountry) continue;
 
-      const rawCities = [...locTree.get(country)].sort();
+      const { cities, hasWide } = locTree.get(country);
+      const rawCities = [...cities].sort();
       const activeCities = rawCities.map(city => {
         const cityCount = countForLocation(jobs, state, { kind: "place", country, name: city });
         const isSelectedCity = state.loc.kind === "place" && state.loc.name === city && state.loc.country === country;
@@ -282,6 +276,16 @@ export function renderFilterBar(container, jobs, state, callbacks) {
         if (isSelectedCountry) countryOpt.setAttribute("selected", "selected");
         group.append(countryOpt);
 
+        // Postings that list the country itself, with no city. A posting can
+        // also list cities, so the rows below can add up to more than the total.
+        const isSelectedWide = state.loc.kind === "wide" && state.loc.country === country;
+        const wideCount = hasWide ? countForLocation(jobs, state, { kind: "wide", country }) : 0;
+        if (wideCount > 0 || isSelectedWide) {
+          const wideOpt = el("option", { value: `w:${country}` }, `Anywhere in ${country} (${wideCount})`);
+          if (isSelectedWide) wideOpt.setAttribute("selected", "selected");
+          group.append(wideOpt);
+        }
+
         for (const { city, count, selected } of activeCities) {
           const cityOpt = el("option", { value: `p:${country}|||${city}` }, `${city} (${count})`);
           if (selected) cityOpt.setAttribute("selected", "selected");
@@ -292,7 +296,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     }
 
     if (locTree.has(null)) {
-      const otherPlaces = [...locTree.get(null)].sort();
+      const otherPlaces = [...locTree.get(null).cities].sort();
       const activePlaces = otherPlaces.map(place => {
         const pCount = countForLocation(jobs, state, { kind: "place", country: null, name: place });
         const isSelected = state.loc.kind === "place" && state.loc.country === null && state.loc.name === place;
@@ -313,6 +317,8 @@ export function renderFilterBar(container, jobs, state, callbacks) {
     const normStateCountry = state.loc.country ? normalizeCountryName(state.loc.country) : null;
     if (state.loc.kind === "country") {
       locationSelect.value = `c:${normStateCountry}`;
+    } else if (state.loc.kind === "wide") {
+      locationSelect.value = `w:${normStateCountry}`;
     } else if (state.loc.kind === "place") {
       locationSelect.value = `p:${normStateCountry || ""}|||${state.loc.name}`;
       if (!locationSelect.value && normStateCountry) {
@@ -469,7 +475,9 @@ export function renderActivePills(container, state, callbacks) {
   if (state.loc && state.loc.kind !== "all") {
     const label = state.loc.kind === "country"
       ? `Country: ${state.loc.country}`
-      : `City: ${state.loc.name}`;
+      : state.loc.kind === "wide"
+        ? `Anywhere in ${state.loc.country}`
+        : `City: ${state.loc.name}`;
     pills.push(
       createPill(label, () => callbacks.onSelectLoc({ kind: "all" }))
     );

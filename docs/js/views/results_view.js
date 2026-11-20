@@ -15,6 +15,8 @@ function describeQuery(shownCount, state, sampleJob) {
 
   if (state.loc.kind === "country") {
     parts.push(`in ${state.loc.country}`);
+  } else if (state.loc.kind === "wide") {
+    parts.push(`anywhere in ${state.loc.country}`);
   } else if (state.loc.kind === "place") {
     parts.push(`in ${state.loc.name}`);
   }
@@ -42,7 +44,9 @@ function describeQuery(shownCount, state, sampleJob) {
 
   let detail = "";
   if (state.loc.kind === "country") {
-    detail = `Matches any location whose address country is ${state.loc.country}: cities, regions, and country-wide postings alike.`;
+    detail = `Matches any location whose address country is ${state.loc.country}: cities, regions, and country-wide postings alike. A posting that lists several cities is counted under each of them, so the city counts can add up to more than this total.`;
+  } else if (state.loc.kind === "wide") {
+    detail = `Postings that list ${state.loc.country} itself as a location, with no specific city. Many of them also list cities.`;
   } else if (state.loc.kind === "place" && sampleJob) {
     const sampleLoc = sampleJob.locs.find(locationTest(state.loc));
     if (sampleLoc) {
@@ -142,7 +146,11 @@ function renderJobCard(job, state, labels, handlers) {
                 if (isHit) {
                   handlers.onSelectLoc({ kind: "all" });
                 } else {
-                  handlers.onSelectLoc({ kind: "place", country: l.country, name: l.name });
+                  handlers.onSelectLoc(
+                    isCountryWide(l) && l.country
+                      ? { kind: "wide", country: l.country }
+                      : { kind: "place", country: l.country, name: l.name }
+                  );
                 }
               }
             : undefined,
