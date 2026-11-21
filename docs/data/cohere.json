@@ -3,7 +3,7 @@
   "board": "Cohere",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-  "downloaded": "2026-11-20"
+  "downloaded": "2026-11-21"
  },
  "jobs": [
   {
@@ -4277,63 +4277,6 @@
    "isListed": true
   },
   {
-   "id": "31bfc2b4-472f-4921-86b1-010daa2da1e8",
-   "title": "Managing Editor",
-   "department": "Marketing",
-   "team": "Marketing",
-   "workplaceType": "Remote",
-   "location": "United States",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "California",
-     "addressCountry": "United States",
-     "addressLocality": "San Francisco"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Seattle",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Washington",
-       "addressCountry": "United States",
-       "addressLocality": "Seattle"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    },
-    {
-     "location": "California",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/31bfc2b4-472f-4921-86b1-010daa2da1e8",
-   "isListed": true
-  },
-  {
    "id": "bdcdc6d1-2379-40fe-bfb6-d61768043b37",
    "title": "Senior Account Executive ",
    "department": "Revenue",
@@ -5735,53 +5678,69 @@
   }
  ],
  "diff": {
-  "new_ids": [
-   "53c89232-1de7-42b5-ab9d-b5290451c7e8"
-  ],
+  "new_ids": [],
   "removed_jobs": [
    {
-    "id": "3906eb1d-932f-485a-8f77-e8cc31859fdd",
-    "title": "Delivery Operations Analyst",
-    "department": "Product Management & Program Management",
-    "team": "Engineering Program Management",
+    "id": "31bfc2b4-472f-4921-86b1-010daa2da1e8",
+    "title": "Managing Editor",
+    "department": "Marketing",
+    "team": "Marketing",
     "workplaceType": "Remote",
-    "location": "Toronto",
+    "location": "United States",
     "address": {
      "postalAddress": {
-      "addressRegion": "Ontario",
-      "addressCountry": "Canada",
-      "addressLocality": "Toronto"
+      "addressRegion": "California",
+      "addressCountry": "United States",
+      "addressLocality": "San Francisco"
      }
     },
     "secondaryLocations": [
      {
-      "location": "Ottawa",
+      "location": "Seattle",
       "address": {
        "postalAddress": {
-        "addressRegion": "Ontario",
-        "addressCountry": "Canada",
-        "addressLocality": "Ottawa"
+        "addressRegion": "Washington",
+        "addressCountry": "United States",
+        "addressLocality": "Seattle"
        }
       }
      },
      {
-      "location": "Montreal",
+      "location": "New York",
       "address": {
        "postalAddress": {
-        "addressRegion": "Quebec ",
+        "addressRegion": "New York",
+        "addressCountry": "United States",
+        "addressLocality": "New York"
+       }
+      }
+     },
+     {
+      "location": "California",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California"
+       }
+      }
+     },
+     {
+      "location": "Toronto",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Ontario",
         "addressCountry": "Canada",
-        "addressLocality": "Montreal"
+        "addressLocality": "Toronto"
        }
       }
      }
     ],
-    "jobUrl": "https://jobs.ashbyhq.com/cohere/3906eb1d-932f-485a-8f77-e8cc31859fdd",
+    "jobUrl": "https://jobs.ashbyhq.com/cohere/31bfc2b4-472f-4921-86b1-010daa2da1e8",
     "isListed": true
    }
   ],
   "summary": {
-   "active": 125,
-   "new": 1,
+   "active": 124,
+   "new": 0,
    "removed": 1
   }
  }
