@@ -3,7 +3,7 @@
   "board": "Cohere",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-  "downloaded": "2026-11-21"
+  "downloaded": "2026-11-22"
  },
  "jobs": [
   {
@@ -5679,69 +5679,11 @@
  ],
  "diff": {
   "new_ids": [],
-  "removed_jobs": [
-   {
-    "id": "31bfc2b4-472f-4921-86b1-010daa2da1e8",
-    "title": "Managing Editor",
-    "department": "Marketing",
-    "team": "Marketing",
-    "workplaceType": "Remote",
-    "location": "United States",
-    "address": {
-     "postalAddress": {
-      "addressRegion": "California",
-      "addressCountry": "United States",
-      "addressLocality": "San Francisco"
-     }
-    },
-    "secondaryLocations": [
-     {
-      "location": "Seattle",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "Washington",
-        "addressCountry": "United States",
-        "addressLocality": "Seattle"
-       }
-      }
-     },
-     {
-      "location": "New York",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "New York",
-        "addressCountry": "United States",
-        "addressLocality": "New York"
-       }
-      }
-     },
-     {
-      "location": "California",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "California"
-       }
-      }
-     },
-     {
-      "location": "Toronto",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "Ontario",
-        "addressCountry": "Canada",
-        "addressLocality": "Toronto"
-       }
-      }
-     }
-    ],
-    "jobUrl": "https://jobs.ashbyhq.com/cohere/31bfc2b4-472f-4921-86b1-010daa2da1e8",
-    "isListed": true
-   }
-  ],
+  "removed_jobs": [],
   "summary": {
    "active": 124,
    "new": 0,
-   "removed": 1
+   "removed": 0
   }
  }
 }
