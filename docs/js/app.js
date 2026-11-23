@@ -1,14 +1,23 @@
 import { DEFAULT_COMPANY, MANIFEST_URL } from "./constants.js";
 import { el } from "./dom.js";
 import { normalizeCountryName, readJob } from "./models.js";
+import { extractAshbyCandidates } from "./normalizers/location_normalizer.js";
 import { renderActivePills, renderFilterBar } from "./views/filter_bar.js";
 import { renderResults } from "./views/results_view.js";
 import { renderSourceHeader } from "./views/source_header.js";
 
+const STORAGE_KEY_PREFS = "ashby_filter_user_companies_v1";
+const LIVE_CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes cache for live job payloads
+
 // Global reactive application state
 const state = {
   companies: [],
+  manifestCompanies: [],
   selectedCompanies: new Set(["all"]), // "all" or Set of specific company IDs
+  hasCustomPrefs: false,
+  customLoading: false,
+  customError: null,
+  customSuccess: null,
   groupMode: "department", // "company" | "department" | "location" | "flat"
   search: "",
   loc: { kind: "all" },
@@ -20,6 +29,90 @@ const state = {
 
 let allJobs = [];
 let sourceMeta = null;
+
+function readUserPrefs() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_PREFS);
+    if (!raw) return { added: [], hidden: [] };
+    const parsed = JSON.parse(raw);
+    return {
+      added: Array.isArray(parsed.added) ? parsed.added : [],
+      hidden: Array.isArray(parsed.hidden) ? parsed.hidden : [],
+    };
+  } catch {
+    return { added: [], hidden: [] };
+  }
+}
+
+function writeUserPrefs(prefs) {
+  try {
+    localStorage.setItem(STORAGE_KEY_PREFS, JSON.stringify(prefs));
+  } catch {
+    // Ignore storage quota errors
+  }
+  state.hasCustomPrefs = prefs.added.length > 0 || prefs.hidden.length > 0;
+}
+
+function formatSlugName(slug) {
+  return slug
+    .split(/[-_.]/)
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+async function fetchLiveBoardBySlug(slug, useCache = true) {
+  const cacheKey = `ashby_filter_live_cache_${slug}`;
+  if (useCache) {
+    try {
+      const cachedRaw = localStorage.getItem(cacheKey);
+      if (cachedRaw) {
+        const cached = JSON.parse(cachedRaw);
+        if (cached && cached.ts && Date.now() - cached.ts < LIVE_CACHE_TTL_MS && cached.data) {
+          return cached.data;
+        }
+      }
+    } catch {
+      // Ignore cache read errors
+    }
+  }
+
+  const resp = await fetch(
+    `https://api.ashbyhq.com/posting-api/job-board/${encodeURIComponent(slug)}`
+  );
+  if (!resp.ok) {
+    return null;
+  }
+  const data = await resp.json();
+  if (!data || !Array.isArray(data.jobs)) {
+    return null;
+  }
+
+  try {
+    localStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), data }));
+  } catch {
+    // Ignore storage quota errors
+  }
+  return data;
+}
+
+async function resolveAndValidateAshbyBoard(rawInput) {
+  const candidates = extractAshbyCandidates(rawInput);
+  if (candidates.length === 0) {
+    throw new Error("Enter a company name, website URL, or Ashby board URL.");
+  }
+
+  for (const slug of candidates) {
+    const data = await fetchLiveBoardBySlug(slug, false);
+    if (data) {
+      return { slug, data };
+    }
+  }
+
+  throw new Error(
+    `No public Ashby job board found for "${rawInput.trim()}". Only companies with a public Ashby endpoint can be added.`
+  );
+}
 
 function initFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -115,6 +208,9 @@ function render() {
       onSearchChange,
       onToggleCompany,
       onToggleAllCompanies,
+      onAddCompany,
+      onRemoveCompany,
+      onRestoreDefaultCompanies,
       onSelectLoc,
       onSelectDept,
       onToggleWorkplace,
@@ -216,16 +312,137 @@ function onResetAll() {
   render();
 }
 
+function updateSourceMeta() {
+  sourceMeta = {
+    isMultiCompany: true,
+    companyCount: state.companies.length,
+    boardNames: state.companies.map((c) => c.name).join(", "),
+    downloaded: new Date().toISOString(),
+  };
+}
+
+async function onAddCompany(rawInput) {
+  state.customLoading = true;
+  state.customError = null;
+  state.customSuccess = null;
+  render();
+
+  try {
+    const { slug, data } = await resolveAndValidateAshbyBoard(rawInput);
+
+    const existing = state.companies.find((c) => c.id.toLowerCase() === slug);
+    if (existing) {
+      state.customLoading = false;
+      state.customError = `"${existing.name}" is already in your list.`;
+      render();
+      return false;
+    }
+
+    const manifestMatch = state.manifestCompanies.find((c) => c.id.toLowerCase() === slug);
+    const prefs = readUserPrefs();
+
+    let companyEntry;
+    if (manifestMatch) {
+      prefs.hidden = prefs.hidden.filter((id) => id.toLowerCase() !== slug);
+      companyEntry = manifestMatch;
+    } else {
+      const displayName = formatSlugName(slug);
+      companyEntry = {
+        id: slug,
+        name: displayName,
+        provider: "Ashby (Live)",
+        isCustom: true,
+      };
+      if (!prefs.added.some((c) => c.id.toLowerCase() === slug)) {
+        prefs.added.push({ id: slug, name: displayName });
+      }
+    }
+    writeUserPrefs(prefs);
+
+    state.companies.push(companyEntry);
+    const listed = (data.jobs || []).filter(
+      (j) => j.isListed === true || j.isListed === undefined
+    );
+    const companyInfo = { id: companyEntry.id, name: companyEntry.name };
+    const newJobs = listed.map((j) => readJob(j, null, companyInfo));
+    allJobs.push(...newJobs);
+
+    // If user wasn't viewing All Companies, select the newly added company so they see it immediately
+    if (!state.selectedCompanies.has("all")) {
+      state.selectedCompanies.add(companyEntry.id);
+    }
+
+    updateSourceMeta();
+    state.customLoading = false;
+    state.customError = null;
+    state.customSuccess = `Added ${companyEntry.name} (${listed.length} listed jobs)`;
+    render();
+    return true;
+  } catch (err) {
+    state.customLoading = false;
+    state.customSuccess = null;
+    state.customError = err.message || "Could not validate Ashby endpoint.";
+    render();
+    return false;
+  }
+}
+
+function onRemoveCompany(companyId) {
+  const idLow = companyId.toLowerCase();
+  const prefs = readUserPrefs();
+  const isManifest = state.manifestCompanies.some((c) => c.id.toLowerCase() === idLow);
+
+  if (isManifest) {
+    if (!prefs.hidden.includes(idLow)) prefs.hidden.push(idLow);
+  } else {
+    prefs.added = prefs.added.filter((c) => c.id.toLowerCase() !== idLow);
+    try {
+      localStorage.removeItem(`ashby_filter_live_cache_${idLow}`);
+    } catch {
+      // Ignore storage errors
+    }
+  }
+  writeUserPrefs(prefs);
+
+  state.companies = state.companies.filter((c) => c.id.toLowerCase() !== idLow);
+  allJobs = allJobs.filter((j) => !j.company || j.company.id.toLowerCase() !== idLow);
+  state.selectedCompanies.delete(companyId);
+  if (state.selectedCompanies.size === 0 && state.companies.length > 0) {
+    state.selectedCompanies.add("all");
+  }
+
+  state.customError = null;
+  state.customSuccess = null;
+  updateSourceMeta();
+  render();
+}
+
+async function onRestoreDefaultCompanies() {
+  writeUserPrefs({ added: [], hidden: [] });
+  state.companies = state.manifestCompanies.filter(
+    (c) => !c.test_only || state.testMode
+  );
+  state.selectedCompanies = new Set(["all"]);
+  state.customError = null;
+  state.customSuccess = "Restored default companies.";
+  await loadData();
+  render();
+}
+
 async function loadData() {
   const results = await Promise.all(
     state.companies.map(async (c) => {
       try {
+        if (c.isCustom || !c.snapshot) {
+          const data = await fetchLiveBoardBySlug(c.id, true);
+          return { company: c, data: data || { jobs: [] } };
+        }
         const resp = await fetch(`${c.snapshot}?_=${Date.now()}`);
         if (!resp.ok) return { company: c, data: { jobs: [] } };
         const data = await resp.json();
         return { company: c, data };
       } catch (e) {
-        console.warn(`Failed to load snapshot for ${c.name}:`, e);
+        console.warn(`Failed to load board for ${c.name}:`, e);
         return { company: c, data: { jobs: [] } };
       }
     })
@@ -246,13 +463,7 @@ async function loadData() {
   }
 
   allJobs = combined;
-
-  sourceMeta = {
-    isMultiCompany: true,
-    companyCount: state.companies.length,
-    boardNames: state.companies.map((c) => c.name).join(", "),
-    downloaded: new Date().toISOString(),
-  };
+  updateSourceMeta();
 }
 
 async function main() {
@@ -262,10 +473,29 @@ async function main() {
     const manifestResp = await fetch(`${MANIFEST_URL}?_=${Date.now()}`);
     if (!manifestResp.ok) throw new Error(`HTTP ${manifestResp.status}`);
     const manifest = await manifestResp.json();
-    const rawCompanies = manifest.companies || [];
-    state.companies = rawCompanies.filter(
-      (c) => !c.test_only || state.testMode || state.selectedCompanies.has(c.id)
+    state.manifestCompanies = manifest.companies || [];
+
+    const prefs = readUserPrefs();
+    state.hasCustomPrefs = prefs.added.length > 0 || prefs.hidden.length > 0;
+    const hiddenSet = new Set(prefs.hidden.map((s) => s.toLowerCase()));
+
+    const baseCompanies = state.manifestCompanies.filter(
+      (c) =>
+        (!c.test_only || state.testMode || state.selectedCompanies.has(c.id)) &&
+        !hiddenSet.has(c.id.toLowerCase())
     );
+
+    const knownIds = new Set(baseCompanies.map((c) => c.id.toLowerCase()));
+    const savedCustom = prefs.added
+      .filter((c) => c && c.id && !knownIds.has(c.id.toLowerCase()))
+      .map((c) => ({
+        id: c.id.toLowerCase(),
+        name: c.name || formatSlugName(c.id),
+        provider: "Ashby (Live)",
+        isCustom: true,
+      }));
+
+    state.companies = [...baseCompanies, ...savedCustom];
   } catch (e) {
     console.error("Could not load manifest:", e);
   }

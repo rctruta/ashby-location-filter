@@ -202,7 +202,7 @@ export function renderFilterBar(container, jobs, state, callbacks) {
 
     const divider = el("div", { class: "popover-divider" });
 
-    // Individual company rows - standard clickable checkboxes with dynamic color indicator
+    // Individual company rows - standard clickable checkboxes with dynamic color indicator + remove button
     const companyRows = state.companies.map((c) => {
       const count = countForCompany(jobs, state, c.id);
       const isChecked = !isAll && state.selectedCompanies && state.selectedCompanies.has(c.id);
@@ -216,15 +216,104 @@ export function renderFilterBar(container, jobs, state, callbacks) {
         },
       });
 
-      return el("label", { class: "company-checkbox-row" },
-        cb,
-        el("span", { class: "company-dot", style: `--badge-hue: ${hue};` }),
-        el("span", { class: "cb-label" }, c.name),
-        el("span", { class: "cb-count" }, String(count))
+      const removeBtn = el(
+        "button",
+        {
+          type: "button",
+          class: "company-remove-btn",
+          title: `Remove ${c.name} from your list`,
+          "aria-label": `Remove ${c.name}`,
+          onclick: (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (callbacks.onRemoveCompany) callbacks.onRemoveCompany(c.id);
+          },
+        },
+        "✕"
+      );
+
+      return el(
+        "div",
+        { class: "company-row-wrap" },
+        el(
+          "label",
+          { class: "company-checkbox-row" },
+          cb,
+          el("span", { class: "company-dot", style: `--badge-hue: ${hue};` }),
+          el("span", { class: "cb-label" }, c.name),
+          el("span", { class: "cb-count" }, String(count))
+        ),
+        removeBtn
       );
     });
 
-    companyPopover.replaceChildren(allRow, divider, ...companyRows);
+    // Add / Validate Ashby Company Form (persisted in localStorage)
+    const manageDivider = el("div", { class: "popover-divider" });
+    const addInput = el("input", {
+      type: "text",
+      class: "custom-company-input",
+      placeholder: "Company name, URL, or Ashby link...",
+      disabled: state.customLoading ? "disabled" : null,
+      onkeydown: (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const val = e.target.value.trim();
+          if (val && callbacks.onAddCompany) {
+            callbacks.onAddCompany(val);
+          }
+        }
+      },
+    });
+    const addBtn = el(
+      "button",
+      {
+        type: "button",
+        class: "custom-company-btn",
+        disabled: state.customLoading ? "disabled" : null,
+        onclick: () => {
+          const val = addInput.value.trim();
+          if (val && callbacks.onAddCompany) {
+            callbacks.onAddCompany(val);
+          }
+        },
+      },
+      state.customLoading ? "Checking..." : "+ Add"
+    );
+
+    const statusMsg = state.customLoading
+      ? el("div", { class: "custom-company-info" }, "Validating Ashby endpoint...")
+      : state.customError
+        ? el("div", { class: "custom-company-error" }, state.customError)
+        : state.customSuccess
+          ? el("div", { class: "custom-company-success" }, state.customSuccess)
+          : null;
+
+    const restoreBtn = state.hasCustomPrefs
+      ? el(
+          "button",
+          {
+            type: "button",
+            class: "restore-defaults-btn",
+            onclick: () => {
+              if (callbacks.onRestoreDefaultCompanies) {
+                callbacks.onRestoreDefaultCompanies();
+              }
+            },
+          },
+          "Restore default companies"
+        )
+      : null;
+
+    const addForm = el(
+      "div",
+      { class: "custom-company-form" },
+      el("div", { class: "custom-company-label" }, "Add Ashby company (saved in browser):"),
+      el("div", { class: "custom-company-row" }, addInput, addBtn),
+      statusMsg,
+      restoreBtn
+    );
+
+    companyPopover.replaceChildren(allRow, divider, ...companyRows, manageDivider, addForm);
   }
 
   // Populate Location Select Options (Hierarchical Countries & Cities)

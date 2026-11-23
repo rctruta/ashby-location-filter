@@ -5,6 +5,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 import {
   classifyScope,
+  extractAshbyCandidates,
   normalizeCountry,
   normalizeLocation,
   normalizeMetro,
@@ -243,4 +244,16 @@ test("parseAshbySlug extracts clean company slugs from raw inputs and Ashby URLs
   );
   assert.equal(parseAshbySlug(""), null);
   assert.equal(parseAshbySlug(null), null);
+});
+
+test("extractAshbyCandidates handles names, website URLs, and Ashby API/board URLs", () => {
+  assert.deepEqual(extractAshbyCandidates("https://jobs.ashbyhq.com/notion/123"), ["notion"]);
+  assert.deepEqual(
+    extractAshbyCandidates("https://api.ashbyhq.com/posting-api/job-board/vanta"),
+    ["vanta"]
+  );
+  assert.deepEqual(extractAshbyCandidates("https://www.linear.app/careers"), ["linear"]);
+  assert.deepEqual(extractAshbyCandidates("notion.so"), ["notion"]);
+  assert.deepEqual(extractAshbyCandidates("Influx Data"), ["influxdata", "influx-data"]);
+  assert.deepEqual(extractAshbyCandidates(""), []);
 });
