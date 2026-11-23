@@ -3,7 +3,7 @@
   "board": "Cohere",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-  "downloaded": "2026-11-22"
+  "downloaded": "2026-11-23"
  },
  "jobs": [
   {
@@ -3374,43 +3374,6 @@
    "isListed": true
   },
   {
-   "id": "60de50e9-aba7-4a3a-8cdb-955a456749aa",
-   "title": "Member of Technical Staff, North Modelling (Evals)",
-   "department": "Modeling",
-   "team": "Modeling",
-   "workplaceType": "Hybrid",
-   "location": "London",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "London",
-     "addressCountry": "United Kingdom",
-     "addressLocality": "London"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "Europe",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "European Union"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/60de50e9-aba7-4a3a-8cdb-955a456749aa",
-   "isListed": true
-  },
-  {
    "id": "41cb2a12-e33a-4368-a9f8-0ae0d19c023e",
    "title": "Technical Program Manager, AI Delivery",
    "department": "Product & Design",
@@ -5679,11 +5642,49 @@
  ],
  "diff": {
   "new_ids": [],
-  "removed_jobs": [],
+  "removed_jobs": [
+   {
+    "id": "60de50e9-aba7-4a3a-8cdb-955a456749aa",
+    "title": "Member of Technical Staff, North Modelling (Evals)",
+    "department": "Modeling",
+    "team": "Modeling",
+    "workplaceType": "Hybrid",
+    "location": "London",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "London",
+      "addressCountry": "United Kingdom",
+      "addressLocality": "London"
+     }
+    },
+    "secondaryLocations": [
+     {
+      "location": "Europe",
+      "address": {
+       "postalAddress": {
+        "addressCountry": "European Union"
+       }
+      }
+     },
+     {
+      "location": "Toronto",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Ontario",
+        "addressCountry": "Canada",
+        "addressLocality": "Toronto"
+       }
+      }
+     }
+    ],
+    "jobUrl": "https://jobs.ashbyhq.com/cohere/60de50e9-aba7-4a3a-8cdb-955a456749aa",
+    "isListed": true
+   }
+  ],
   "summary": {
-   "active": 124,
+   "active": 123,
    "new": 0,
-   "removed": 0
+   "removed": 1
   }
  }
 }
