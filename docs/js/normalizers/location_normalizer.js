@@ -300,3 +300,51 @@ export function parseAshbySlug(input) {
   const slug = trimmed.toLowerCase().replace(/[^a-z0-9_.-]/g, "");
   return slug || null;
 }
+
+/**
+ * Generates ordered Ashby board slug candidates from a company name, website URL,
+ * jobs.ashbyhq.com URL, or Ashby Posting API URL.
+ *
+ * @param {string|null} input
+ * @returns {string[]}
+ */
+export function extractAshbyCandidates(input) {
+  if (!input || typeof input !== "string") return [];
+  const trimmed = input.trim();
+  if (!trimmed) return [];
+
+  // 1. Explicit Ashby job board or Posting API URL -> exact slug only
+  const jobsMatch = trimmed.match(/jobs\.ashbyhq\.com\/([a-zA-Z0-9_.-]+)/i);
+  if (jobsMatch) return [jobsMatch[1].toLowerCase()];
+
+  const apiMatch = trimmed.match(/job-board\/([a-zA-Z0-9_.-]+)/i);
+  if (apiMatch) return [apiMatch[1].toLowerCase()];
+
+  // 2. General website URL (e.g. https://www.linear.app/careers or notion.so)
+  if (/^https?:\/\//i.test(trimmed) || /^[a-z0-9-]+\.[a-z]{2,}(\/|$)/i.test(trimmed)) {
+    try {
+      const normalizedUrl = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+      const urlObj = new URL(normalizedUrl);
+      const hostParts = urlObj.hostname
+        .toLowerCase()
+        .replace(/^www\./, "")
+        .split(".")
+        .filter(Boolean);
+      const domainRoot = hostParts.length >= 2 ? hostParts[hostParts.length - 2] : hostParts[0];
+      if (domainRoot) {
+        const compact = domainRoot.replace(/[^a-z0-9]/g, "");
+        return [...new Set([domainRoot, compact].filter(Boolean))];
+      }
+    } catch {
+      // Fall through to name parsing
+    }
+  }
+
+  // 3. Plain company name or slug (e.g. "Influx Data", "Linear", "OpenAI")
+  const lower = trimmed.toLowerCase();
+  const compact = lower.replace(/[^a-z0-9]/g, "");
+  const hyphenated = lower.replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const rawSlug = lower.replace(/[^a-z0-9_.-]/g, "");
+
+  return [...new Set([rawSlug, compact, hyphenated].filter(Boolean))];
+}
