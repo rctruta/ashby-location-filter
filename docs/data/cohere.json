@@ -3,7 +3,7 @@
   "board": "Cohere",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/cohere",
-  "downloaded": "2026-11-23"
+  "downloaded": "2026-11-24"
  },
  "jobs": [
   {
@@ -704,74 +704,6 @@
     }
    ],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/554a9380-ab50-4338-88a9-c6b8ab19d92e",
-   "isListed": true
-  },
-  {
-   "id": "61703710-4379-42fd-a508-946f2a5fb6bc",
-   "title": "Member of Technical Staff, Data Analysis and Evaluation",
-   "department": "Modeling",
-   "team": "Post-Training",
-   "workplaceType": "Remote",
-   "location": "London",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "London",
-     "addressCountry": "United Kingdom",
-     "addressLocality": "London"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "San Francisco",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    },
-    {
-     "location": "Paris",
-     "address": {
-      "postalAddress": {
-       "addressCountry": "France",
-       "addressLocality": "Paris"
-      }
-     }
-    },
-    {
-     "location": "Toronto",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Ontario",
-       "addressCountry": "Canada",
-       "addressLocality": "Toronto"
-      }
-     }
-    },
-    {
-     "location": "Montreal",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Quebec ",
-       "addressCountry": "Canada",
-       "addressLocality": "Montreal"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/61703710-4379-42fd-a508-946f2a5fb6bc",
    "isListed": true
   },
   {
@@ -4757,55 +4689,6 @@
    "isListed": true
   },
   {
-   "id": "5dcad8a9-5daf-4e28-b315-ee91b5f98512",
-   "title": "Senior Product Designer",
-   "department": "Product & Design",
-   "team": "Design",
-   "workplaceType": "Remote",
-   "location": "Toronto",
-   "address": {
-    "postalAddress": {
-     "addressRegion": "Ontario",
-     "addressCountry": "Canada",
-     "addressLocality": "Toronto"
-    }
-   },
-   "secondaryLocations": [
-    {
-     "location": "San Francisco",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "United States",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "London",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "London",
-       "addressCountry": "United Kingdom",
-       "addressLocality": "London"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "United States",
-       "addressLocality": "New York"
-      }
-     }
-    }
-   ],
-   "jobUrl": "https://jobs.ashbyhq.com/cohere/5dcad8a9-5daf-4e28-b315-ee91b5f98512",
-   "isListed": true
-  },
-  {
    "id": "9be116c1-c1df-49bd-8e90-31d41b62645f",
    "title": "Public Sector Delivery Analyst",
    "department": "Product & Design",
@@ -5638,17 +5521,145 @@
    ],
    "jobUrl": "https://jobs.ashbyhq.com/cohere/0067eb76-92af-497e-a5f8-7521716552f9",
    "isListed": true
+  },
+  {
+   "id": "bb10d507-b8ca-4c48-a137-333b710b6908",
+   "title": "Finance Systems Senior Analyst",
+   "department": "Business Operations",
+   "team": "Finance",
+   "workplaceType": "Remote",
+   "location": "United States",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Canada",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Canada"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/bb10d507-b8ca-4c48-a137-333b710b6908",
+   "isListed": true
+  },
+  {
+   "id": "33dfe3cc-1fd2-4ba3-8c7c-e7e19cd477d7",
+   "title": "Senior Global Benefits Specialist",
+   "department": "People Operations",
+   "team": "HR",
+   "workplaceType": "Remote",
+   "location": "United States",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "California",
+     "addressCountry": "United States",
+     "addressLocality": "San Francisco"
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "New York",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "New York",
+       "addressCountry": "United States",
+       "addressLocality": "New York"
+      }
+     }
+    },
+    {
+     "location": "Washington, DC",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Washington, DC",
+       "addressCountry": "United States",
+       "addressLocality": "Washington, DC"
+      }
+     }
+    },
+    {
+     "location": "Toronto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Ontario",
+       "addressCountry": "Canada",
+       "addressLocality": "Toronto"
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/cohere/33dfe3cc-1fd2-4ba3-8c7c-e7e19cd477d7",
+   "isListed": true
   }
  ],
  "diff": {
-  "new_ids": [],
+  "new_ids": [
+   "33dfe3cc-1fd2-4ba3-8c7c-e7e19cd477d7",
+   "bb10d507-b8ca-4c48-a137-333b710b6908"
+  ],
   "removed_jobs": [
    {
-    "id": "60de50e9-aba7-4a3a-8cdb-955a456749aa",
-    "title": "Member of Technical Staff, North Modelling (Evals)",
+    "id": "5dcad8a9-5daf-4e28-b315-ee91b5f98512",
+    "title": "Senior Product Designer",
+    "department": "Product & Design",
+    "team": "Design",
+    "workplaceType": "Remote",
+    "location": "Toronto",
+    "address": {
+     "postalAddress": {
+      "addressRegion": "Ontario",
+      "addressCountry": "Canada",
+      "addressLocality": "Toronto"
+     }
+    },
+    "secondaryLocations": [
+     {
+      "location": "San Francisco",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "United States",
+        "addressLocality": "San Francisco"
+       }
+      }
+     },
+     {
+      "location": "London",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "London",
+        "addressCountry": "United Kingdom",
+        "addressLocality": "London"
+       }
+      }
+     },
+     {
+      "location": "New York",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "New York",
+        "addressCountry": "United States",
+        "addressLocality": "New York"
+       }
+      }
+     }
+    ],
+    "jobUrl": "https://jobs.ashbyhq.com/cohere/5dcad8a9-5daf-4e28-b315-ee91b5f98512",
+    "isListed": true
+   },
+   {
+    "id": "61703710-4379-42fd-a508-946f2a5fb6bc",
+    "title": "Member of Technical Staff, Data Analysis and Evaluation",
     "department": "Modeling",
-    "team": "Modeling",
-    "workplaceType": "Hybrid",
+    "team": "Post-Training",
+    "workplaceType": "Remote",
     "location": "London",
     "address": {
      "postalAddress": {
@@ -5659,10 +5670,31 @@
     },
     "secondaryLocations": [
      {
-      "location": "Europe",
+      "location": "San Francisco",
       "address": {
        "postalAddress": {
-        "addressCountry": "European Union"
+        "addressRegion": "California",
+        "addressCountry": "United States",
+        "addressLocality": "San Francisco"
+       }
+      }
+     },
+     {
+      "location": "New York",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "New York",
+        "addressCountry": "United States",
+        "addressLocality": "New York"
+       }
+      }
+     },
+     {
+      "location": "Paris",
+      "address": {
+       "postalAddress": {
+        "addressCountry": "France",
+        "addressLocality": "Paris"
        }
       }
      },
@@ -5675,16 +5707,26 @@
         "addressLocality": "Toronto"
        }
       }
+     },
+     {
+      "location": "Montreal",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Quebec ",
+        "addressCountry": "Canada",
+        "addressLocality": "Montreal"
+       }
+      }
      }
     ],
-    "jobUrl": "https://jobs.ashbyhq.com/cohere/60de50e9-aba7-4a3a-8cdb-955a456749aa",
+    "jobUrl": "https://jobs.ashbyhq.com/cohere/61703710-4379-42fd-a508-946f2a5fb6bc",
     "isListed": true
    }
   ],
   "summary": {
    "active": 123,
-   "new": 0,
-   "removed": 1
+   "new": 2,
+   "removed": 2
   }
  }
 }
