@@ -39,8 +39,9 @@ jobs:
             git checkout -B "$BRANCH"
             git add docs/data/
             git commit -m "chore(data): update job snapshots and diffs"
-            git push --force-with-lease -u origin "$BRANCH"
-            if ! gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
+            git push --force -u origin "$BRANCH"
+            OPEN_PRS="$(gh pr list --head "$BRANCH" --state open --json number --jq 'length')"
+            if [ "${OPEN_PRS:-0}" = "0" ]; then
               gh pr create \
                 --base main \
                 --head "$BRANCH" \
