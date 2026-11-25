@@ -39,7 +39,7 @@ jobs:
             git checkout -B "$BRANCH"
             git add docs/data/
             git commit -m "chore(data): update job snapshots and diffs"
-            git push --force-with-lease -u origin "$BRANCH"
+            git push --force -u origin "$BRANCH"
             if ! gh pr view "$BRANCH" --json url >/dev/null 2>&1; then
               gh pr create \
                 --base main \
