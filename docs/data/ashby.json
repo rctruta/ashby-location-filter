@@ -3,7 +3,7 @@
   "board": "Ashby",
   "provider": "Ashby",
   "feed_url": "https://api.ashbyhq.com/posting-api/job-board/ashby",
-  "downloaded": "2026-11-24"
+  "downloaded": "2026-11-28"
  },
  "jobs": [
   {
@@ -4235,6 +4235,35 @@
    "isListed": true
   },
   {
+   "id": "ce9f0432-7abf-4911-b644-69d0fb08d67f",
+   "title": "Renewal Manager, SMB - Americas",
+   "department": "Customer Success",
+   "team": "Contract Management",
+   "workplaceType": "Remote",
+   "location": "Remote - US",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "",
+     "addressCountry": "United States",
+     "addressLocality": ""
+    }
+   },
+   "secondaryLocations": [
+    {
+     "location": "Remote - Canada",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "",
+       "addressCountry": "Canada",
+       "addressLocality": ""
+      }
+     }
+    }
+   ],
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/ce9f0432-7abf-4911-b644-69d0fb08d67f",
+   "isListed": true
+  },
+  {
    "id": "5d4b0ed6-da8c-4377-a43a-c45bf90a0073",
    "title": "Sr. Total Rewards Manager",
    "department": "People & Talent",
@@ -4406,10 +4435,10 @@
    "isListed": true
   },
   {
-   "id": "db46ff5d-e469-4bba-b8af-c55ac04f311f",
-   "title": "Data Analytics Manager",
-   "department": "Data",
-   "team": "Data",
+   "id": "dd3601fc-3a21-467b-aaff-43fceb65864b",
+   "title": "SMB Customer Success Manager - Americas",
+   "department": "Customer Success",
+   "team": "Start-up Customer Success",
    "workplaceType": "Remote",
    "location": "Remote - US",
    "address": {
@@ -4421,26 +4450,6 @@
    },
    "secondaryLocations": [
     {
-     "location": "Austin",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Texas",
-       "addressCountry": "USA",
-       "addressLocality": "Austin"
-      }
-     }
-    },
-    {
-     "location": "Los Angeles",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "California",
-       "addressCountry": "USA",
-       "addressLocality": "Los Angeles"
-      }
-     }
-    },
-    {
      "location": "Remote - Canada",
      "address": {
       "postalAddress": {
@@ -4449,49 +4458,9 @@
        "addressLocality": ""
       }
      }
-    },
-    {
-     "location": "Seattle",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Washington",
-       "addressCountry": "USA",
-       "addressLocality": "Seattle"
-      }
-     }
-    },
-    {
-     "location": "New York",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "New York",
-       "addressCountry": "USA",
-       "addressLocality": "New York"
-      }
-     }
-    },
-    {
-     "location": "San Francisco",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "CA",
-       "addressCountry": "USA",
-       "addressLocality": "San Francisco"
-      }
-     }
-    },
-    {
-     "location": "Denver",
-     "address": {
-      "postalAddress": {
-       "addressRegion": "Colorado",
-       "addressCountry": "USA",
-       "addressLocality": "Denver"
-      }
-     }
     }
    ],
-   "jobUrl": "https://jobs.ashbyhq.com/Ashby/db46ff5d-e469-4bba-b8af-c55ac04f311f",
+   "jobUrl": "https://jobs.ashbyhq.com/Ashby/dd3601fc-3a21-467b-aaff-43fceb65864b",
    "isListed": true
   },
   {
@@ -5403,110 +5372,103 @@
  ],
  "diff": {
   "new_ids": [
-   "1f7e3bd7-a3a6-4ead-ab68-f126084868e3",
-   "73a6291f-0b00-47a5-8639-e1504f442d7e",
-   "7eebfe58-26ce-4d83-8e87-5e2b1e61a0d9"
+   "ce9f0432-7abf-4911-b644-69d0fb08d67f",
+   "dd3601fc-3a21-467b-aaff-43fceb65864b"
   ],
   "removed_jobs": [
    {
-    "id": "330eb697-6e76-4033-9e73-7bd6c841a27a",
-    "title": "Support Manager - EMEA",
-    "department": "Customer Success",
-    "team": "Technical Support",
+    "id": "db46ff5d-e469-4bba-b8af-c55ac04f311f",
+    "title": "Data Analytics Manager",
+    "department": "Data",
+    "team": "Data",
     "workplaceType": "Remote",
-    "location": "Remote - European Union",
+    "location": "Remote - US",
     "address": {
      "postalAddress": {
-      "postalCode": "",
       "addressRegion": "",
-      "addressCountry": "European Union",
+      "addressCountry": "United States",
       "addressLocality": ""
      }
     },
     "secondaryLocations": [
      {
-      "location": "United Kingdom",
+      "location": "Austin",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "Texas",
+        "addressCountry": "USA",
+        "addressLocality": "Austin"
+       }
+      }
+     },
+     {
+      "location": "Los Angeles",
+      "address": {
+       "postalAddress": {
+        "addressRegion": "California",
+        "addressCountry": "USA",
+        "addressLocality": "Los Angeles"
+       }
+      }
+     },
+     {
+      "location": "Remote - Canada",
       "address": {
        "postalAddress": {
         "addressRegion": "",
-        "addressCountry": "United Kingdom",
+        "addressCountry": "Canada",
         "addressLocality": ""
        }
       }
      },
      {
-      "location": "Italy",
+      "location": "Seattle",
       "address": {
        "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Italy",
-        "addressLocality": ""
+        "addressRegion": "Washington",
+        "addressCountry": "USA",
+        "addressLocality": "Seattle"
        }
       }
      },
      {
-      "location": "Germany",
+      "location": "New York",
       "address": {
        "postalAddress": {
-        "addressCountry": "Germany",
-        "addressLocality": ""
+        "addressRegion": "New York",
+        "addressCountry": "USA",
+        "addressLocality": "New York"
        }
       }
      },
      {
-      "location": "Denmark",
+      "location": "San Francisco",
       "address": {
        "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Denmark",
-        "addressLocality": ""
+        "addressRegion": "CA",
+        "addressCountry": "USA",
+        "addressLocality": "San Francisco"
        }
       }
      },
      {
-      "location": "Ireland",
+      "location": "Denver",
       "address": {
        "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "Ireland",
-        "addressLocality": ""
-       }
-      }
-     },
-     {
-      "location": "Spain",
-      "address": {
-       "postalAddress": {
-        "addressCountry": "Spain"
-       }
-      }
-     },
-     {
-      "location": "Portugal",
-      "address": {
-       "postalAddress": {
-        "addressCountry": "Portugal"
-       }
-      }
-     },
-     {
-      "location": "France",
-      "address": {
-       "postalAddress": {
-        "addressRegion": "",
-        "addressCountry": "France",
-        "addressLocality": ""
+        "addressRegion": "Colorado",
+        "addressCountry": "USA",
+        "addressLocality": "Denver"
        }
       }
      }
     ],
-    "jobUrl": "https://jobs.ashbyhq.com/Ashby/330eb697-6e76-4033-9e73-7bd6c841a27a",
+    "jobUrl": "https://jobs.ashbyhq.com/Ashby/db46ff5d-e469-4bba-b8af-c55ac04f311f",
     "isListed": true
    }
   ],
   "summary": {
-   "active": 78,
-   "new": 3,
+   "active": 79,
+   "new": 2,
    "removed": 1
   }
  }
